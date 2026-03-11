@@ -13,6 +13,8 @@ export const siteConfig = {
   monogramLight: "/images/monogram-light.png",
   monogramDark: "/images/monogram-dark.png",
   portrait: "/images/portrait.jpg",
+  headshot: "/images/headshot.jpg",
+  workspace: "/images/workspace.jpg",
 };
 
 export const meetingLinks = {

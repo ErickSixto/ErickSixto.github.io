@@ -12,7 +12,7 @@ import {
 } from "../components/ui/dialog";
 import { ArrowRight, ExternalLink, CheckCircle2, Calendar, Target, Lightbulb, Layers } from "lucide-react";
 import { MotionSection, StaggerContainer, StaggerItem } from "../components/animations";
-import { projects, meetingLinks } from "../data/mock";
+import { siteConfig, projects, meetingLinks } from "../data/mock";
 
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -20,15 +20,32 @@ export default function ProjectsPage() {
   return (
     <main className="pt-20">
       {/* Header */}
-      <section className="py-24 bg-[#F1F1EF]">
+      <section className="py-24 bg-[#F1F1EF] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <MotionSection>
-            <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Projects</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
-            <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
-              Real-world Salesforce projects that solved real business problems. Click any project to see the full story.
-            </p>
-          </MotionSection>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <MotionSection>
+              <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Projects</p>
+              <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
+              <p className="text-lg text-[#4B5563] max-w-lg leading-relaxed">
+                Real-world Salesforce projects that solved real business problems. Click any project to see the full story.
+              </p>
+            </MotionSection>
+
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.8, ease: "easeOut" }}
+              className="relative hidden lg:block"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-br from-[#CB9135]/10 to-transparent rounded-2xl" />
+              <div className="absolute -bottom-3 -right-3 w-2/3 h-2/3 border-2 border-[#CB9135]/20 rounded-2xl" />
+              <img
+                src={siteConfig.workspace}
+                alt="Development workspace"
+                className="relative rounded-2xl w-full object-cover shadow-2xl shadow-black/10"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 

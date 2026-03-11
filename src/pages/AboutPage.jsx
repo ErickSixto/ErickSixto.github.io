@@ -38,16 +38,36 @@ export default function AboutPage() {
             </div>
             <MotionSection delay={0.2}>
               <div className="flex justify-center lg:justify-end">
-                <div className="relative">
+                <div className="relative group">
+                  {/* Decorative accent frame */}
                   <motion.div
-                    className="absolute -inset-3 bg-[#E5E7EB]/50 rounded-2xl"
-                    animate={{ rotate: [-2, -1, -2] }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                    className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#CB9135]/30 rounded-2xl"
+                    initial={{ opacity: 0, x: 10, y: 10 }}
+                    animate={{ opacity: 1, x: 0, y: 0 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
                   />
-                  <img
-                    src={siteConfig.portrait}
-                    alt="Erick Sixto"
-                    className="relative rounded-2xl max-w-sm w-full object-cover"
+                  {/* Subtle warm glow */}
+                  <div className="absolute -inset-6 bg-gradient-to-br from-[#CB9135]/8 via-transparent to-[#2F2E2E]/5 rounded-3xl blur-xl" />
+                  {/* Main image */}
+                  <motion.div
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    className="relative overflow-hidden rounded-2xl shadow-2xl shadow-black/15"
+                  >
+                    <img
+                      src={siteConfig.headshot}
+                      alt="Erick Sixto"
+                      className="relative max-w-sm w-full object-cover"
+                    />
+                    {/* Bottom gradient vignette */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#2F2E2E]/10 via-transparent to-transparent" />
+                  </motion.div>
+                  {/* Gold accent bar */}
+                  <motion.div
+                    className="absolute -left-2 top-8 w-1 h-16 bg-[#CB9135] rounded-full"
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
                   />
                 </div>
               </div>
