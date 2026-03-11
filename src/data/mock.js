@@ -10,12 +10,9 @@ export const siteConfig = {
   website: "www.ericksixto.card.co",
   linkedin: "https://www.linkedin.com/in/ericksixto",
   github: "https://github.com/ericksixto",
-  monogramLight:
-    "https://customer-assets.emergentagent.com/job_salesforce-systems/artifacts/0o00omqm_monogramv2.png",
-  monogramDark:
-    "https://customer-assets.emergentagent.com/job_salesforce-systems/artifacts/3nctinry_monogram_darkv2.png",
-  portrait:
-    "https://customer-assets.emergentagent.com/job_8617f669-f0f2-42bd-8c43-f1c50211efd3/artifacts/t1go5qj4_Fiverr%20Portrait%20BW.jpg",
+  monogramLight: "/images/monogram-light.png",
+  monogramDark: "/images/monogram-dark.png",
+  portrait: "/images/portrait.jpg",
 };
 
 export const meetingLinks = {

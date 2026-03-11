@@ -38,7 +38,7 @@ export default function Header() {
             <img
               src={siteConfig.monogramLight}
               alt="ES"
-              className="h-9 w-9 transition-transform duration-300 group-hover:scale-105"
+              className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:flex flex-col">
               <span className="text-[#2F2E2E] font-bold text-base tracking-tight leading-none">
