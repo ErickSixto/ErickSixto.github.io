@@ -109,7 +109,7 @@ export default function AboutPage() {
             {processSteps.map((step, i) => (
               <StaggerItem key={i}>
                 <div>
-                  <span className="text-4xl font-bold text-[#E5E7EB] leading-none">
+                  <span className="text-4xl font-bold text-[#CB9135]/30 leading-none">
                     {step.step}
                   </span>
                   <h3 className="font-semibold text-[#2F2E2E] mt-3 mb-2">
@@ -140,7 +140,7 @@ export default function AboutPage() {
             <div className="absolute left-[7px] top-2 bottom-0 w-px bg-[#E5E7EB]" />
             {experience.map((role, i) => (
               <MotionSection key={i} delay={i * 0.1}>
-                <div className="relative pl-10 pb-20 last:pb-0">
+                <div className="relative pl-10 pb-16 last:pb-0">
                   <div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full border-[3px] border-[#2F2E2E] bg-white" />
                   <div className="flex flex-col gap-1">
                     <span className="text-sm text-[#4B5563]">
@@ -155,7 +155,7 @@ export default function AboutPage() {
                     <p className="text-sm text-[#4B5563] leading-relaxed mt-2">
                       {role.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-2 mt-3 mb-4">
                       {role.highlights.map((h, j) => (
                         <Badge
                           key={j}

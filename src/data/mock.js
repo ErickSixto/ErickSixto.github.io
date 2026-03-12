@@ -3,7 +3,7 @@
 export const siteConfig = {
   name: "Erick Sixto",
   descriptor: "SALESFORCE SPECIALIST",
-  headline: "I build Salesforce systems that teams actually use.",
+  headline: "I build Salesforce systems that teams actually use",
   subheadline:
     "Senior Salesforce Developer with 7+ years helping businesses run cleaner, faster, and with less friction — across Sales Cloud, Service Cloud, and Experience Cloud.",
   email: "sixto.developer@gmail.com",

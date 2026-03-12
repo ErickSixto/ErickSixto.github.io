@@ -82,12 +82,12 @@ export default function HomePage() {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="flex flex-wrap gap-4 mb-10"
               >
-                <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
+                <Link to="/contact">
                   <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-7 h-12 text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    {meetingLinks.discovery.shortLabel}
+                    Get in Touch
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                </a>
+                </Link>
                 <Link to="/projects">
                   <Button
                     variant="outline"
@@ -135,7 +135,7 @@ export default function HomePage() {
               {credibilityItems.map((item, i) => {
                 const numMatch = String(item.value).match(/^(\d+)(\+?)$/);
                 return (
-                  <div key={i}>
+                  <div key={i} className="text-center md:text-left">
                     <p className="text-2xl font-bold text-[#2F2E2E]">
                       {numMatch ? <CountUp target={numMatch[1]} suffix={numMatch[2]} /> : item.value}
                     </p>
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Skills Marquee ── */}
-      <section className="py-8 bg-white border-y border-[#E5E7EB] overflow-hidden">
+      <section className="py-8 bg-white border-y border-[#E5E7EB] overflow-hidden hidden md:block">
         <Marquee items={marqueeItems} speed={40} />
       </section>
 
@@ -279,7 +279,7 @@ export default function HomePage() {
             {processSteps.map((step, i) => (
               <StaggerItem key={i}>
                 <div>
-                  <span className="text-4xl font-bold text-[#E5E7EB] leading-none">{step.step}</span>
+                  <span className="text-4xl font-bold text-[#CB9135]/30 leading-none">{step.step}</span>
                   <h3 className="font-semibold text-[#2F2E2E] mt-3 mb-2">{step.title}</h3>
                   <p className="text-sm text-[#4B5563] leading-relaxed">{step.description}</p>
                 </div>

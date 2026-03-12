@@ -50,43 +50,40 @@ export default function ServicesPage() {
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                   <Card className="p-8 border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300 h-full">
-                    <div className="flex items-start gap-5 mb-5">
-                      <div className="p-3 bg-[#F1F1EF] rounded-lg flex-shrink-0">
-                        <IconComp className="h-6 w-6 text-[#2F2E2E]" />
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2.5 bg-[#F1F1EF] rounded-lg flex-shrink-0">
+                        <IconComp className="h-5 w-5 text-[#2F2E2E]" />
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-[#2F2E2E] mb-2">
-                          {service.title}
-                        </h3>
-                        <p className="text-sm text-[#4B5563] leading-relaxed">
-                          {service.description}
-                        </p>
-                      </div>
+                      <h3 className="text-xl font-semibold text-[#2F2E2E]">
+                        {service.title}
+                      </h3>
                     </div>
 
-                    <div className="ml-[68px]">
-                      <div className="bg-[#F1F1EF] rounded-lg p-4 mb-5">
-                        <p className="text-xs uppercase tracking-wider text-[#9CA3AF] mb-1">
-                          Outcome
-                        </p>
-                        <p className="text-sm font-medium text-[#2F2E2E]">
-                          {service.outcome}
-                        </p>
-                      </div>
-                      <div>
-                        <p className="text-xs uppercase tracking-wider text-[#9CA3AF] mb-3">
-                          Typical Deliverables
-                        </p>
-                        <div className="flex flex-col gap-2">
-                          {service.deliverables.map((d, j) => (
-                            <div key={j} className="flex items-center gap-2.5">
-                              <CheckCircle2 className="h-3.5 w-3.5 text-[#2F2E2E] flex-shrink-0" />
-                              <span className="text-sm text-[#4B5563]">
-                                {d}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+                    <p className="text-sm text-[#4B5563] leading-relaxed mb-5">
+                      {service.description}
+                    </p>
+
+                    <div className="bg-[#F1F1EF] rounded-lg p-4 mb-5">
+                      <p className="text-xs uppercase tracking-wider text-[#9CA3AF] mb-1">
+                        Outcome
+                      </p>
+                      <p className="text-sm font-medium text-[#2F2E2E]">
+                        {service.outcome}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-xs uppercase tracking-wider text-[#9CA3AF] mb-3">
+                        Typical Deliverables
+                      </p>
+                      <div className="flex flex-col gap-2">
+                        {service.deliverables.map((d, j) => (
+                          <div key={j} className="flex items-center gap-2.5">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-[#2F2E2E] flex-shrink-0" />
+                            <span className="text-sm text-[#4B5563]">
+                              {d}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </Card>
