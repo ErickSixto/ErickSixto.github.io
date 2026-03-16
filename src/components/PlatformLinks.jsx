@@ -38,7 +38,7 @@ function PlatformIcon({ link, size = "sm" }) {
     <div
       className={`${sizeClasses} rounded-md flex items-center justify-center text-white font-bold`}
       style={{ backgroundColor: link.color }}
-    >i
+    >
       {link.letter}
     </div>
   );

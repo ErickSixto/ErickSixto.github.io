@@ -7,9 +7,6 @@ import { Card } from "../components/ui/card";
 import {
   ArrowRight,
   CheckCircle2,
-  Star,
-  Shield,
-  Award,
   Settings,
   Globe,
   RefreshCw,
@@ -91,7 +88,7 @@ export default function HomePage() {
                 <Link to="/projects">
                   <Button
                     variant="outline"
-                    className="border-[#2F2E2E]/20 text-[#2F2E2E] hover:bg-[#2F2E2E] hover:text-white hover:border-[#2F2E2E] px-7 h-12 text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                    className="border-[#2F2E2E]/20 text-[#2F2E2E] hover:bg-[#CB9135] hover:text-white hover:border-[#CB9135] px-7 h-12 text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                   >
                     See My Work
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -208,10 +205,12 @@ export default function HomePage() {
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                     <Card className="p-7 bg-white border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300 h-full">
-                      <div className="p-2.5 bg-[#F1F1EF] rounded-lg w-fit mb-5">
-                        <IconComp className="h-6 w-6 text-[#2F2E2E]" />
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2 bg-[#F1F1EF] rounded-lg flex-shrink-0">
+                          <IconComp className="h-5 w-5 text-[#2F2E2E]" />
+                        </div>
+                        <h3 className="font-semibold text-[#2F2E2E]">{service.title}</h3>
                       </div>
-                      <h3 className="font-semibold text-[#2F2E2E] mb-2.5">{service.title}</h3>
                       <p className="text-sm text-[#4B5563] leading-relaxed">{service.shortDesc}</p>
                     </Card>
                   </motion.div>
@@ -219,6 +218,11 @@ export default function HomePage() {
               );
             })}
           </StaggerContainer>
+          <div className="mt-8 text-center md:hidden">
+            <Link to="/services" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
+              All Services <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -263,6 +267,11 @@ export default function HomePage() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+          <div className="mt-8 text-center md:hidden">
+            <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
+              All Projects <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 
