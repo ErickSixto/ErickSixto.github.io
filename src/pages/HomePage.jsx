@@ -204,9 +204,9 @@ export default function HomePage() {
               return (
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
-                    <Card className="p-7 bg-white border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300 h-full">
+                    <Card className="p-7 bg-white border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 h-full cursor-pointer">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-[#F1F1EF] rounded-lg flex-shrink-0">
+                        <div className="p-2 bg-[#F1F1EF] rounded-lg flex-shrink-0 transition-colors duration-200 group-hover:bg-[#CB9135]/10">
                           <IconComp className="h-5 w-5 text-[#2F2E2E]" />
                         </div>
                         <h3 className="font-semibold text-[#2F2E2E]">{service.title}</h3>
@@ -245,8 +245,8 @@ export default function HomePage() {
               <StaggerItem key={project.id}>
                 <Link to="/projects">
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
-                    <Card className="border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300 h-full flex flex-col cursor-pointer overflow-hidden">
-                      <div className="h-1 bg-[#CB9135]" />
+                    <Card className="border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 h-full flex flex-col cursor-pointer overflow-hidden group">
+                      <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-200" />
                       <div className="p-6">
                         <Badge variant="secondary" className="w-fit mb-3 text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{project.category}</Badge>
                         <h3 className="font-semibold text-[#2F2E2E] mb-1">{project.title}</h3>
@@ -313,7 +313,7 @@ export default function HomePage() {
               <StaggerItem key={proof.platform}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                   <a href={proof.url} target="_blank" rel="noopener noreferrer" className="block">
-                    <Card className="p-7 border-[#E5E7EB] h-full hover:shadow-lg transition-all duration-300 group">
+                    <Card className="p-7 border-[#E5E7EB] h-full hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 group cursor-pointer">
                       <div className="flex items-center justify-between mb-5">
                         <div className="flex items-center gap-3">
                           <div className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-sm font-bold" style={{ backgroundColor: proof.color }}>

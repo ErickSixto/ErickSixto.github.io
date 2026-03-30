@@ -4,9 +4,18 @@
 
 body {
     margin: 0;
-    font-family: "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 code {
@@ -77,36 +86,13 @@ code {
     body {
         @apply bg-background text-foreground;
     }
-}
-
-@layer base {
-    [data-debug-wrapper="true"] {
-        display: contents !important;
+    a, button, [role="button"], [type="button"], [type="submit"],
+    summary, label[for], select, .cursor-pointer {
+        cursor: pointer;
     }
-
-    [data-debug-wrapper="true"] > * {
-        margin-left: inherit;
-        margin-right: inherit;
-        margin-top: inherit;
-        margin-bottom: inherit;
-        padding-left: inherit;
-        padding-right: inherit;
-        padding-top: inherit;
-        padding-bottom: inherit;
-        column-gap: inherit;
-        row-gap: inherit;
-        gap: inherit;
-        border-left-width: inherit;
-        border-right-width: inherit;
-        border-top-width: inherit;
-        border-bottom-width: inherit;
-        border-left-style: inherit;
-        border-right-style: inherit;
-        border-top-style: inherit;
-        border-bottom-style: inherit;
-        border-left-color: inherit;
-        border-right-color: inherit;
-        border-top-color: inherit;
-        border-bottom-color: inherit;
+    a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+    input:focus-visible, textarea:focus-visible, select:focus-visible {
+        @apply outline-none ring-2 ring-[#CB9135]/50 ring-offset-2 ring-offset-background;
     }
 }
+

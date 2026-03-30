@@ -49,7 +49,7 @@ export default function ServicesPage() {
               return (
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
-                  <Card className="p-8 border-[#E5E7EB] hover:shadow-lg transition-shadow duration-300 h-full">
+                  <Card className="p-8 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 h-full cursor-pointer">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="p-2.5 bg-[#F1F1EF] rounded-lg flex-shrink-0">
                         <IconComp className="h-5 w-5 text-[#2F2E2E]" />

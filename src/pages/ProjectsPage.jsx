@@ -57,10 +57,10 @@ export default function ProjectsPage() {
               <StaggerItem key={project.id}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
                   <Card
-                    className="border-[#E5E7EB] hover:shadow-lg transition-all duration-300 cursor-pointer group h-full flex flex-col overflow-hidden"
+                    className="border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 cursor-pointer group h-full flex flex-col overflow-hidden"
                     onClick={() => setSelectedProject(project)}
                   >
-                    <div className="h-1 bg-[#CB9135]" />
+                    <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-200" />
                     <div className="p-7 flex-grow flex flex-col">
                       <div className="flex items-center justify-between mb-4">
                         <Badge variant="secondary" className="text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{project.category}</Badge>
