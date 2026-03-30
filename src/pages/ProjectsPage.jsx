@@ -93,7 +93,7 @@ export default function ProjectsPage() {
 
       {/* Project Detail Dialog */}
       <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-white">
+        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto bg-white pt-10">
           {selectedProject && (
             <>
               <DialogHeader>
