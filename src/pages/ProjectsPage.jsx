@@ -64,7 +64,12 @@ export default function ProjectsPage() {
                     <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-200" />
                     <div className="p-7 flex-grow flex flex-col">
                       <div className="flex items-center justify-between mb-4">
-                        <Badge variant="secondary" className="text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{project.category}</Badge>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="secondary" className="text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{project.category}</Badge>
+                          {project.industry && (
+                            <Badge variant="outline" className="text-xs border-[#CB9135]/30 text-[#CB9135] hover:bg-transparent">{project.industry}</Badge>
+                          )}
+                        </div>
                         <ExternalLink className="h-4 w-4 text-[#E5E7EB] group-hover:text-[#4B5563] transition-colors duration-200" />
                       </div>
                       <h3 className="text-xl font-semibold text-[#2F2E2E] mb-1">{project.title}</h3>
@@ -98,7 +103,12 @@ export default function ProjectsPage() {
           {selectedProject && (
             <>
               <DialogHeader>
-                <Badge variant="secondary" className="w-fit mb-3 text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{selectedProject.category}</Badge>
+                <div className="flex items-center gap-2 mb-3">
+                  <Badge variant="secondary" className="w-fit text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{selectedProject.category}</Badge>
+                  {selectedProject.industry && (
+                    <Badge variant="outline" className="w-fit text-xs border-[#CB9135]/30 text-[#CB9135] hover:bg-transparent">{selectedProject.industry}</Badge>
+                  )}
+                </div>
                 <DialogTitle className="text-2xl font-bold text-[#2F2E2E]">{selectedProject.title}</DialogTitle>
                 <p className="text-sm text-[#CB9135] font-medium">{selectedProject.client}</p>
               </DialogHeader>

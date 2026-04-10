@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { Menu, ArrowRight } from "lucide-react";
-import { siteConfig } from "../../data/mock";
+import { Menu, Calendar } from "lucide-react";
+import { siteConfig, meetingLinks } from "../../data/mock";
 
 const navLinks = [
   { label: "About", path: "/about" },
@@ -70,12 +70,12 @@ export default function Header() {
 
           {/* CTA + Mobile */}
           <div className="flex items-center gap-4">
-            <Link to="/contact" className="hidden md:block">
+            <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer" className="hidden md:block">
               <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white text-[13px] px-5 h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
-                Let's Work Together
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+                <Calendar className="mr-1.5 h-3.5 w-3.5" />
+                Book a Free Call
               </Button>
-            </Link>
+            </a>
 
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -113,14 +113,17 @@ export default function Header() {
                     </Link>
                   ))}
                   <div className="pt-4 px-4">
-                    <Link
-                      to="/contact"
+                    <a
+                      href={meetingLinks.discovery.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setMobileOpen(false)}
                     >
                       <Button className="bg-[#2F2E2E] text-white w-full h-10 hover:bg-[#1a1919]">
-                        Let's Work Together
+                        <Calendar className="mr-2 h-4 w-4" />
+                        Book a Free Call
                       </Button>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </SheetContent>

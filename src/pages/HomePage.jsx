@@ -15,6 +15,9 @@ import {
   BarChart3,
   Calendar,
   ExternalLink,
+  Phone,
+  Star,
+  RefreshCcw,
 } from "lucide-react";
 import {
   AnimatedText,
@@ -34,6 +37,7 @@ import {
   socialProof,
   marqueeItems,
   meetingLinks,
+  testimonials,
 } from "../data/mock";
 
 const iconMap = { Settings, Globe, RefreshCw, Zap, Database, BarChart3 };
@@ -79,12 +83,12 @@ export default function HomePage() {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="flex flex-wrap gap-4 mb-10"
               >
-                <Link to="/contact">
+                <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-7 h-12 text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
-                    Get in Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <Phone className="mr-2 h-4 w-4" />
+                    Book a Free Discovery Call
                   </Button>
-                </Link>
+                </a>
                 <Link to="/projects">
                   <Button
                     variant="outline"
@@ -275,8 +279,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Process ── */}
+      {/* ── Testimonials ── */}
       <section className="py-24 bg-[#F1F1EF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionSection>
+            <div className="mb-12">
+              <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Client Reviews</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E]">What clients say</h2>
+            </div>
+          </MotionSection>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => {
+              const fullStars = Math.floor(t.rating);
+              const hasHalf = t.rating % 1 >= 0.5;
+              return (
+                <StaggerItem key={t.id}>
+                  <Card className="p-7 bg-white border-[#E5E7EB] h-full flex flex-col">
+                    {/* Stars */}
+                    <div className="flex items-center gap-0.5 mb-4">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < fullStars
+                              ? "fill-[#CB9135] text-[#CB9135]"
+                              : i === fullStars && hasHalf
+                              ? "fill-[#CB9135]/50 text-[#CB9135]"
+                              : "fill-[#E5E7EB] text-[#E5E7EB]"
+                          }`}
+                        />
+                      ))}
+                      <span className="text-xs text-[#4B5563] ml-1.5">{t.rating}</span>
+                      {t.isRepeatClient && (
+                        <span className="ml-auto flex items-center gap-1 text-[10px] text-[#CB9135] font-medium uppercase tracking-wide">
+                          <RefreshCcw className="h-3 w-3" />
+                          Repeat Client
+                        </span>
+                      )}
+                    </div>
+                    {/* Quote */}
+                    <p className="text-[#2F2E2E] text-sm leading-relaxed flex-grow mb-5">
+                      &ldquo;{t.text}&rdquo;
+                    </p>
+                    {/* Author */}
+                    <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB]">
+                      <div>
+                        <p className="text-sm font-semibold text-[#2F2E2E]">{t.author}</p>
+                        <p className="text-xs text-[#4B5563]">{t.country}</p>
+                      </div>
+                      <span className="text-[10px] text-[#4B5563] bg-[#F1F1EF] px-2 py-1 rounded-full">
+                        {t.service}
+                      </span>
+                    </div>
+                  </Card>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+          <div className="mt-8 text-center">
+            <a
+              href="https://www.fiverr.com/ericksixto#Reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#4B5563] hover:text-[#2F2E2E] transition-colors"
+            >
+              120+ verified reviews on Fiverr
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Process ── */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="max-w-3xl mb-14">
@@ -299,7 +374,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Social Proof (Real Metrics) ── */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#F1F1EF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="mb-12">
