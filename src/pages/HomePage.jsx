@@ -15,6 +15,9 @@ import {
   BarChart3,
   Calendar,
   ExternalLink,
+  Phone,
+  Star,
+  RefreshCcw,
 } from "lucide-react";
 import {
   AnimatedText,
@@ -34,6 +37,7 @@ import {
   socialProof,
   marqueeItems,
   meetingLinks,
+  testimonials,
 } from "../data/mock";
 
 const iconMap = { Settings, Globe, RefreshCw, Zap, Database, BarChart3 };
@@ -46,7 +50,7 @@ export default function HomePage() {
     <main>
       {/* ── Hero ── */}
       <section className="min-h-[92vh] flex items-center pt-20 bg-[#F1F1EF] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="max-w-xl">
               <motion.p
@@ -60,7 +64,7 @@ export default function HomePage() {
 
               <AnimatedText
                 text={siteConfig.headline}
-                className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#2F2E2E] leading-[1.08] mb-7"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[#2F2E2E] leading-[1.08] mb-7"
                 delay={0.2}
               />
 
@@ -79,12 +83,12 @@ export default function HomePage() {
                 transition={{ delay: 1, duration: 0.6 }}
                 className="flex flex-wrap gap-4 mb-10"
               >
-                <Link to="/contact">
+                <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-7 h-12 text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
-                    Get in Touch
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <Phone className="mr-2 h-4 w-4" />
+                    Book a Free Discovery Call
                   </Button>
-                </Link>
+                </a>
                 <Link to="/projects">
                   <Button
                     variant="outline"
@@ -120,7 +124,7 @@ export default function HomePage() {
                 <img
                   src={siteConfig.portrait}
                   alt="Erick Sixto"
-                  className="relative rounded-2xl w-full max-w-[380px] object-cover"
+                  className="relative rounded-2xl w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px] object-cover"
                 />
               </div>
             </motion.div>
@@ -146,13 +150,13 @@ export default function HomePage() {
       </section>
 
       {/* ── Skills Marquee ── */}
-      <section className="py-8 bg-white border-y border-[#E5E7EB] overflow-hidden hidden md:block">
+      <section className="py-8 bg-white border-y border-[#E5E7EB] overflow-hidden">
         <Marquee items={marqueeItems} speed={40} />
       </section>
 
       {/* ── Value Proposition ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="max-w-3xl">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Why Erick</p>
@@ -164,7 +168,7 @@ export default function HomePage() {
               </p>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-14">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-14">
             {[
               { title: "Clean Architecture", desc: "Thoughtful object models and well-structured code that scales without becoming fragile." },
               { title: "Maintainable Systems", desc: "Your team can extend and manage the system after handoff — without calling me for every change." },
@@ -186,7 +190,7 @@ export default function HomePage() {
 
       {/* ── Services Preview ── */}
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="flex justify-between items-end mb-12">
               <div>
@@ -198,7 +202,7 @@ export default function HomePage() {
               </Link>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {featuredServices.map((service) => {
               const IconComp = iconMap[service.icon] || Settings;
               return (
@@ -228,7 +232,7 @@ export default function HomePage() {
 
       {/* ── Featured Projects ── */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="flex justify-between items-end mb-12">
               <div>
@@ -240,7 +244,7 @@ export default function HomePage() {
               </Link>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {featuredProjects.map((project) => (
               <StaggerItem key={project.id}>
                 <Link to="/projects">
@@ -275,9 +279,80 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Process ── */}
+      {/* ── Testimonials ── */}
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionSection>
+            <div className="mb-12">
+              <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Client Reviews</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E]">What clients say</h2>
+            </div>
+          </MotionSection>
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((t) => {
+              const fullStars = Math.floor(t.rating);
+              const hasHalf = t.rating % 1 >= 0.5;
+              return (
+                <StaggerItem key={t.id}>
+                  <Card className="p-7 bg-white border-[#E5E7EB] h-full flex flex-col">
+                    {/* Stars */}
+                    <div className="flex items-center gap-0.5 mb-4">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < fullStars
+                              ? "fill-[#CB9135] text-[#CB9135]"
+                              : i === fullStars && hasHalf
+                              ? "fill-[#CB9135]/50 text-[#CB9135]"
+                              : "fill-[#E5E7EB] text-[#E5E7EB]"
+                          }`}
+                        />
+                      ))}
+                      <span className="text-xs text-[#4B5563] ml-1.5">{t.rating}</span>
+                      {t.isRepeatClient && (
+                        <span className="ml-auto flex items-center gap-1 text-[10px] text-[#CB9135] font-medium uppercase tracking-wide">
+                          <RefreshCcw className="h-3 w-3" />
+                          Repeat Client
+                        </span>
+                      )}
+                    </div>
+                    {/* Quote */}
+                    <p className="text-[#2F2E2E] text-sm leading-relaxed flex-grow mb-5">
+                      &ldquo;{t.text}&rdquo;
+                    </p>
+                    {/* Author */}
+                    <div className="flex items-center justify-between pt-4 border-t border-[#E5E7EB]">
+                      <div>
+                        <p className="text-sm font-semibold text-[#2F2E2E]">{t.author}</p>
+                        <p className="text-xs text-[#4B5563]">{t.country}</p>
+                      </div>
+                      <span className="text-[10px] text-[#4B5563] bg-[#F1F1EF] px-2 py-1 rounded-full">
+                        {t.service}
+                      </span>
+                    </div>
+                  </Card>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+          <div className="mt-8 text-center">
+            <a
+              href="https://www.fiverr.com/ericksixto#Reviews"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-[#4B5563] hover:text-[#2F2E2E] transition-colors"
+            >
+              120+ verified reviews on Fiverr
+              <ArrowRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Process ── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="max-w-3xl mb-14">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Process</p>
@@ -299,8 +374,8 @@ export default function HomePage() {
       </section>
 
       {/* ── Social Proof (Real Metrics) ── */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <section className="py-24 bg-[#F1F1EF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="mb-12">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Verified Results</p>
@@ -308,7 +383,7 @@ export default function HomePage() {
               <p className="text-[#4B5563] mt-3 max-w-lg">Every metric links to a public profile. No placeholders — real, trackable proof.</p>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {socialProof.map((proof) => (
               <StaggerItem key={proof.platform}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
@@ -352,7 +427,7 @@ export default function HomePage() {
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Ready to fix your Salesforce?</h2>
             <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">

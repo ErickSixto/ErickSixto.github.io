@@ -23,12 +23,12 @@ export default function ServicesPage() {
     <main className="pt-20">
       {/* Header */}
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">
               Services
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">
               What I deliver
             </h1>
             <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
@@ -42,8 +42,8 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8" stagger={0.06}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-8" stagger={0.06}>
             {services.map((service) => {
               const IconComp = iconMap[service.icon] || Settings;
               return (
@@ -101,7 +101,7 @@ export default function ServicesPage() {
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl font-bold text-white mb-5">
               Need Salesforce help?
