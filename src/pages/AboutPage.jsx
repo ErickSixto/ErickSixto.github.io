@@ -18,14 +18,14 @@ export default function AboutPage() {
     <main className="pt-20">
       {/* Hero */}
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <MotionSection>
                 <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">
                   About
                 </p>
-                <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] leading-tight mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] leading-tight mb-6">
                   {aboutData.intro}
                 </h1>
               </MotionSection>
@@ -57,6 +57,7 @@ export default function AboutPage() {
                     <img
                       src={siteConfig.headshot}
                       alt="Erick Sixto"
+                      loading="lazy"
                       className="relative max-w-sm w-full object-cover"
                     />
                     {/* Bottom gradient vignette */}
@@ -78,7 +79,7 @@ export default function AboutPage() {
 
       {/* Story */}
       <section className="py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <h2 className="text-3xl font-bold text-[#2F2E2E] mb-10">My path</h2>
           </MotionSection>
@@ -94,7 +95,7 @@ export default function AboutPage() {
 
       {/* How I Work */}
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="mb-14">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">
@@ -127,7 +128,7 @@ export default function AboutPage() {
 
       {/* Experience Timeline */}
       <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <div className="mb-14">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">
@@ -180,7 +181,7 @@ export default function AboutPage() {
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl font-bold text-white mb-5">
               Let's work together

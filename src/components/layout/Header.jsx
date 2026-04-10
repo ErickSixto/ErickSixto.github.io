@@ -31,7 +31,7 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
@@ -56,6 +56,7 @@ export default function Header() {
               <Link
                 key={link.path}
                 to={link.path}
+                aria-current={location.pathname === link.path ? "page" : undefined}
                 className={`text-[13px] tracking-wide transition-colors duration-200 ${
                   location.pathname === link.path
                     ? "text-[#2F2E2E] font-medium"
@@ -101,6 +102,7 @@ export default function Header() {
                       key={link.path}
                       to={link.path}
                       onClick={() => setMobileOpen(false)}
+                      aria-current={location.pathname === link.path ? "page" : undefined}
                       className={`py-3 px-4 rounded-lg text-base transition-colors ${
                         location.pathname === link.path
                           ? "text-[#2F2E2E] font-medium bg-white"

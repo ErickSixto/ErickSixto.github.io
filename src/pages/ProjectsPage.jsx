@@ -21,11 +21,11 @@ export default function ProjectsPage() {
     <main className="pt-20">
       {/* Header */}
       <section className="py-24 bg-[#F1F1EF] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <MotionSection>
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Projects</p>
-              <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
               <p className="text-lg text-[#4B5563] max-w-lg leading-relaxed">
                 Real-world Salesforce projects that solved real business problems. Click any project to see the full story.
               </p>
@@ -42,6 +42,7 @@ export default function ProjectsPage() {
               <img
                 src={siteConfig.workspace}
                 alt="Development workspace"
+                loading="lazy"
                 className="relative rounded-2xl w-full object-cover shadow-2xl shadow-black/10"
               />
             </motion.div>
@@ -51,8 +52,8 @@ export default function ProjectsPage() {
 
       {/* Projects Grid */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6" stagger={0.06}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-6" stagger={0.06}>
             {projects.map((project) => (
               <StaggerItem key={project.id}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
@@ -166,7 +167,7 @@ export default function ProjectsPage() {
           <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
           <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl font-bold text-white mb-5">Have a similar challenge?</h2>
             <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">Let's discuss what's not working and map out an approach — free, no commitment.</p>
