@@ -31,10 +31,10 @@ export default function ContactPage() {
   return (
     <main className="pt-20">
       <section className="py-24 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionSection>
             <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Contact</p>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Let's talk</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Let's talk</h1>
             <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
               The fastest way to get started is a free discovery call. Or send me a message below.
             </p>
@@ -43,7 +43,7 @@ export default function ContactPage() {
       </section>
 
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Meeting CTAs */}
           <MotionSection className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
@@ -76,7 +76,7 @@ export default function ContactPage() {
             </div>
           </MotionSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             <MotionSection>
               <h2 className="text-2xl font-bold text-[#2F2E2E] mb-6">Or send a message</h2>
               {submitted ? (
