@@ -429,7 +429,7 @@ export default function HomePage() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Ready to fix your Salesforce?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Got an org that's fighting your team?</h2>
             <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
               Whether it's a messy data model, a broken integration, or a portal that needs rebuilding — let's start with a free conversation.
             </p>
