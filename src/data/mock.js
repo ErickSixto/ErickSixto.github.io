@@ -2,10 +2,10 @@
 
 export const siteConfig = {
   name: "Erick Sixto",
-  descriptor: "SALESFORCE SPECIALIST",
-  headline: "I build Salesforce systems that teams actually use",
+  descriptor: "SALESFORCE DEVELOPER",
+  headline: "Salesforce that doesn't fight your team",
   subheadline:
-    "Senior Salesforce Developer with 7+ years helping businesses run cleaner, faster, and with less friction — across Sales Cloud, Service Cloud, and Experience Cloud.",
+    "I'm an engineer who ended up in Salesforce. Seven years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",
   email: "sixto.developer@gmail.com",
   website: "www.ericksixto.card.co",
   linkedin: "https://www.linkedin.com/in/ericksixto",
@@ -20,13 +20,13 @@ export const siteConfig = {
 export const meetingLinks = {
   discovery: {
     url: "https://tidycal.com/ericksixto/discovery-meeting",
-    label: "Book a Free Discovery Call",
-    shortLabel: "Free Discovery Call",
+    label: "Let's talk about your org",
+    shortLabel: "Talk about your org",
   },
   consultation: {
     url: "https://tidycal.com/ericksixto/salesforce-consultation",
-    label: "Book a Paid Consultation",
-    shortLabel: "Paid Consultation",
+    label: "Book a paid consultation",
+    shortLabel: "Paid consultation",
   },
 };
 
@@ -88,26 +88,26 @@ export const services = [
   {
     id: "implementation",
     title: "Salesforce Implementation & Customization",
-    shortDesc: "End-to-end Salesforce setup tailored to how your team actually works.",
-    description: "I configure and customize Salesforce orgs that map to real business processes. No over-engineering. No unnecessary complexity. Just clean, usable systems.",
-    outcome: "A Salesforce org your team adopts without resistance.",
+    shortDesc: "Salesforce setup that fits your team — not the other way around.",
+    description: "I set up Salesforce orgs that map to how your team already works. Nothing gets configured unless it solves a real problem. If a feature doesn't earn its place, it doesn't ship.",
+    outcome: "A system your team picks up without training marathons.",
     deliverables: ["Custom objects & fields", "Page layouts & record types", "Validation rules & formulas", "User training & handoff documentation"],
     icon: "Settings",
   },
   {
     id: "experience-cloud",
     title: "Experience Cloud Portals",
-    shortDesc: "Customer-facing portals that are fast, clear, and built with reusable components.",
-    description: "I build Experience Cloud portals that reduce friction for your end users. Login flows, plan views, member dashboards — all built with Lightning Web Components.",
-    outcome: "Portals your customers actually find useful.",
+    shortDesc: "Portals your customers don't complain about.",
+    description: "Experience Cloud portals that load fast and stop getting in the user's way. Built with Lightning Web Components, reusable from day one — so the next dev who touches this doesn't have to rebuild from scratch.",
+    outcome: "Portals users stop calling support about.",
     deliverables: ["Portal setup & configuration", "Custom Lightning Web Components", "Login flows & navigation", "Responsive UI & UX optimization"],
     icon: "Globe",
   },
   {
     id: "integrations",
     title: "Salesforce Integrations",
-    shortDesc: "Connect Salesforce with your existing tools — reliably and maintainably.",
-    description: "Whether it's syncing with external systems or building custom API connections, I design integrations that don't break and that your admins can understand.",
+    shortDesc: "Integrations your admins can troubleshoot without calling me.",
+    description: "I build integrations your admins can troubleshoot without calling me. REST, SOAP, middleware — whatever the connection needs, it ships with monitoring and clear error handling.",
     outcome: "Systems that talk to each other without constant firefighting.",
     deliverables: ["REST & SOAP API integrations", "Middleware design & patterns", "Error handling & retry logic", "Monitoring & alerting setup"],
     icon: "RefreshCw",
@@ -115,27 +115,27 @@ export const services = [
   {
     id: "automation",
     title: "Automation & Process Design",
-    shortDesc: "Flows, triggers, and Apex logic that reduce manual work and stay maintainable.",
-    description: "I build automation that works long-term. Clear trigger architecture, bulkified Apex, well-documented Flows, and process logic your team can extend.",
-    outcome: "Less manual work. Fewer errors. Processes that scale.",
+    shortDesc: "Flows, triggers, and Apex that don't need a maintenance contract.",
+    description: "Automation that keeps working after I leave. Trigger architecture your admins can read. Apex that handles bulk without falling over. Flows that don't require a PhD to debug.",
+    outcome: "Less manual work. Fewer surprises. Processes that scale without rewrites.",
     deliverables: ["Apex triggers with FFLib patterns", "Flow automation", "Scheduled & batch jobs", "Process documentation"],
     icon: "Zap",
   },
   {
     id: "data-architecture",
     title: "Data Model Cleanup & Architecture",
-    shortDesc: "Restructure messy data models into clean, scalable foundations.",
-    description: "Bad data models create problems that compound. I audit schemas, clean up relationships, and design architectures that support reporting, automation, and growth.",
-    outcome: "A data foundation you can build on with confidence.",
+    shortDesc: "Untangle the data model before it breaks everything downstream.",
+    description: "A messy data model is a tax on everything downstream — reports, automation, integrations, future features. I untangle the schema before it quietly breaks the next five things you build.",
+    outcome: "A data foundation you can build on without second-guessing.",
     deliverables: ["Data model audit & ERD", "Object relationship redesign", "Data migration support", "Schema documentation"],
     icon: "Database",
   },
   {
     id: "reporting",
     title: "Reporting, Dashboards & Operational Visibility",
-    shortDesc: "Give leadership the visibility they need to make decisions.",
-    description: "I design reports and dashboards that surface real operational insights — not vanity metrics. Clean filters, clear layouts, and data that helps teams prioritize.",
-    outcome: "Leadership makes better decisions. Teams know what to focus on.",
+    shortDesc: "Leadership visibility without the vanity metrics.",
+    description: "Dashboards that answer the questions your team actually asks — and hide the ones they don't. Filters that make sense. Layouts that load. Metrics tied to decisions, not meetings.",
+    outcome: "Leadership makes faster calls. Teams know what to focus on.",
     deliverables: ["Custom reports & report types", "Executive dashboards", "Operational KPI tracking", "Data quality monitoring"],
     icon: "BarChart3",
   },
@@ -302,11 +302,11 @@ export const experience = [
 ];
 
 export const processSteps = [
-  { step: "01", title: "Clarify the Outcome", description: "Before writing code, I make sure we agree on what success looks like. Not features — outcomes." },
-  { step: "02", title: "Define Scope Early", description: "Clear boundaries prevent scope creep and keep delivery on track. I document what\u2019s in and what\u2019s out." },
-  { step: "03", title: "Call Out Tradeoffs", description: "Every technical decision has tradeoffs. I surface them early so you make informed choices." },
-  { step: "04", title: "Deliver in Increments", description: "You see working code regularly — not a big reveal at the end. Feedback loops stay tight." },
-  { step: "05", title: "Hand Off Maintainable Systems", description: "I deliver systems your team can actually run. Documentation, clean code, and clear architecture." },
+  { step: "01", title: "Clarify the outcome", description: "I don't start building until we agree on what 'done' actually means. Not a feature list. A business result." },
+  { step: "02", title: "Scope it on paper", description: "Scope gets written down before we start — what's in, what's out. Disagreements are cheap in week one. Expensive in week five." },
+  { step: "03", title: "Name the tradeoffs", description: "Every architectural call has a tradeoff. I name them while you can still change your mind." },
+  { step: "04", title: "Ship in pieces", description: "You see working pieces every week. No surprise reveals at the end." },
+  { step: "05", title: "Hand off a system, not a black box", description: "The work isn't done until your team can extend it without me. Documentation, clean code, architecture your admins can read." },
 ];
 
 export const testimonials = [
@@ -341,11 +341,11 @@ export const testimonials = [
 ];
 
 export const aboutData = {
-  intro: "I\u2019m a Salesforce Specialist with 7+ years of experience building systems that teams actually use.",
+  intro: "I'm an engineer who ended up in Salesforce. Seven years of it — mostly fixing things other people built.",
   story: [
-    "I started as a Mechatronics Engineer — which taught me to think in systems. I moved into front-end development because I cared about usability: if people can\u2019t use what you build, it doesn\u2019t matter how well it\u2019s engineered.",
-    "That mindset carried into Salesforce. Over seven years, I\u2019ve worked across Sales Cloud, Service Cloud, and Experience Cloud for companies ranging from insurance enterprises to fast-moving startups.",
-    "My focus is on maintainability, usability, reliable integrations, clean handoff, and business impact. I work best on the problems that most consultants avoid: messy data models, brittle automation, confusing portals, and unreliable integrations.",
+    "I trained as a Mechatronics Engineer. That's the discipline where a motor failing on the factory floor teaches you more than any textbook — because the operator is standing there waiting for it to work. I moved into front-end development because I wanted to build software the same way: if a person can't use it, it doesn't matter how elegant the engineering is.",
+    "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
+    "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
   ],
-  approach: "I don\u2019t believe in over-engineering. I believe in understanding the problem, choosing the simplest architecture that solves it, and delivering a system that your team can maintain after I\u2019m gone.",
+  approach: "I don't over-engineer. The goal is the simplest architecture that solves the real problem — and a system your team can keep running after I'm gone.",
 };

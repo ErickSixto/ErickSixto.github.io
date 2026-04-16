@@ -36,7 +36,7 @@ export default function ContactPage() {
             <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Contact</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Let's talk</h1>
             <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
-              The fastest way to get started is a free discovery call. Or send me a message below.
+              A 30-minute call is the fastest way to figure out if we should work together. Or drop a message below — I reply inside a day.
             </p>
           </MotionSection>
         </div>

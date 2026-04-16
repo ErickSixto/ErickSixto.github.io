@@ -191,7 +191,7 @@ export default function AboutPage() {
             </p>
             <Link to="/contact">
               <Button className="bg-white text-[#2F2E2E] hover:bg-gray-100 px-8 h-11 text-sm font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
-                Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+                Get in touch <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </MotionSection>
