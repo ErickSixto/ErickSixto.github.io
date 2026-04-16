@@ -341,11 +341,11 @@ export const testimonials = [
 ];
 
 export const aboutData = {
-  intro: "I\u2019m a Salesforce Specialist with 7+ years of experience building systems that teams actually use.",
+  intro: "I'm an engineer who ended up in Salesforce. Seven years of it — mostly fixing things other people built.",
   story: [
-    "I started as a Mechatronics Engineer — which taught me to think in systems. I moved into front-end development because I cared about usability: if people can\u2019t use what you build, it doesn\u2019t matter how well it\u2019s engineered.",
-    "That mindset carried into Salesforce. Over seven years, I\u2019ve worked across Sales Cloud, Service Cloud, and Experience Cloud for companies ranging from insurance enterprises to fast-moving startups.",
-    "My focus is on maintainability, usability, reliable integrations, clean handoff, and business impact. I work best on the problems that most consultants avoid: messy data models, brittle automation, confusing portals, and unreliable integrations.",
+    "I trained as a Mechatronics Engineer. That's the discipline where a motor failing on the factory floor teaches you more than any textbook — because the operator is standing there waiting for it to work. I moved into front-end development because I wanted to build software the same way: if a person can't use it, it doesn't matter how elegant the engineering is.",
+    "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
+    "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
   ],
-  approach: "I don\u2019t believe in over-engineering. I believe in understanding the problem, choosing the simplest architecture that solves it, and delivering a system that your team can maintain after I\u2019m gone.",
+  approach: "I don't over-engineer. The goal is the simplest architecture that solves the real problem — and a system your team can keep running after I'm gone.",
 };
