@@ -73,7 +73,7 @@ export default function Header() {
             <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer" className="hidden md:block">
               <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white text-[13px] px-5 h-9 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                 <Calendar className="mr-1.5 h-3.5 w-3.5" />
-                Book a Free Call
+                Let's talk
               </Button>
             </a>
 
@@ -121,7 +121,7 @@ export default function Header() {
                     >
                       <Button className="bg-[#2F2E2E] text-white w-full h-10 hover:bg-[#1a1919]">
                         <Calendar className="mr-2 h-4 w-4" />
-                        Book a Free Call
+                        Let's talk
                       </Button>
                     </a>
                   </div>
