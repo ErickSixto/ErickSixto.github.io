@@ -161,7 +161,7 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Why Erick</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E] mb-6">
-                Salesforce that works for your team, not against it
+                The work I refuse to do
               </h2>
               <p className="text-lg text-[#4B5563] leading-relaxed">
                 Most Salesforce orgs have too many features and not enough adoption. I focus on the opposite — less configuration, more usability. If your team won't use it, I won't build it.
@@ -380,7 +380,7 @@ export default function HomePage() {
             <div className="mb-12">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Verified Results</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E]">Numbers you can verify</h2>
-              <p className="text-[#4B5563] mt-3 max-w-lg">Every metric links to a public profile. No placeholders — real, trackable proof.</p>
+              <p className="text-[#4B5563] mt-3 max-w-lg">Every metric links to a public profile. Click through and verify.</p>
             </div>
           </MotionSection>
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -431,7 +431,7 @@ export default function HomePage() {
           <MotionSection>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Got an org that's fighting your team?</h2>
             <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Whether it's a messy data model, a broken integration, or a portal that needs rebuilding — let's start with a free conversation.
+              Messy data model, broken integration, portal that users avoid — start with a 30-minute call. No pitch.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">

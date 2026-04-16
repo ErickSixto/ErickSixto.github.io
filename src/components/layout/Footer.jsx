@@ -27,7 +27,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm text-gray-500 leading-relaxed max-w-xs mt-4">
-              Senior Salesforce Specialist. Available for consulting, freelance, and contract work.
+              Senior Salesforce Specialist. Available for consulting, freelance, and senior contract work.
             </p>
           </div>
 
@@ -62,10 +62,10 @@ export default function Footer() {
             <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-gray-600 mb-5">Schedule</h4>
             <div className="flex flex-col gap-3">
               <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2.5">
-                <Calendar className="h-4 w-4 flex-shrink-0" /> Free Discovery Call
+                <Calendar className="h-4 w-4 flex-shrink-0" /> Intro call · free
               </a>
               <a href={meetingLinks.consultation.url} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2.5">
-                <Calendar className="h-4 w-4 flex-shrink-0" /> Paid Consultation
+                <Calendar className="h-4 w-4 flex-shrink-0" /> Paid consultation
               </a>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-gray-600">&copy; {new Date().getFullYear()} Erick Sixto. All rights reserved.</p>
-          <p className="text-xs text-gray-600">Salesforce Specialist &middot; Available for Hire</p>
+          <p className="text-xs text-gray-600">Salesforce Specialist &middot; Available for hire</p>
         </div>
       </div>
     </footer>
