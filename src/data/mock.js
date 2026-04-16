@@ -20,13 +20,13 @@ export const siteConfig = {
 export const meetingLinks = {
   discovery: {
     url: "https://tidycal.com/ericksixto/discovery-meeting",
-    label: "Book a Free Discovery Call",
-    shortLabel: "Free Discovery Call",
+    label: "Let's talk about your org",
+    shortLabel: "Talk about your org",
   },
   consultation: {
     url: "https://tidycal.com/ericksixto/salesforce-consultation",
-    label: "Book a Paid Consultation",
-    shortLabel: "Paid Consultation",
+    label: "Book a paid consultation",
+    shortLabel: "Paid consultation",
   },
 };
 
