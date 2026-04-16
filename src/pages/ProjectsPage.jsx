@@ -27,7 +27,7 @@ export default function ProjectsPage() {
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Projects</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
               <p className="text-lg text-[#4B5563] max-w-lg leading-relaxed">
-                Real-world Salesforce projects that solved real business problems. Click any project to see the full story.
+                Salesforce work I've shipped. Business outcomes, not feature lists — click any project for the full story.
               </p>
             </MotionSection>
 
