@@ -86,7 +86,7 @@ export default function HomePage() {
                 <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
                   <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-7 h-12 text-sm transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                     <Phone className="mr-2 h-4 w-4" />
-                    Book a Free Discovery Call
+                    Let's talk about your org
                   </Button>
                 </a>
                 <Link to="/projects">
@@ -94,7 +94,7 @@ export default function HomePage() {
                     variant="outline"
                     className="border-[#2F2E2E]/20 text-[#2F2E2E] hover:bg-[#CB9135] hover:text-white hover:border-[#CB9135] px-7 h-12 text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    See My Work
+                    See my work
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
@@ -164,15 +164,15 @@ export default function HomePage() {
                 Salesforce that works for your team, not against it
               </h2>
               <p className="text-lg text-[#4B5563] leading-relaxed">
-                Most Salesforce orgs end up over-configured and under-adopted. I build systems with clean architecture, clear automation, and usable interfaces — so your team actually uses what gets built.
+                Most Salesforce orgs have too many features and not enough adoption. I focus on the opposite — less configuration, more usability. If your team won't use it, I won't build it.
               </p>
             </div>
           </MotionSection>
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-14">
             {[
-              { title: "Clean Architecture", desc: "Thoughtful object models and well-structured code that scales without becoming fragile." },
-              { title: "Maintainable Systems", desc: "Your team can extend and manage the system after handoff — without calling me for every change." },
-              { title: "Business Impact", desc: "Every decision ties back to a real business outcome. No unnecessary complexity." },
+              { title: "Clean architecture", desc: "Object models that scale without turning brittle. Code your next dev can read." },
+              { title: "Maintainable by default", desc: "Your team extends the system after handoff. I'm not on speed-dial for every change." },
+              { title: "Built for the outcome", desc: "Every decision ties back to a business result. No complexity for the sake of looking clever." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="flex gap-4">
