@@ -48,7 +48,7 @@ export default function ContactPage() {
           <MotionSection className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
               <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
-                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-300 group cursor-pointer h-full">
+                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 group cursor-pointer h-full">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#CB9135]/10 transition-colors"><Calendar className="h-5 w-5 text-[#2F2E2E]" /></div>
                     <div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </Card>
               </a>
               <a href={meetingLinks.consultation.url} target="_blank" rel="noopener noreferrer">
-                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-300 group cursor-pointer h-full">
+                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 group cursor-pointer h-full">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#CB9135]/10 transition-colors"><Calendar className="h-5 w-5 text-[#2F2E2E]" /></div>
                     <div>

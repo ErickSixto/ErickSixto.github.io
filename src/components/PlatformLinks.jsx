@@ -46,14 +46,15 @@ function PlatformIcon({ link, size = "sm" }) {
 
 export function PlatformLinksRow({ size = "sm", showLabels = true, className = "" }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-1 ${className}`}>
       {platformLinks.map((link) => (
         <a
           key={link.name}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[#4B5563] hover:text-[#2F2E2E] transition-colors duration-200 group"
+          aria-label={`Visit Erick Sixto on ${link.name}`}
+          className="inline-flex items-center justify-center gap-2 min-h-[44px] min-w-[44px] px-2 text-[#4B5563] hover:text-[#2F2E2E] rounded-md hover:bg-[#2F2E2E]/5 transition-colors duration-200 group"
           title={link.name}
         >
           <PlatformIcon link={link} size={size} />
@@ -68,15 +69,16 @@ export function PlatformLinksRow({ size = "sm", showLabels = true, className = "
 
 export function PlatformLinksCompact({ className = "" }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-1 ${className}`}>
       {platformLinks.map((link) => (
         <a
           key={link.name}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label={`Visit Erick Sixto on ${link.name}`}
           title={link.name}
-          className="group"
+          className="inline-flex items-center justify-center min-h-[44px] min-w-[44px] group rounded-md hover:bg-white/5 transition-colors"
         >
           <div
             className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold opacity-60 group-hover:opacity-100 transition-all duration-200 group-hover:scale-110"

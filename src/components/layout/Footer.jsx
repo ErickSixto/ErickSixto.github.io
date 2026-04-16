@@ -20,7 +20,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={siteConfig.monogramDark} alt="ES" className="h-10 w-10" />
+              <img src={siteConfig.monogramDark} alt="Erick Sixto ES monogram" className="h-10 w-10" />
               <div className="flex flex-col">
                 <span className="text-white font-bold text-base tracking-tight leading-none">Erick Sixto</span>
                 <span className="text-[10px] text-gray-500 uppercase tracking-[0.15em] leading-none mt-1">{siteConfig.descriptor}</span>

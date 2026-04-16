@@ -125,7 +125,7 @@ export default function HomePage() {
                 />
                 <img
                   src={siteConfig.portrait}
-                  alt="Erick Sixto"
+                  alt="Portrait of Erick Sixto, Salesforce Specialist"
                   className="relative rounded-2xl w-full max-w-[280px] sm:max-w-[340px] lg:max-w-[380px] object-cover"
                 />
               </div>
