@@ -2,7 +2,7 @@
 
 export const siteConfig = {
   name: "Erick Sixto",
-  descriptor: "SALESFORCE DEVELOPER",
+  descriptor: "SALESFORCE SPECIALIST",
   headline: "Salesforce that doesn't fight your team",
   subheadline:
     "I'm an engineer who ended up in Salesforce. Seven years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",

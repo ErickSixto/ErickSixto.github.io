@@ -56,7 +56,7 @@ export default function AboutPage() {
                   >
                     <img
                       src={siteConfig.headshot}
-                      alt="Erick Sixto"
+                      alt="Headshot of Erick Sixto, Salesforce Specialist"
                       loading="lazy"
                       className="relative max-w-sm w-full object-cover"
                     />

@@ -37,7 +37,7 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src={siteConfig.monogramLight}
-              alt="ES"
+              alt="Erick Sixto ES monogram"
               className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
             />
             <div className="hidden sm:flex flex-col">

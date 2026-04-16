@@ -48,29 +48,29 @@ export default function ContactPage() {
           <MotionSection className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
               <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
-                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-300 group cursor-pointer h-full">
+                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 group cursor-pointer h-full">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#CB9135]/10 transition-colors"><Calendar className="h-5 w-5 text-[#2F2E2E]" /></div>
                     <div>
-                      <h3 className="font-semibold text-[#2F2E2E]">Discovery Call</h3>
-                      <p className="text-xs text-[#CB9135] font-medium">Free — 30 minutes</p>
+                      <h3 className="font-semibold text-[#2F2E2E]">Intro call</h3>
+                      <p className="text-xs text-[#CB9135] font-medium">Free · 30 minutes</p>
                     </div>
                     <ExternalLink className="h-4 w-4 text-[#E5E7EB] group-hover:text-[#4B5563] transition-colors ml-auto" />
                   </div>
-                  <p className="text-sm text-[#4B5563] leading-relaxed">Let's discuss your project, identify the main challenges, and see if we're a good fit.</p>
+                  <p className="text-sm text-[#4B5563] leading-relaxed">Tell me what's broken. I'll tell you if I can help — and if I can't, who probably can.</p>
                 </Card>
               </a>
               <a href={meetingLinks.consultation.url} target="_blank" rel="noopener noreferrer">
-                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-300 group cursor-pointer h-full">
+                <Card className="p-6 border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 group cursor-pointer h-full">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#CB9135]/10 transition-colors"><Calendar className="h-5 w-5 text-[#2F2E2E]" /></div>
                     <div>
-                      <h3 className="font-semibold text-[#2F2E2E]">Paid Consultation</h3>
-                      <p className="text-xs text-[#4B5563] font-medium">In-depth technical session</p>
+                      <h3 className="font-semibold text-[#2F2E2E]">Paid consultation</h3>
+                      <p className="text-xs text-[#4B5563] font-medium">Paid · deep technical session</p>
                     </div>
                     <ExternalLink className="h-4 w-4 text-[#E5E7EB] group-hover:text-[#4B5563] transition-colors ml-auto" />
                   </div>
-                  <p className="text-sm text-[#4B5563] leading-relaxed">For teams that need expert Salesforce guidance on architecture, integrations, or strategy.</p>
+                  <p className="text-sm text-[#4B5563] leading-relaxed">For teams that already know what they need — architecture review, integration design, or a sanity check before they build.</p>
                 </Card>
               </a>
             </div>
