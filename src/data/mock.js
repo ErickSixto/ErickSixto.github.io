@@ -2,10 +2,10 @@
 
 export const siteConfig = {
   name: "Erick Sixto",
-  descriptor: "SALESFORCE SPECIALIST",
-  headline: "I build Salesforce systems that teams actually use",
+  descriptor: "SALESFORCE DEVELOPER",
+  headline: "Salesforce that doesn't fight your team",
   subheadline:
-    "Senior Salesforce Developer with 7+ years helping businesses run cleaner, faster, and with less friction — across Sales Cloud, Service Cloud, and Experience Cloud.",
+    "I'm an engineer who ended up in Salesforce. Seven years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",
   email: "sixto.developer@gmail.com",
   website: "www.ericksixto.card.co",
   linkedin: "https://www.linkedin.com/in/ericksixto",
