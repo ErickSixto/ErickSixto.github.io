@@ -44,7 +44,8 @@ const iconMap = { Settings, Globe, RefreshCw, Zap, Database, BarChart3 };
 
 export default function HomePage() {
   const featuredProjects = projects.slice(0, 3);
-  const featuredServices = services.slice(0, 3);
+  const featuredServices = services.slice(0, 2);
+  const [heroProject, ...secondaryProjects] = featuredProjects;
 
   return (
     <main>
@@ -53,11 +54,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="max-w-xl">
+              {/* Overline: only on mobile — desktop header already carries the descriptor */}
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-[#CB9135] text-[13px] font-medium uppercase tracking-[0.2em] mb-6"
+                className="lg:hidden text-[#CB9135] text-[13px] font-medium uppercase tracking-[0.2em] mb-6"
               >
                 {siteConfig.descriptor}
               </motion.p>
@@ -161,18 +163,17 @@ export default function HomePage() {
             <div className="max-w-3xl">
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Why Erick</p>
               <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E] mb-6">
-                The work I refuse to do
+                Two things the work has to do
               </h2>
               <p className="text-lg text-[#4B5563] leading-relaxed">
                 Most Salesforce orgs have too many features and not enough adoption. I focus on the opposite — less configuration, more usability. If your team won't use it, I won't build it.
               </p>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-14">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 max-w-4xl">
             {[
-              { title: "Clean architecture", desc: "Object models that scale without turning brittle. Code your next dev can read." },
-              { title: "Maintainable by default", desc: "Your team extends the system after handoff. I'm not on speed-dial for every change." },
-              { title: "Built for the outcome", desc: "Every decision ties back to a business result. No complexity for the sake of looking clever." },
+              { title: "Architecture your next dev can read", desc: "Object models that scale without turning brittle. Clean code, clear boundaries, no clever abstractions that only make sense at 2 a.m." },
+              { title: "A system your team runs without me", desc: "When the work ships, your admins can extend it. Your team can onboard new hires to it. Nobody needs my phone number to change a field." },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="flex gap-4">
@@ -198,33 +199,35 @@ export default function HomePage() {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E]">What I deliver</h2>
               </div>
               <Link to="/services" className="hidden md:flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-all duration-200 hover:gap-3">
-                All Services <ArrowRight className="h-4 w-4" />
+                See all 6 services <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredServices.map((service) => {
               const IconComp = iconMap[service.icon] || Settings;
               return (
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
-                    <Card className="p-7 bg-white border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 h-full cursor-pointer">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-[#F1F1EF] rounded-lg flex-shrink-0 transition-colors duration-200 group-hover:bg-[#CB9135]/10">
-                          <IconComp className="h-5 w-5 text-[#2F2E2E]" />
+                    <Link to="/services" className="block h-full">
+                      <Card className="p-10 bg-white border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 transition-all duration-200 h-full cursor-pointer group">
+                        <div className="inline-flex p-3 bg-[#F1F1EF] rounded-lg mb-6 transition-colors duration-200 group-hover:bg-[#CB9135]/10">
+                          <IconComp className="h-6 w-6 text-[#2F2E2E]" />
                         </div>
-                        <h3 className="font-semibold text-[#2F2E2E]">{service.title}</h3>
-                      </div>
-                      <p className="text-sm text-[#4B5563] leading-relaxed">{service.shortDesc}</p>
-                    </Card>
+                        <h3 className="text-xl font-semibold text-[#2F2E2E] mb-3 group-hover:text-[#CB9135] transition-colors">{service.title}</h3>
+                        <p className="text-[#4B5563] leading-relaxed mb-6">{service.shortDesc}</p>
+                        <p className="text-xs uppercase tracking-[0.18em] text-[#CB9135] font-medium">Outcome</p>
+                        <p className="text-sm text-[#2F2E2E] mt-2 leading-relaxed">{service.outcome}</p>
+                      </Card>
+                    </Link>
                   </motion.div>
                 </StaggerItem>
               );
             })}
           </StaggerContainer>
-          <div className="mt-8 text-center md:hidden">
+          <div className="mt-10 text-center md:hidden">
             <Link to="/services" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
-              All Services <ArrowRight className="h-4 w-4" />
+              See all 6 services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -244,8 +247,39 @@ export default function HomePage() {
               </Link>
             </div>
           </MotionSection>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => (
+          {/* Hero project — full-width, richer presentation */}
+          <MotionSection>
+            <Link to="/projects">
+              <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
+                <Card className="border-[#E5E7EB] hover:shadow-xl hover:border-[#CB9135]/30 transition-all duration-200 cursor-pointer overflow-hidden group">
+                  <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-200" />
+                  <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 p-10">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Badge variant="secondary" className="text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]">{heroProject.category}</Badge>
+                        <span className="text-xs uppercase tracking-[0.15em] text-[#CB9135] font-medium">Featured</span>
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-[#2F2E2E] mb-2 group-hover:text-[#CB9135] transition-colors">{heroProject.title}</h3>
+                      <p className="text-sm text-[#CB9135] font-medium mb-5">{heroProject.client}</p>
+                      <p className="text-[#4B5563] leading-relaxed max-w-2xl">{heroProject.goal}</p>
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-1 gap-6 md:gap-8 md:pl-10 md:border-l md:border-[#E5E7EB] md:min-w-[180px]">
+                      {heroProject.impact.map((imp, j) => (
+                        <div key={j}>
+                          <p className="text-3xl font-bold text-[#2F2E2E]">{imp.metric}</p>
+                          <p className="text-sm text-[#4B5563] mt-1">{imp.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            </Link>
+          </MotionSection>
+
+          {/* Secondary projects — smaller cards in 2-column */}
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            {secondaryProjects.map((project) => (
               <StaggerItem key={project.id}>
                 <Link to="/projects">
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
