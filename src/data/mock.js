@@ -302,11 +302,11 @@ export const experience = [
 ];
 
 export const processSteps = [
-  { step: "01", title: "Clarify the Outcome", description: "Before writing code, I make sure we agree on what success looks like. Not features — outcomes." },
-  { step: "02", title: "Define Scope Early", description: "Clear boundaries prevent scope creep and keep delivery on track. I document what\u2019s in and what\u2019s out." },
-  { step: "03", title: "Call Out Tradeoffs", description: "Every technical decision has tradeoffs. I surface them early so you make informed choices." },
-  { step: "04", title: "Deliver in Increments", description: "You see working code regularly — not a big reveal at the end. Feedback loops stay tight." },
-  { step: "05", title: "Hand Off Maintainable Systems", description: "I deliver systems your team can actually run. Documentation, clean code, and clear architecture." },
+  { step: "01", title: "Clarify the outcome", description: "I don't start building until we agree on what 'done' actually means. Not a feature list. A business result." },
+  { step: "02", title: "Scope it on paper", description: "Scope gets written down before we start — what's in, what's out. Disagreements are cheap in week one. Expensive in week five." },
+  { step: "03", title: "Name the tradeoffs", description: "Every architectural call has a tradeoff. I name them while you can still change your mind." },
+  { step: "04", title: "Ship in pieces", description: "You see working pieces every week. No surprise reveals at the end." },
+  { step: "05", title: "Hand off a system, not a black box", description: "The work isn't done until your team can extend it without me. Documentation, clean code, architecture your admins can read." },
 ];
 
 export const testimonials = [
