@@ -14,7 +14,7 @@ export const siteConfig = {
   monogramDark: "/images/monogram-dark.png",
   portrait: "/images/portrait.jpg",
   headshot: "/images/headshot.jpg",
-  workspace: "/images/workspace.jpg",
+  workspace: "https://images.pexels.com/photos/34803974/pexels-photo-34803974.jpeg",
 };
 
 export const meetingLinks = {
