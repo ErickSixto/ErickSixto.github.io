@@ -340,6 +340,37 @@ export const testimonials = [
   },
 ];
 
+export const testimonials = [
+  {
+    id: "grant-cohn",
+    author: "grant_cohn",
+    country: "United States",
+    rating: 5,
+    text: "Sixto was a pleasure to work with. He spent the time to meet with me and discuss exactly what I wanted and informed me on ways I could adjust my scope of work to operate more efficiently in my Salesforce org. I will be using Sixto again in the near future for any other projects related to Salesforce.",
+    service: "CRM Management",
+    platform: "Fiverr",
+  },
+  {
+    id: "xcoreff1",
+    author: "xcoreff1",
+    country: "United States",
+    rating: 5,
+    isRepeatClient: true,
+    text: "Erick, as always, goes above and beyond what we ask. We've used him for multiple projects over several years and his expertise is unmatched. He'll present multiple ways something can be done on the back-end and then will offer additional ways to increase visibility and presentation on the front-end. Highly recommend!",
+    service: "CRM Management",
+    platform: "Fiverr",
+  },
+  {
+    id: "dfigroup",
+    author: "dfigroup",
+    country: "United States",
+    rating: 4.7,
+    text: "Sixto H exceeded our expectations with detailed documentation and outstanding attention to detail. His proactive communication and politeness made the cooperation seamless. We're excited to continue our Salesforce development with him, as our mutual trust, competence, and communication truly stand out.",
+    service: "Help / Consultation",
+    platform: "Fiverr",
+  },
+];
+
 export const aboutData = {
   intro: "I'm an engineer who ended up in Salesforce. Seven years of it — mostly fixing things other people built.",
   story: [
