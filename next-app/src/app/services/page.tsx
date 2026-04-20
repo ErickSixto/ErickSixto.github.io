@@ -5,12 +5,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowRight, CheckCircle2, Settings, Globe, RefreshCw, Zap, Database, BarChart3 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Settings, Globe, RefreshCw, Zap, Database, BarChart3, type LucideIcon } from "lucide-react";
 import { MotionSection, StaggerContainer, StaggerItem } from "@/components/animations";
 import { services } from "@/data/mock";
 
 const EASE_PREMIUM: [number, number, number, number] = [0.22, 1, 0.36, 1];
-const iconMap: Record<string, any> = { Settings, Globe, RefreshCw, Zap, Database, BarChart3 };
+const iconMap: Record<string, LucideIcon> = { Settings, Globe, RefreshCw, Zap, Database, BarChart3 };
 
 export default function ServicesPage() {
   return (

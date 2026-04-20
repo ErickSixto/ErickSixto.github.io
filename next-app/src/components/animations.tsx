@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 
 // Premium easing curve used across the site
 const EASE_PREMIUM: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -21,7 +21,7 @@ export function AnimatedText({
     hidden: {},
     visible: { transition: { staggerChildren: 0.06, delayChildren: delay } },
   };
-  const child = {
+  const child: Variants = {
     hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
     visible: {
       opacity: 1,
@@ -35,7 +35,7 @@ export function AnimatedText({
       {words.map((word, i) => (
         <motion.span
           key={i}
-          variants={child as any}
+          variants={child}
           className="inline-block"
           style={{ marginRight: "0.3em" }}
         >
@@ -64,7 +64,7 @@ export function Marquee({
             <span className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E5E7EB] select-none px-3 sm:px-4 tracking-tight">
               {item}
             </span>
-            <span className="text-[#C8A23C] text-xl px-4 select-none">/</span>
+            <span className="text-[#CB9135] text-xl px-4 select-none">/</span>
           </span>
         ))}
       </div>
@@ -199,7 +199,7 @@ export function StaggerItem({
           y: 0,
           transition: { duration: 0.6, ease: EASE_PREMIUM },
         },
-      } as any}
+      } satisfies Variants}
       className={className}
     >
       {children}

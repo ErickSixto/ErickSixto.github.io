@@ -27,7 +27,8 @@ export default function ContactPage() {
         formData.company ? `\nCompany: ${formData.company}` : ""
       }`,
     );
-    window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`, "_self");
+    const mailtoUrl = `mailto:${siteConfig.email}?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
     setSubmitted(true);
   };
 
@@ -102,9 +103,16 @@ export default function ContactPage() {
                   <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", stiffness: 200 }}>
                     <CheckCircle2 className="h-12 w-12 text-[#2F2E2E] mx-auto mb-5" />
                   </motion.div>
-                  <h3 className="text-xl font-semibold text-[#2F2E2E] mb-2">Email client opened</h3>
+                  <h3 className="text-xl font-semibold text-[#2F2E2E] mb-2">Check your email client</h3>
                   <p className="text-[#4B5563] mb-6">
-                    Complete sending from your email application. I&apos;ll respond within 24 hours.
+                    Your mail client should have opened — if not, email{" "}
+                    <a
+                      href={`mailto:${siteConfig.email}`}
+                      className="text-[#2F2E2E] underline hover:text-[#CB9135]"
+                    >
+                      {siteConfig.email}
+                    </a>{" "}
+                    directly.
                   </p>
                   <Button
                     className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-6 h-11 transition-all duration-300 hover:scale-[1.015] active:scale-[0.98]"

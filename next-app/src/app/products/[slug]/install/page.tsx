@@ -27,6 +27,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
+  const adminPermSet = product.adminPermissionSetName ?? `${product.name} Admin`;
   const steps = [
     {
       n: "01",
@@ -45,13 +46,13 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
     },
     {
       n: "04",
-      title: "Assign the Access Analyzer Admin perm set",
-      description: "Go to Setup → Permission Sets → Access Analyzer Admin → Manage Assignments → Add the admins who should use the tool.",
+      title: `Assign the ${adminPermSet} perm set`,
+      description: `Go to Setup → Permission Sets → ${adminPermSet} → Manage Assignments → Add the admins who should use the tool.`,
     },
   ];
 
   return (
-    <main className="pt-20 bg-[#F1F1EF]">
+    <main className="pt-24 md:pt-28 bg-[#F1F1EF]">
       <section className="pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs

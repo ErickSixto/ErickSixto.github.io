@@ -9,7 +9,8 @@ function readProductFile(fileName: string): Product {
   const filePath = path.join(CONTENT_DIR, fileName);
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
-  const frontmatter = productSchema.parse(data);
+  const slug = fileName.replace(/\.mdx$/, "");
+  const frontmatter = productSchema.parse({ ...data, slug });
   return { ...frontmatter, body: content };
 }
 

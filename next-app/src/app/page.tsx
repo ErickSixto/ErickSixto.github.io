@@ -20,6 +20,7 @@ import {
   Phone,
   Star,
   RefreshCcw,
+  type LucideIcon,
 } from "lucide-react";
 import {
   AnimatedText,
@@ -44,7 +45,7 @@ import {
 
 const EASE_PREMIUM: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, LucideIcon> = {
   Settings,
   Globe,
   RefreshCw,
@@ -84,7 +85,7 @@ export default function HomePage() {
 
               <AnimatedText
                 text={siteConfig.headline}
-                className="font-bold text-[#2F2E2E] leading-[1.06] mb-7 tracking-tight"
+                className="text-[clamp(2rem,6vw,4.5rem)] font-bold text-[#2F2E2E] leading-[1.06] mb-7 tracking-tight"
                 delay={0.2}
               />
 
@@ -151,13 +152,6 @@ export default function HomePage() {
               </div>
             </motion.div>
           </div>
-
-          {/* Hero heading sizing is controlled by clamp — applied to the <h1> inline via a style tag */}
-          <style jsx global>{`
-            main section h1 {
-              font-size: clamp(2rem, 6vw, 4.5rem);
-            }
-          `}</style>
 
           {/* Credibility Bar */}
           <MotionSection delay={0.6} className="mt-20">
@@ -243,7 +237,7 @@ export default function HomePage() {
                 href="/services"
                 className="hidden md:flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-all duration-300 hover:gap-3"
               >
-                See all 6 services <ArrowRight className="h-4 w-4" />
+                See all {services.length} services <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
           </MotionSection>
@@ -278,7 +272,7 @@ export default function HomePage() {
               href="/services"
               className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors"
             >
-              See all 6 services <ArrowRight className="h-4 w-4" />
+              See all {services.length} services <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
@@ -291,7 +285,7 @@ export default function HomePage() {
             <div className="flex justify-between items-end mb-12">
               <div>
                 <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">
-                  — Selected work
+                  — Projects
                 </p>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E] tracking-tight">
                   Selected work

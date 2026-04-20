@@ -10,7 +10,7 @@ export interface ProductHeroProps {
   buyHref: string;
   price: number;
   currency: string;
-  status: string;
+  status: "live" | "coming-soon" | "archived";
 }
 
 export function ProductHero({ name, tagline, heroImage, buyHref, price, currency, status }: ProductHeroProps) {

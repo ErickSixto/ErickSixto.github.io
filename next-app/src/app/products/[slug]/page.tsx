@@ -30,7 +30,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
 
   return (
-    <main>
+    <main className="pt-24 md:pt-28">
       <ProductHero
         name={product.name}
         tagline={product.tagline}
@@ -70,7 +70,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               The long version
             </h2>
           </div>
-          <article className="prose-custom text-[#2F2E2E]">
+          <article className="text-[#2F2E2E]">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
               components={{
