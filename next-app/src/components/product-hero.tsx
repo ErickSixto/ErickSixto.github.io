@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 
 export interface ProductHeroProps {
   name: string;
@@ -29,7 +29,7 @@ export function ProductHero({ name, tagline, heroImage, buyHref, price, currency
             <div className="flex items-center gap-4 flex-wrap">
               <Link href={buyHref}>
                 <Button className="bg-[#2F2E2E] hover:bg-[#1a1919] text-white px-7 h-14 text-sm transition-all duration-300 hover:scale-[1.015] active:scale-[0.98]">
-                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  <Download className="mr-2 h-4 w-4" />
                   Buy for <span className="tabular-nums ml-1">${price}</span>
                   <span className="ml-1 opacity-70">{currency}</span>
                 </Button>
