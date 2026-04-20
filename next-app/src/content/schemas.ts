@@ -12,6 +12,8 @@ export const productSchema = z.object({
   installUrlProd: z.string().url().optional(),
   installUrlSandbox: z.string().url().optional(),
   adminPermissionSetName: z.string().optional(),
+  requiredEditions: z.string().optional(),
+  notSupportedEditions: z.string().optional(),
   features: z
     .array(z.object({ title: z.string(), description: z.string() }))
     .default([]),

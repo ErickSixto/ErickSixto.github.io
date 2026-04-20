@@ -8,6 +8,7 @@ import { ProductHero } from "@/components/product-hero";
 import { FeatureGrid } from "@/components/feature-grid";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { MotionSection } from "@/components/animations";
 import { getAllProducts, getProductBySlug } from "@/content/products";
 
 export function generateStaticParams() {
@@ -52,6 +53,21 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
+      {product.requiredEditions && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="rounded-2xl border border-[#E5E7EB] bg-white p-6 md:p-8">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[#CB9135] mb-3">Compatibility</p>
+            <p className="text-[#2F2E2E] leading-relaxed">
+              Requires a Salesforce edition that supports installed Apex code —
+              <strong> {product.requiredEditions}</strong>.
+              {product.notSupportedEditions && (
+                <> Not supported on {product.notSupportedEditions} editions.</>
+              )}
+            </p>
+          </div>
+        </section>
+      )}
+
       <section id="features" className="py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 max-w-2xl">
@@ -61,6 +77,55 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <FeatureGrid features={product.features} />
         </div>
       </section>
+
+      {product.slug === "access-analyzer" && (
+        <section className="py-32 bg-white border-t border-[#E5E7EB]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <MotionSection className="mb-12 max-w-2xl">
+              <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">— In action</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E] tracking-tight">
+                See the answer, not the maze
+              </h2>
+            </MotionSection>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  src: "/products/access-analyzer/crud-results.png",
+                  caption: "CRUD results — every source evaluated, decisive winner highlighted.",
+                },
+                {
+                  src: "/products/access-analyzer/fls-results.png",
+                  caption: "Field-level detail — read, edit, and hidden states per field.",
+                },
+                {
+                  src: "/products/access-analyzer/record-widget.png",
+                  caption: "Record-page widget — auto-detects the object and user in context.",
+                },
+                {
+                  src: "/products/access-analyzer/app-overview.png",
+                  caption: "Standalone app — for deep audits on any user and permission.",
+                },
+              ].map((shot, i) => (
+                <MotionSection key={shot.src} delay={i * 0.08}>
+                  <figure className="group">
+                    <div className="rounded-2xl border border-[#E5E7EB] bg-[#F1F1EF] overflow-hidden shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:shadow-black/10">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={shot.src}
+                        alt={shot.caption}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <figcaption className="mt-4 text-sm text-[#4B5563] leading-relaxed">
+                      {shot.caption}
+                    </figcaption>
+                  </figure>
+                </MotionSection>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-32 bg-[#F1F1EF]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

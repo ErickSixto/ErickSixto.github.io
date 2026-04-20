@@ -45,9 +45,6 @@ export function ProductHero({ name, tagline, heroImage, buyHref, price, currency
               <Badge variant="outline" className="text-xs border-[#E5E7EB] text-[#4B5563]">
                 Instant install URL
               </Badge>
-              <Badge variant="outline" className="text-xs border-[#E5E7EB] text-[#4B5563]">
-                14-day refund
-              </Badge>
             </div>
           </div>
 

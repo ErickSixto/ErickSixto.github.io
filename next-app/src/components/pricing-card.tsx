@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, Lock, Zap, RotateCcw } from "lucide-react";
+import { CheckCircle2, Lock, Zap } from "lucide-react";
 
 export interface PricingCardProps {
   productName: string;
@@ -26,7 +26,7 @@ export function PricingCard({ productName, price, currency, buyLink, features }:
         </Button>
       </a>
 
-      <div className="mt-6 grid grid-cols-3 gap-3 text-[11px] uppercase tracking-[0.12em] text-[#4B5563]">
+      <div className="mt-6 grid grid-cols-2 gap-3 text-[11px] uppercase tracking-[0.12em] text-[#4B5563]">
         <div className="flex flex-col items-center gap-1.5 text-center">
           <Lock className="h-4 w-4 text-[#CB9135]" />
           Secure Stripe
@@ -34,10 +34,6 @@ export function PricingCard({ productName, price, currency, buyLink, features }:
         <div className="flex flex-col items-center gap-1.5 text-center">
           <Zap className="h-4 w-4 text-[#CB9135]" />
           Instant install URL
-        </div>
-        <div className="flex flex-col items-center gap-1.5 text-center">
-          <RotateCcw className="h-4 w-4 text-[#CB9135]" />
-          14-day refund
         </div>
       </div>
 

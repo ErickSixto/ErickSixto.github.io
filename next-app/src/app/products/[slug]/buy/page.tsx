@@ -62,7 +62,6 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
                   <ul className="space-y-2 text-sm text-[#4B5563]">
                     <li>Secure Stripe checkout — we never see your card.</li>
                     <li>Instant install URL — no waiting, no Security Review queue.</li>
-                    <li>14-day refund, no questions.</li>
                   </ul>
                 </div>
               </div>

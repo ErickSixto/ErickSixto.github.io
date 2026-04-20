@@ -8,6 +8,8 @@ buyLink: https://buy.stripe.com/14A4gzeLX4t2bbIaoN1gs00
 heroImage: /products/access-analyzer/hero.png
 installUrlProd: https://login.salesforce.com/packaging/installPackage.apexp?p0=04tgL000000DvDNQA0
 installUrlSandbox: https://test.salesforce.com/packaging/installPackage.apexp?p0=04tgL000000DvDNQA0
+requiredEditions: Enterprise, Unlimited, Developer, Performance
+notSupportedEditions: Professional, Essentials, Group
 features:
   - title: Trace any permission
     description: Pinpoint the exact profile or permission set granting access
@@ -22,12 +24,10 @@ faq:
     a: No. Everything runs inside your Salesforce org. Nothing is persisted, nothing is exported, no external services are called. Strict CRUD and FLS enforcement throughout.
   - q: How does installation work?
     a: One URL opens the Salesforce installer. Takes about two minutes. Works in Production, Sandbox, Developer Edition, and Scratch orgs.
+  - q: Which Salesforce editions are supported?
+    a: Access Analyzer requires Apex class support, so it works on Enterprise, Unlimited, Developer, and Performance editions. It does NOT work on Professional, Essentials, or Group editions — those do not allow installed Apex. Sandbox and scratch orgs of supported editions are fully supported.
   - q: What happens if I find the permission is wrong?
     a: Access Analyzer explains exactly which profile or perm set to edit. You make the fix in Setup — the tool points to the decisive source so you change the minimum safe thing.
-  - q: Do I get updates?
-    a: Yes — 12 months of free updates. New package versions install with the same URL.
-  - q: Is there a refund?
-    a: Yes. 14-day refund, no questions.
   - q: Is it on the AppExchange?
     a: No — Access Analyzer is distributed directly as an Unlocked Package. That means no Security Review queue, no middleman, and a lower price. You install it with a URL just like an AppExchange package.
   - q: Can I see the source code?
@@ -63,3 +63,11 @@ Admins running orgs with more than a handful of profiles and permission sets. Es
 Install the package. Open the **Access Analyzer** app from the App Launcher, pick a user and a permission, and read the answer. Or add the **Access Analyzer Widget** to any Lightning record page and it auto-detects the object and user in context.
 
 Both surfaces return the same information: every source that grants (or denies) the permission, with the decisive winner highlighted.
+
+## Salesforce edition requirements
+
+Access Analyzer is built on Apex and Lightning Web Components, which require an edition that allows installed Apex code.
+
+**Works on:** Enterprise, Unlimited, Developer, and Performance editions (including their sandboxes and scratch orgs).
+
+**Does not work on:** Professional, Essentials, and Group editions — these Salesforce editions do not allow installed Apex, which the tool depends on. If you're on one of these, there's no workaround; Salesforce itself blocks the install.
