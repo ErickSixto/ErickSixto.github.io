@@ -1,0 +1,65 @@
+---
+name: Access Analyzer
+tagline: Explain why any user has or lacks any permission
+status: live
+price: 199
+currency: USD
+buyLink: https://buy.stripe.com/14A4gzeLX4t2bbIaoN1gs00
+heroImage: /products/access-analyzer/hero.png
+installUrlProd: https://login.salesforce.com/packaging/installPackage.apexp?p0=04tgL000000DvDNQA0
+installUrlSandbox: https://test.salesforce.com/packaging/installPackage.apexp?p0=04tgL000000DvDNQA0
+features:
+  - title: Trace any permission
+    description: Pinpoint the exact profile or permission set granting access
+  - title: One-click fix
+    description: Ship the minimum safe change, from the same screen
+  - title: Works on any permission
+    description: Object, field, record type, app — anything a profile or perm set can grant
+  - title: No data leaves your org
+    description: Runs entirely inside Salesforce. No external services.
+faq:
+  - q: Does it touch my data?
+    a: No. Everything runs inside your Salesforce org. Nothing is persisted, nothing is exported, no external services are called. Strict CRUD and FLS enforcement throughout.
+  - q: How does installation work?
+    a: One URL opens the Salesforce installer. Takes about two minutes. Works in Production, Sandbox, Developer Edition, and Scratch orgs.
+  - q: What happens if I find the permission is wrong?
+    a: Access Analyzer explains exactly which profile or perm set to edit. You make the fix in Setup — the tool points to the decisive source so you change the minimum safe thing.
+  - q: Do I get updates?
+    a: Yes — 12 months of free updates. New package versions install with the same URL.
+  - q: Is there a refund?
+    a: Yes. 14-day refund, no questions.
+  - q: Is it on the AppExchange?
+    a: No — Access Analyzer is distributed directly as an Unlocked Package. That means no Security Review queue, no middleman, and a lower price. You install it with a URL just like an AppExchange package.
+  - q: Can I see the source code?
+    a: Yes — this is distributed as an Unlocked Package, so all Apex, LWC, and metadata is readable inside your org after install.
+  - q: How do I uninstall?
+    a: Setup → Installed Packages → Uninstall. Access Analyzer stores no data outside its own metadata, so uninstall is clean.
+---
+
+## Why Access Analyzer
+
+Every Salesforce admin has lived this: a user swears they can't see a field, or can see one they shouldn't. You open their profile. Then permission sets. Then permission set groups. Then muting sets. Thirty minutes later you still aren't sure which one is the decisive source.
+
+Access Analyzer collapses that maze into one clear answer.
+
+## What you get
+
+- **The decisive source, highlighted.** Profile, permission set, permission set group, muting set — all evaluated together. The winning source is called out so you know exactly what to edit.
+- **Object and field-level detail.** CRUD at the object. Read/edit/hide at the field. All on one screen, for any user, on any object.
+- **Works on every page.** A standalone app for deep audits, plus a record-page widget that auto-detects the current object. Drop it on Account, Opportunity, or a custom object — zero configuration.
+- **Copy-ready explanations.** Plain-English sentences you can paste straight into a Jira ticket, audit note, or help-desk reply.
+- **Stays in your org.** No external services. No data leaves Salesforce. Nothing persisted beyond the package's own metadata.
+
+## Who it's for
+
+Admins running orgs with more than a handful of profiles and permission sets. Especially:
+
+- Teams onboarding users into roles that were defined three admins ago.
+- Security reviewers who need an evidence trail, not a theory.
+- Consultants auditing an org on their first week.
+
+## How it works
+
+Install the package. Open the **Access Analyzer** app from the App Launcher, pick a user and a permission, and read the answer. Or add the **Access Analyzer Widget** to any Lightning record page and it auto-detects the object and user in context.
+
+Both surfaces return the same information: every source that grants (or denies) the permission, with the decisive winner highlighted.
