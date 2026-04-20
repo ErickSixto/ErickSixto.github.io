@@ -278,6 +278,47 @@ export const processSteps = [
   { step: "05", title: "Hand off a system, not a black box", description: "The work isn't done until your team can extend it without me. Documentation, clean code, architecture your admins can read." },
 ];
 
+export const experience = [
+  {
+    company: "Nimble Gravity",
+    role: "Senior Salesforce Developer",
+    period: "Feb 2023 \u2014 Present",
+    description: "Leading Salesforce development for enterprise clients. Building custom data models, integrations, and Experience Cloud solutions across complex multi-cloud environments.",
+    highlights: ["Enterprise implementations", "Complex integrations", "Team leadership"],
+  },
+  {
+    company: "Zurich Insurance Group",
+    role: "Salesforce Developer",
+    period: "Jan 2022 \u2014 Feb 2023",
+    description: "Built core Experience Cloud portal for Zurich North America. Delivered reusable LWC components and member-facing experiences supporting multiple audience segments.",
+    highlights: ["Experience Cloud portals", "Reusable LWC library", "Multi-segment UX"],
+  },
+  {
+    company: "Unosquare",
+    role: "Salesforce Consultant",
+    period: "Jul 2021 \u2014 Jan 2022",
+    description: "Consulted on Salesforce implementations for financial services clients. Built broker portals, logging frameworks, and automated intake processes.",
+    highlights: ["Financial services", "nCino extensions", "FFLib architecture"],
+  },
+  {
+    company: "The Ksquare Group",
+    role: "Junior Software Engineer \u2192 Salesforce Developer",
+    period: "Jul 2019 \u2014 Jul 2021",
+    description: "Started as a software engineer and transitioned into Salesforce development. Built foundational skills in Apex, Lightning, and Salesforce administration.",
+    highlights: ["Career foundation", "Apex & Lightning", "Full-stack development"],
+  },
+];
+
+export const aboutData = {
+  intro: "I'm an engineer who ended up in Salesforce. Seven years of it — mostly fixing things other people built.",
+  story: [
+    "I trained as a Mechatronics Engineer. That's the discipline where a motor failing on the factory floor teaches you more than any textbook — because the operator is standing there waiting for it to work. I moved into front-end development because I wanted to build software the same way: if a person can't use it, it doesn't matter how elegant the engineering is.",
+    "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
+    "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
+  ],
+  approach: "I don't over-engineer. The goal is the simplest architecture that solves the real problem — and a system your team can keep running after I'm gone.",
+};
+
 export const testimonials = [
   {
     id: "grant-cohn",
