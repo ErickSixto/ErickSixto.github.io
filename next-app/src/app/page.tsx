@@ -248,7 +248,7 @@ export default function HomePage() {
                 <StaggerItem key={service.id}>
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: EASE_PREMIUM }}>
                     <Link href="/services" className="block h-full">
-                      <Card className="p-10 bg-white border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 h-full cursor-pointer group">
+                      <Card className="p-10 bg-white border-[#E5E7EB] hover:border-[#CB9135]/50 h-full cursor-pointer group">
                         <div className="inline-flex p-3 bg-[#F1F1EF] rounded-lg mb-6 transition-colors duration-300 group-hover:bg-[#CB9135]/10">
                           <IconComp className="h-6 w-6 text-[#2F2E2E]" />
                         </div>
@@ -302,7 +302,7 @@ export default function HomePage() {
           <MotionSection>
             <Link href="/projects">
               <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: EASE_PREMIUM }}>
-                <Card className="border-[#E5E7EB] hover:shadow-xl hover:border-[#CB9135]/30 cursor-pointer overflow-hidden group">
+                <Card className="border-[#E5E7EB] hover:border-[#CB9135]/50 cursor-pointer overflow-hidden group">
                   <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-500" />
                   <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 p-10">
                     <div>
@@ -344,7 +344,7 @@ export default function HomePage() {
               <StaggerItem key={project.id}>
                 <Link href="/projects">
                   <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: EASE_PREMIUM }}>
-                    <Card className="border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 h-full flex flex-col cursor-pointer overflow-hidden group">
+                    <Card className="border-[#E5E7EB] hover:border-[#CB9135]/50 h-full flex flex-col cursor-pointer overflow-hidden group">
                       <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-500" />
                       <div className="p-6">
                         <Badge
@@ -506,7 +506,7 @@ export default function HomePage() {
               <StaggerItem key={proof.platform}>
                 <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.3, ease: EASE_PREMIUM }}>
                   <a href={proof.url} target="_blank" rel="noopener noreferrer" className="block">
-                    <Card className="p-7 border-[#E5E7EB] h-full hover:shadow-lg hover:border-[#CB9135]/30 group cursor-pointer">
+                    <Card className="p-7 border-[#E5E7EB] h-full hover:border-[#CB9135]/50 group cursor-pointer">
                       <div className="flex items-center justify-between mb-5">
                         <div className="flex items-center gap-3">
                           <div
@@ -552,11 +552,6 @@ export default function HomePage() {
 
       {/* ── Final CTA ── */}
       <section className="py-32 bg-[#2F2E2E] relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 gradient-sweep-bg pointer-events-none"
-          animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-          transition={{ duration: 14, ease: EASE_PREMIUM, repeat: Infinity }}
-        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 tracking-tight">

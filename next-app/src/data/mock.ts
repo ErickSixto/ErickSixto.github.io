@@ -89,7 +89,7 @@ export const services = [
     id: "implementation",
     title: "Salesforce Implementation & Customization",
     shortDesc: "Salesforce setup that fits your team — not the other way around.",
-    description: "I set up Salesforce orgs that map to how your team already works. Nothing gets configured unless it solves a real problem. If a feature doesn't earn its place, it doesn't ship.",
+    description: "I set up Salesforce orgs that map to how your team already works. Nothing gets configured unless it solves a problem — and earns its maintenance cost. If a feature doesn't earn its place, it doesn't ship.",
     outcome: "A system your team picks up without training marathons.",
     deliverables: ["Custom objects & fields", "Page layouts & record types", "Validation rules & formulas", "User training & handoff documentation"],
     icon: "Settings",
@@ -107,7 +107,7 @@ export const services = [
     id: "integrations",
     title: "Salesforce Integrations",
     shortDesc: "Integrations your admins can troubleshoot without calling me.",
-    description: "I build integrations your admins can troubleshoot without calling me. REST, SOAP, middleware — whatever the connection needs, it ships with monitoring and clear error handling.",
+    description: "Most integrations break at the edges — not because of bad code, but because nobody designed for errors. I build connections your admins can troubleshoot without calling me: REST, SOAP, middleware, with monitoring and clear error handling from day one.",
     outcome: "Systems that talk to each other without constant firefighting.",
     deliverables: ["REST & SOAP API integrations", "Middleware design & patterns", "Error handling & retry logic", "Monitoring & alerting setup"],
     icon: "RefreshCw",
@@ -134,7 +134,7 @@ export const services = [
     id: "reporting",
     title: "Reporting, Dashboards & Operational Visibility",
     shortDesc: "Leadership visibility without the vanity metrics.",
-    description: "Dashboards that answer the questions your team actually asks — and hide the ones they don't. Filters that make sense. Layouts that load. Metrics tied to decisions, not meetings.",
+    description: "The orgs I inherit usually have dashboards nobody looks at. The real question is what decision the report is supposed to drive — and whether the person making that call can find the answer in under ten seconds. I build for that.",
     outcome: "Leadership makes faster calls. Teams know what to focus on.",
     deliverables: ["Custom reports & report types", "Executive dashboards", "Operational KPI tracking", "Data quality monitoring"],
     icon: "BarChart3",
@@ -316,7 +316,7 @@ export const aboutData = {
     "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
     "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
   ],
-  approach: "I don't over-engineer. The goal is the simplest architecture that solves the real problem — and a system your team can keep running after I'm gone.",
+  approach: "I don't over-engineer. The goal is the simplest architecture that solves the problem — and a system your team can keep running after I'm gone.",
 };
 
 export const testimonials = [
