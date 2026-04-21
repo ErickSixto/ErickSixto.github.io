@@ -7,6 +7,7 @@ import { siteConfig, meetingLinks } from "@/data/mock";
 const footerLinks = [
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
+  { label: "Products", path: "/products" },
   { label: "Projects", path: "/projects" },
   { label: "Contact", path: "/contact" },
 ];

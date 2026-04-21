@@ -8,9 +8,9 @@ import { Menu, X, Calendar } from "lucide-react";
 import { siteConfig, meetingLinks } from "@/data/mock";
 
 const navLinks = [
-  { label: "Products", path: "/products" },
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
+  { label: "Products", path: "/products" },
   { label: "Projects", path: "/projects" },
   { label: "Contact", path: "/contact" },
 ];
