@@ -316,7 +316,7 @@ export const aboutData = {
     "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
     "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
   ],
-  approach: "I don't over-engineer. The goal is the simplest architecture that solves the real problem — and a system your team can keep running after I'm gone.",
+  approach: "I don't over-engineer. The goal is the simplest architecture that solves the problem — and a system your team can keep running after I'm gone.",
 };
 
 export const testimonials = [

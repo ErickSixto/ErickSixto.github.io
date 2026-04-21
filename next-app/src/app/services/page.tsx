@@ -77,7 +77,7 @@ export default function ServicesPage() {
           <MotionSection>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5 tracking-tight">Need Salesforce help?</h2>
             <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">
-              Tell me about your project and I&apos;ll let you know how I can help.
+              I&apos;ll let you know if I can help — and if I can&apos;t, who probably can.
             </p>
             <Link href="/contact">
               <Button className="bg-white text-[#2F2E2E] hover:bg-gray-100 px-8 h-14 text-sm font-medium transition-all duration-300 hover:scale-[1.015] active:scale-[0.98]">
