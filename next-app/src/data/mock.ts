@@ -6,7 +6,7 @@ export const siteConfig = {
   headline: "Salesforce that doesn't fight your team",
   subheadline:
     "I'm an engineer who ended up in Salesforce. Seven years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",
-  email: "sixto.developer@gmail.com",
+  email: "sixto@ericksixto.com",
   website: "www.ericksixto.card.co",
   linkedin: "https://www.linkedin.com/in/ericksixto",
   github: "https://github.com/ericksixto",
