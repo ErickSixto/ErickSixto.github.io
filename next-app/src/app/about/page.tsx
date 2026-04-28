@@ -24,8 +24,8 @@ export default function AboutPage() {
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={siteConfig.headshot}
-            alt="Erick Sixto, Salesforce Specialist"
+            src={siteConfig.portrait}
+            alt="Portrait of Erick Sixto, Salesforce Specialist"
             loading="lazy"
             className="w-full max-w-[480px] mx-auto block"
           />

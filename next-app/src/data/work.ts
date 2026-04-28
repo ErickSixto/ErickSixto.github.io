@@ -68,31 +68,35 @@ export const work: WorkEntry[] = [
     outcomeMetric: "4h → 1min",
   },
   {
-    id: "lead-routing",
+    id: "trackanything-lwc-migration",
     number: "№ 04",
-    industry: "Insurance",
-    scale: "200 reps",
-    year: 2023,
-    title: "Rebuilt lead routing for an insurance broker after a regional expansion.",
+    industry: "Asset Tracking SaaS",
+    scale: "Field service teams",
+    year: 2024,
+    title:
+      "Migrated TrackAnything's core asset-tracking app from Visualforce to Lightning Web Components.",
     found:
-      "PLACEHOLDER — Erick to fill in. Original org as found.",
+      "A five-year-old Visualforce page handled 80% of daily user interactions but had grown to 3,400 lines. Mobile users were timing out on the initial load. The support queue had a recurring \"page is broken on iPad\" ticket category. The team had been quoted six figures for a full rebuild and had shelved the project twice.",
     call:
-      "PLACEHOLDER — Erick to fill in. The judgment call made.",
+      "I refused the full rebuild. The data model was sound — only the UI was choking. Migrated section-by-section to LWC over eight weeks, keeping the Visualforce shell live until each piece was proven in production. Pushed back on three feature requests during the migration that would have re-bloated the new components.",
     outcome:
-      "PLACEHOLDER — Erick to fill in. One quantified result.",
+      "First contentful paint dropped from 6.2 seconds to under one. The \"page is broken on iPad\" ticket category went to zero. Total project cost was roughly a quarter of the original quote, and the codebase shipped with a component library the in-house dev could extend without me.",
+    outcomeMetric: "6.2s → 0.9s",
   },
   {
-    id: "data-cleanup",
+    id: "5th-axis-rep-quotas",
     number: "№ 05",
-    industry: "B2B SaaS",
-    scale: "150 employees",
-    year: 2022,
-    title: "Untangled six years of duplicate accounts from an acquisition merge.",
+    industry: "Precision Manufacturing",
+    scale: "40+ external reps",
+    year: 2023,
+    title:
+      "Tracked external sales rep quotas without paying for Salesforce licenses they'd never use.",
     found:
-      "PLACEHOLDER — Erick to fill in. Original org as found.",
+      "Forty-plus independent manufacturer reps carried 5th Axis alongside competing lines. None had Salesforce access — the licensing math doesn't work for users who'd log in twice a quarter to check a number. Quota tracking lived in a shared spreadsheet, commission disputes were a quarterly event, and sales leadership couldn't see territory performance until month-end close.",
     call:
-      "PLACEHOLDER — Erick to fill in. The judgment call made.",
+      "I refused to scope licenses for users who'd never use them. Built a custom quota object in Salesforce, exposed read-only territory dashboards through an Experience Cloud guest portal (no license cost), and wrote an Apex service that pulled rep performance from existing order data nightly. Reps got an email digest every Monday with a personal portal link — no login required.",
     outcome:
-      "PLACEHOLDER — Erick to fill in. One quantified result.",
+      "Commission disputes stopped almost overnight: one source of truth, visible to everyone. The \"where are we against quota?\" question went from a three-day spreadsheet pull to a Monday-morning glance. Annual licensing savings covered the build cost in seven months.",
+    outcomeMetric: "$0 license cost",
   },
 ];

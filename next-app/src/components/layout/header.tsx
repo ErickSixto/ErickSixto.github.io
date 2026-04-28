@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { meetingLinks } from "@/data/mock";
+import { meetingLinks, siteConfig } from "@/data/mock";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -18,8 +18,22 @@ export default function Header() {
   return (
     <header className="border-b border-[#2F2E2E11] bg-[#F1F1EF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between gap-6">
-        <Link href="/" className="text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E]">
-          Erick Sixto
+        <Link href="/" className="flex items-center gap-3 group">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={siteConfig.monogramLight}
+            alt=""
+            aria-hidden="true"
+            className="h-8 w-auto"
+          />
+          <div className="flex flex-col leading-none">
+            <span className="text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E]">
+              Erick Sixto
+            </span>
+            <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#6B7280] mt-1">
+              Salesforce Specialist
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
