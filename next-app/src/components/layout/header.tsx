@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="border-b border-[#2F2E2E11] bg-[#F1F1EF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group flex-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={siteConfig.monogramLight}
@@ -57,14 +57,16 @@ export default function Header() {
           })}
         </nav>
 
-        <a
-          href={meetingLinks.discovery.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-[0.72rem] border border-[#2F2E2E33] text-[#2F2E2E] px-4 py-2 rounded-[2px] hover:bg-[#2F2E2E] hover:text-[#F1F1EF] transition-colors duration-200"
-        >
-          Book a call
-        </a>
+        <div className="flex-1 flex justify-end">
+          <a
+            href={meetingLinks.discovery.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[0.72rem] border border-[#2F2E2E33] text-[#2F2E2E] px-4 py-2 rounded-[2px] hover:bg-[#2F2E2E] hover:text-[#F1F1EF] transition-colors duration-200"
+          >
+            Book a call
+          </a>
+        </div>
       </div>
 
       {/* Mobile nav: keep simple — links inline below the bar on small screens */}

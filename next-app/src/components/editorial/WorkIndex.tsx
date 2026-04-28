@@ -20,7 +20,7 @@ export function WorkIndex({ entries }: { entries: WorkEntry[] }) {
             {entry.title}
           </span>
           <span className="font-mono text-[0.62rem] tracking-[0.16em] uppercase text-[#6B7280]">
-            {entry.industry} · {entry.year}
+            <span className="text-[#2F2E2E]">{entry.client}</span> · {entry.year}
           </span>
         </a>
       ))}

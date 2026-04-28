@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#2F2E2E11] mt-0">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-wrap justify-between items-center gap-4 text-[0.74rem] text-[#6B7280]">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={siteConfig.monogramLight}
@@ -39,9 +39,11 @@ export default function Footer() {
           ))}
         </nav>
 
-        <span className="font-mono text-[0.62rem] tracking-[0.16em] uppercase">
-          © {year} · ericksixto.com
-        </span>
+        <div className="flex-1 flex justify-end">
+          <span className="font-mono text-[0.62rem] tracking-[0.16em] uppercase">
+            © {year} · ericksixto.com
+          </span>
+        </div>
       </div>
     </footer>
   );

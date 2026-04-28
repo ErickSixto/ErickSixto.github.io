@@ -24,7 +24,11 @@ export function WorkPeek({
           >
             <div>
               <div className="font-mono text-[0.62rem] tracking-[0.16em] uppercase text-[#6B7280] mb-2">
-                {entry.industry} · {entry.scale} · {entry.year}
+                <span className="text-[#2F2E2E] font-medium">{entry.client}</span>
+                <span className="mx-2 text-[#2F2E2E33]">·</span>
+                {entry.industry}
+                <span className="mx-2 text-[#2F2E2E33]">·</span>
+                {entry.year}
               </div>
               <div className="text-[1.1rem] font-medium text-[#2F2E2E] mb-1 tracking-[-0.005em] group-hover:text-[#2F2E2E]">
                 {entry.title}

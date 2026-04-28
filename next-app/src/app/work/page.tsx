@@ -34,7 +34,7 @@ export default function WorkPage() {
       </section>
 
       <ClosingCTA
-        label="Want to be entry №09?"
+        label="Want to be entry №06?"
         questionLead="Bring me the engagement"
         questionBold="other consultants ducked."
         body="The work I keep is the work that wouldn't fit a packaged Salesforce template. If your org is one of those, let's talk."

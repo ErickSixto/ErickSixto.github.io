@@ -3,19 +3,17 @@
 //  - call: the judgment call Erick made (2-3 sentences, the authority signal)
 //  - outcome: one quantified result, one sentence (1-2 sentences)
 //
-// Keep entries to ~150 words total. Anonymize client names to industry + size.
-//
-// PLACEHOLDER CONTENT — Erick to edit prose before launch. Existing project
-// data has been mapped to this schema; the "call I made" sections need the
-// most rewriting.
+// Five named-customer engagements. The first three are featured on the home
+// page (work.slice(0, 3)), so order matters — strongest customer/metric first.
 
 export type WorkEntry = {
   id: string; // hash anchor, kebab-case
   number: string; // "№ 01"
+  client: string; // real customer name, displayed prominently
   industry: string;
   scale: string; // e.g. "90 employees", "30 reps"
   year: number;
-  title: string; // sentence-style, ~12-18 words
+  title: string; // sentence-style, action-focused, no client name
   found: string; // org as I found it
   call: string; // the call I made
   outcome: string; // outcome
@@ -24,59 +22,16 @@ export type WorkEntry = {
 
 export const work: WorkEntry[] = [
   {
-    id: "pipeline-migration",
-    number: "№ 01",
-    industry: "B2B SaaS",
-    scale: "90 employees",
-    year: 2024,
-    title: "Migrated three years of pipeline to a single source of truth.",
-    found:
-      "Twelve sales reps had each developed their own naming conventions for accounts. Forecasting reports were unreliable enough that the founder had given up on them and was tracking pipeline in a spreadsheet. The CRM existed; nobody trusted it.",
-    call:
-      "Closed twelve reps' worth of duplicate accounts before we touched a single object. Rebuilt the data model around how the team actually sells, not how Salesforce assumes you'll sell. Added validation rules that fail fast instead of letting bad data into reports.",
-    outcome:
-      "Forecasting reports stopped lying. The founder got their pipeline view back. Total engagement: six weeks, no overrun.",
-  },
-  {
-    id: "cx-portal",
-    number: "№ 02",
-    industry: "Customer Success",
-    scale: "30 reps",
-    year: 2024,
-    title: "Rebuilt a CX portal that was driving tickets, not deflecting them.",
-    found:
-      "Experience Cloud site shipped a year before by another consultant. Customers were filing tickets to ask where their tickets were, because the portal's case-status object hadn't been wired to the email automation. The CS team was running two systems in parallel.",
-    call:
-      "I told them not to rebuild. The portal architecture was fine. The problem was three half-finished automations and a permission set that hadn't been reviewed since launch. I refused to scope a redesign and proposed a four-week fix-and-document engagement instead.",
-    outcome:
-      "Weekly support volume dropped 38% in the first month after relaunch. Their admin can now extend the case-routing logic without me, which was the actual goal.",
-    outcomeMetric: "−38%",
-  },
-  {
-    id: "automation-consolidation",
-    number: "№ 03",
-    industry: "Professional Services",
-    scale: "50 employees",
-    year: 2023,
-    title: "Replaced four homegrown automation Flows with one Apex service.",
-    found:
-      "A four-hour nightly batch was syncing project records to an external billing system through a chain of four Process Builder + Flow combinations. The chain failed silently roughly once a week, and nobody noticed until invoices were late.",
-    call:
-      "Consolidated all four into one queueable Apex class with explicit error handling and retry logic. Migrated the trigger contract while the old chain stayed live, then cut over in a single deploy. Wrote a runbook the admin team could read in fifteen minutes.",
-    outcome:
-      "Sub-minute scheduled runs replaced the four-hour batch. Silent failures became logged retries. No more invoicing errors three months in.",
-    outcomeMetric: "4h → 1min",
-  },
-  {
     id: "trackanything-lwc-migration",
-    number: "№ 04",
+    number: "№ 01",
+    client: "TrackAnything",
     industry: "Asset Tracking SaaS",
     scale: "Field service teams",
     year: 2024,
     title:
-      "Migrated TrackAnything's core asset-tracking app from Visualforce to Lightning Web Components.",
+      "Migrated a 3,400-line Visualforce page to Lightning Web Components without rebuilding it.",
     found:
-      "A five-year-old Visualforce page handled 80% of daily user interactions and had grown to 3,400 lines. Every new feature meant navigating the entire file. Business logic, UI markup, and controller code were woven together in a way that made any change risky. The team had been quoted six figures for a full rebuild and shelved it twice.",
+      "A five-year-old Visualforce page handled 80% of daily user interactions and had grown to 3,400 lines. Business logic, UI markup, and controller code were woven together in a way that made every new feature risky. The team had been quoted six figures for a full rebuild and shelved it twice.",
     call:
       "I refused the full rebuild. The data model and business logic were sound — only the presentation layer had become unmaintainable. I decomposed the page into discrete LWC components with clean interfaces, migrated them section by section over eight weeks, and kept the Visualforce shell live until each component was proven in production. Pushed back on three feature requests mid-migration that would have re-entangled what we'd just untangled.",
     outcome:
@@ -84,13 +39,30 @@ export const work: WorkEntry[] = [
     outcomeMetric: "6.2s → 0.9s",
   },
   {
+    id: "zurich-member-portal",
+    number: "№ 02",
+    client: "Zurich Insurance Group",
+    industry: "Insurance",
+    scale: "Three member segments",
+    year: 2022,
+    title: "Rebuilt the member portal so seven clicks became two.",
+    found:
+      "Zurich's North American member portal had been built incrementally over years. Three distinct audience segments shared one set of confusing flows, and key tasks like updating a plan or finding policy details took seven or more clicks across inconsistent screens. The component library was duplicated three times — once per segment — with no shared primitives.",
+    call:
+      "I refused to ship segment-specific portals on top of duplicated code. Designed a single reusable LWC component library with audience-aware configuration, then collapsed the three flows into one streamlined journey with optional surfaces per segment. Worked directly with the design team to keep the UX honest and the markup lean.",
+    outcome:
+      "Members complete the most common tasks in two clicks instead of seven. The component library is now the foundation Zurich extends from — every component documented, tested, and segment-aware out of the box.",
+    outcomeMetric: "7 → 2 clicks",
+  },
+  {
     id: "5th-axis-rep-quotas",
-    number: "№ 05",
+    number: "№ 03",
+    client: "5th Axis",
     industry: "Precision Manufacturing",
     scale: "40+ external reps",
     year: 2023,
     title:
-      "Tracked external sales rep quotas without paying for Salesforce licenses they'd never use.",
+      "Tracked external rep quotas without paying for Salesforce licenses they'd never use.",
     found:
       "Forty-plus independent manufacturer reps carried 5th Axis alongside competing lines. None had Salesforce access — the licensing math doesn't work for users who'd log in twice a quarter to check a number. Quota tracking lived in a shared spreadsheet, commission disputes were a quarterly event, and sales leadership couldn't see territory performance until month-end close.",
     call:
@@ -101,12 +73,13 @@ export const work: WorkEntry[] = [
   },
   {
     id: "landgeeks-property-workspace",
-    number: "№ 06",
+    number: "№ 04",
+    client: "LandGeeks",
     industry: "Property Management",
     scale: "Operations team",
     year: 2024,
     title:
-      "Built LandGeeks a full property management workspace inside Salesforce.",
+      "Built a console workspace that replaced four disconnected tools.",
     found:
       "LandGeeks was managing properties, owners, and documents across disconnected tools. Their team was re-entering data between systems, and there was no single place to see a property's full picture: owner history, uploaded files, location on a map, and related contacts — all in one view. Reporting was fragmented and manual.",
     call:
@@ -117,12 +90,13 @@ export const work: WorkEntry[] = [
   },
   {
     id: "viritopia-pre-opportunity",
-    number: "№ 07",
+    number: "№ 05",
+    client: "Viritopia",
     industry: "Sustainable Architecture",
     scale: "Sales team",
     year: 2023,
     title:
-      "Kept Viritopia's pipeline honest with a pre-opportunity object for deals still in research.",
+      "Designed a Pre-Opportunity object for deals still in the research phase.",
     found:
       "Viritopia sells living walls — a product where buyers spend months in research before they commit. Their team was creating Opportunities for every qualified inquiry, which bloated the pipeline and made forecasting unreliable. The standard stage progression didn't match how these deals actually move: a prospect can be fully qualified but still two quarters away from a real decision.",
     call:

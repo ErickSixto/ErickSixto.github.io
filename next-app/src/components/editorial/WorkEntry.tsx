@@ -8,11 +8,15 @@ import type { WorkEntry as WorkEntryType } from "@/data/work";
 export function WorkEntry({ entry }: { entry: WorkEntryType }) {
   return (
     <article id={entry.id} className="py-20 border-t border-[#2F2E2E22] first:border-t-0 first:pt-8">
-      <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-6 flex flex-wrap gap-4">
+      <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-3 flex flex-wrap gap-4">
         <span className="text-[#CB9135] font-medium">{entry.number}</span>
         <span>{entry.industry}</span>
         <span>{entry.scale}</span>
         <span>{entry.year}</span>
+      </div>
+
+      <div className="text-[0.95rem] font-semibold text-[#2F2E2E] mb-5 tracking-[-0.005em]">
+        {entry.client}
       </div>
 
       <h2 className="font-light text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.15] tracking-[-0.02em] text-[#2F2E2E] mb-8 max-w-[24ch]">
