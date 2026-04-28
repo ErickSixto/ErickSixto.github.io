@@ -1,18 +1,22 @@
+// Primitive for hairline-divided lists. Rows are children; the component
+// adds top/bottom 1px rules at #2F2E2E1F. Used by stances, work peek,
+// /work index, and the about timeline.
+
 import React from "react";
 
-interface EditorialListProps {
+export function EditorialList({
+  children,
+  className = "",
+}: {
   children: React.ReactNode;
-}
-
-export function EditorialList({ children }: EditorialListProps) {
-  const items = React.Children.toArray(children);
-
+  className?: string;
+}) {
   return (
-    <div className="border-t border-[#2F2E2E1F]">
-      {items.map((child, index) => (
-        <div key={index} className="border-b border-[#2F2E2E1F]">
-          {child}
-        </div>
+    <div
+      className={`border-t border-[#2F2E2E1F] ${className}`}
+    >
+      {React.Children.map(children, (child) => (
+        <div className="border-b border-[#2F2E2E1F]">{child}</div>
       ))}
     </div>
   );
