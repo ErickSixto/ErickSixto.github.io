@@ -76,11 +76,11 @@ export const work: WorkEntry[] = [
     title:
       "Migrated TrackAnything's core asset-tracking app from Visualforce to Lightning Web Components.",
     found:
-      "A five-year-old Visualforce page handled 80% of daily user interactions but had grown to 3,400 lines. Mobile users were timing out on the initial load. The support queue had a recurring \"page is broken on iPad\" ticket category. The team had been quoted six figures for a full rebuild and had shelved the project twice.",
+      "A five-year-old Visualforce page handled 80% of daily user interactions and had grown to 3,400 lines. Every new feature meant navigating the entire file. Business logic, UI markup, and controller code were woven together in a way that made any change risky. The team had been quoted six figures for a full rebuild and shelved it twice.",
     call:
-      "I refused the full rebuild. The data model was sound — only the UI was choking. Migrated section-by-section to LWC over eight weeks, keeping the Visualforce shell live until each piece was proven in production. Pushed back on three feature requests during the migration that would have re-bloated the new components.",
+      "I refused the full rebuild. The data model and business logic were sound — only the presentation layer had become unmaintainable. I decomposed the page into discrete LWC components with clean interfaces, migrated them section by section over eight weeks, and kept the Visualforce shell live until each component was proven in production. Pushed back on three feature requests mid-migration that would have re-entangled what we'd just untangled.",
     outcome:
-      "First contentful paint dropped from 6.2 seconds to under one. The \"page is broken on iPad\" ticket category went to zero. Total project cost was roughly a quarter of the original quote, and the codebase shipped with a component library the in-house dev could extend without me.",
+      "First contentful paint dropped from 6.2 seconds to under one. The codebase shipped with a component library the in-house developer can extend independently. Total cost came in at roughly a quarter of the original rebuild quote.",
     outcomeMetric: "6.2s → 0.9s",
   },
   {
@@ -98,5 +98,37 @@ export const work: WorkEntry[] = [
     outcome:
       "Commission disputes stopped almost overnight: one source of truth, visible to everyone. The \"where are we against quota?\" question went from a three-day spreadsheet pull to a Monday-morning glance. Annual licensing savings covered the build cost in seven months.",
     outcomeMetric: "$0 license cost",
+  },
+  {
+    id: "landgeeks-property-workspace",
+    number: "№ 06",
+    industry: "Property Management",
+    scale: "Operations team",
+    year: 2024,
+    title:
+      "Built LandGeeks a full property management workspace inside Salesforce.",
+    found:
+      "LandGeeks was managing properties, owners, and documents across disconnected tools. Their team was re-entering data between systems, and there was no single place to see a property's full picture: owner history, uploaded files, location on a map, and related contacts — all in one view. Reporting was fragmented and manual.",
+    call:
+      "Built a console-style Lightning App around a new data model: custom property and owner objects with rich relationship architecture, a dynamic map component wired to the Google Maps API, a document management panel with file preview, and a filterable property list with multi-criteria search. Kept the architecture component-first so each panel is independently extensible. Wrote Apex services to back the map rendering and filter logic so the components stayed lean.",
+    outcome:
+      "The team's daily workflow collapsed from four tools into one console. Property owners are linked to their records, files are attached and visible in context, and the map answers location questions that used to require a separate lookup entirely.",
+    outcomeMetric: "4 tools → 1",
+  },
+  {
+    id: "viritopia-pre-opportunity",
+    number: "№ 07",
+    industry: "Sustainable Architecture",
+    scale: "Sales team",
+    year: 2023,
+    title:
+      "Kept Viritopia's pipeline honest with a pre-opportunity object for deals still in research.",
+    found:
+      "Viritopia sells living walls — a product where buyers spend months in research before they commit. Their team was creating Opportunities for every qualified inquiry, which bloated the pipeline and made forecasting unreliable. The standard stage progression didn't match how these deals actually move: a prospect can be fully qualified but still two quarters away from a real decision.",
+    call:
+      "Introduced a custom Pre-Opportunity object that sits upstream of the standard pipeline. Qualified prospects enter research-phase tracking here — with their own stage logic, activity history, and conversion criteria — and graduate to Opportunities only when there's a genuine business decision in motion. Kept the standard Opportunity object untouched so existing reports, forecasting, and integrations continued working without changes.",
+    outcome:
+      "Pipeline stopped reflecting wishful thinking. The sales team has a clear view of what's a real deal versus what's still being evaluated. Conversion from Pre-Opportunity became a meaningful signal — and the founder stopped pulling the forecast apart every quarter to explain the noise.",
+    outcomeMetric: "Pipeline clarity",
   },
 ];

@@ -30,7 +30,7 @@ export default function AboutPage() {
             className="w-full max-w-[480px] mx-auto block"
           />
           <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] text-center mt-4">
-            Mexico City · 2025
+            Mérida · 2025
           </figcaption>
         </figure>
       </section>
