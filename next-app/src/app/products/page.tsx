@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Hero } from "@/components/editorial/Hero";
 import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { EditorialList } from "@/components/editorial/EditorialList";
-import { EditorialButton } from "@/components/editorial/EditorialButton";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
 import { meetingLinks } from "@/data/mock";
 import { getAllProducts } from "@/content/products";

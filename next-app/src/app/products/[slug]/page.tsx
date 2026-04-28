@@ -151,7 +151,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <p className="text-[#4B5563] leading-relaxed mb-5 text-[16px]">{children}</p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="space-y-2.5 mb-6 pl-5 list-disc marker:text-[#CB9135]">{children}</ul>
+                  <ul className="space-y-2.5 mb-6 pl-5 list-disc marker:text-[#4B5563]">{children}</ul>
                 ),
                 li: ({ children }) => (
                   <li className="text-[#4B5563] leading-relaxed pl-1">{children}</li>
