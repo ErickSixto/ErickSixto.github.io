@@ -23,7 +23,7 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
   if (!product) notFound();
 
   return (
-    <main className="pt-24 md:pt-28 min-h-screen bg-[#F1F1EF]">
+    <main className="min-h-screen bg-[#F1F1EF]">
       <section className="pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs

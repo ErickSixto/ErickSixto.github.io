@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   if (!product) notFound();
 
   return (
-    <main className="pt-24 md:pt-28">
+    <main>
       <ProductHero
         name={product.name}
         tagline={product.tagline}

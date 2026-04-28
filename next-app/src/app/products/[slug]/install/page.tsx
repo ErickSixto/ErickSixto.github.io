@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -52,7 +51,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
   ];
 
   return (
-    <main className="pt-24 md:pt-28 bg-[#F1F1EF]">
+    <main className="bg-[#F1F1EF]">
       <section className="pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -67,7 +66,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
 
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 shadow-sm mb-6">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6">
             <PartyPopper className="h-4 w-4 text-[#CB9135]" />
             <span className="text-xs uppercase tracking-[0.15em] text-[#2F2E2E] font-medium">Thanks for your purchase</span>
           </div>
@@ -161,9 +160,9 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
               <p className="text-sm text-[#4B5563] leading-relaxed mb-3">
                 Stuck on the install? Reply to your Stripe receipt or reach out via the contact page.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
+              <a href="mailto:sixto@ericksixto.com" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
                 Contact support <CheckCircle2 className="h-3.5 w-3.5" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

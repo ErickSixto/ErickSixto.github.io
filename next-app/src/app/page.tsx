@@ -8,6 +8,12 @@ import { stances } from "@/data/stances";
 import { work } from "@/data/work";
 import { meetingLinks } from "@/data/mock";
 
+export const metadata = {
+  title: "Erick Sixto — Salesforce Specialist",
+  description:
+    "Senior Salesforce specialist. Seven years fixing orgs that got worse every time someone tried to improve them. Lead-gen for SaaS founders and CX teams.",
+};
+
 export default function HomePage() {
   const peek = work.slice(0, 3);
 
