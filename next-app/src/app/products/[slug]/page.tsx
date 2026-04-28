@@ -55,8 +55,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {product.requiredEditions && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="rounded-2xl border border-[#E5E7EB] bg-white p-6 md:p-8">
-            <p className="text-[11px] uppercase tracking-[0.18em] text-[#CB9135] mb-3">Compatibility</p>
+          <div className="rounded-none border border-[#E5E7EB] bg-white p-6 md:p-8">
+            <p className="text-[11px] uppercase tracking-[0.18em] text-[#4B5563] mb-3">Compatibility</p>
             <p className="text-[#2F2E2E] leading-relaxed">
               Requires a Salesforce edition that supports installed Apex code —
               <strong> {product.requiredEditions}</strong>.
@@ -108,7 +108,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               ].map((shot, i) => (
                 <MotionSection key={shot.src} delay={i * 0.08}>
                   <figure className="group">
-                    <div className="rounded-2xl border border-[#E5E7EB] bg-[#F1F1EF] overflow-hidden shadow-sm transition-all duration-500 group-hover:shadow-xl group-hover:shadow-black/10">
+                    <div className="rounded-none border border-[#E5E7EB] bg-[#F1F1EF] overflow-hidden transition-all duration-500">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={shot.src}

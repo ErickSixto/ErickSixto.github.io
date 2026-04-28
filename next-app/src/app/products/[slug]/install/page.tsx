@@ -84,7 +84,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
       <section className="pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {product.installUrlProd && (
-            <Card className="p-8 rounded-2xl border-[#E5E7EB] bg-white">
+            <Card className="p-8 rounded-none border-[#E5E7EB] bg-white">
               <div className="flex items-center gap-3 mb-3">
                 <Badge className="bg-[#2F2E2E] text-white hover:bg-[#2F2E2E]">Production</Badge>
                 <h2 className="text-xl font-semibold text-[#2F2E2E] tracking-tight">Install in Production</h2>
@@ -105,7 +105,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
           )}
 
           {product.installUrlSandbox && (
-            <Card className="p-8 rounded-2xl border-[#E5E7EB] bg-white">
+            <Card className="p-8 rounded-none border-[#E5E7EB] bg-white">
               <div className="flex items-center gap-3 mb-3">
                 <Badge variant="outline" className="border-[#CB9135]/30 text-[#CB9135]">
                   Sandbox / Dev / Scratch
@@ -152,7 +152,7 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
 
-          <div className="mt-16 p-8 rounded-2xl bg-[#F1F1EF] flex items-start gap-4">
+          <div className="mt-16 p-8 rounded-none bg-[#F1F1EF] flex items-start gap-4">
             <div className="p-2.5 bg-white rounded-lg flex-shrink-0">
               <BookOpen className="h-5 w-5 text-[#CB9135]" />
             </div>

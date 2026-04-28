@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { Hero } from "@/components/editorial/Hero";
+import { SectionLabel } from "@/components/editorial/SectionLabel";
+import { EditorialList } from "@/components/editorial/EditorialList";
+import { EditorialButton } from "@/components/editorial/EditorialButton";
+import { ClosingCTA } from "@/components/editorial/ClosingCTA";
+import { meetingLinks } from "@/data/mock";
 import { getAllProducts } from "@/content/products";
 
 export const metadata = {
@@ -10,65 +13,72 @@ export const metadata = {
 };
 
 export default function ProductsIndexPage() {
-  const products = getAllProducts().filter((p) => p.status === "live" || p.status === "coming-soon");
+  const products = getAllProducts().filter(
+    (p) => p.status === "live" || p.status === "coming-soon"
+  );
 
   return (
-    <main className="pt-20">
-      <section className="py-32 bg-[#F1F1EF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">— Products</p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6 tracking-tight">
-            Tools I&apos;ve shipped
-          </h1>
-          <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
-            Salesforce-native products that solve a specific problem I got tired of fixing by hand.
-          </p>
-        </div>
+    <main>
+      <Hero
+        eyebrowLeft="Products"
+        headlineLead="Tools I've"
+        headlineBold="shipped."
+        lead="Salesforce-native products that solve a specific problem I got tired of fixing by hand. Each one runs in your org, not on my server."
+      />
+
+      <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-[#2F2E2E11]">
+        <SectionLabel className="mb-6 inline-block">Available</SectionLabel>
+        {products.length === 0 ? (
+          <p className="text-[#4B5563]">No products available right now.</p>
+        ) : (
+          <EditorialList>
+            {products.map((product) => (
+              <Link
+                key={product.slug}
+                href={`/products/${product.slug}`}
+                className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-6 sm:gap-12 py-8 items-baseline group"
+              >
+                <div>
+                  <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-2">
+                    {product.status === "live" ? "Available now" : "Coming soon"}
+                  </div>
+                  <h2 className="text-[1.4rem] font-semibold text-[#2F2E2E] mb-2 tracking-[-0.01em]">
+                    {product.name}
+                  </h2>
+                  <p className="text-[0.95rem] leading-[1.6] text-[#4B5563] max-w-[60ch]">
+                    {product.tagline}
+                  </p>
+                </div>
+                <div className="flex flex-col sm:items-end gap-3">
+                  <div>
+                    <span className="text-[1.4rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.005em]">
+                      ${product.price}
+                    </span>
+                    <span className="text-[0.72rem] text-[#6B7280] ml-1.5 font-mono uppercase tracking-[0.16em]">
+                      {product.currency}
+                    </span>
+                  </div>
+                  <span className="font-mono text-[0.7rem] text-[#2F2E2E] border-b border-[#2F2E2E55] pb-px">
+                    learn more →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </EditorialList>
+        )}
       </section>
 
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {products.length === 0 ? (
-            <p className="text-[#4B5563]">No products yet.</p>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {products.map((product) => (
-                <Link key={product.slug} href={`/products/${product.slug}`} className="block h-full">
-                  <Card className="rounded-2xl border-[#E5E7EB] hover:shadow-lg hover:border-[#CB9135]/30 overflow-hidden h-full flex flex-col group cursor-pointer">
-                    <div className="h-1 bg-[#CB9135] group-hover:h-1.5 transition-all duration-500" />
-                    <div className="p-8 flex-grow flex flex-col">
-                      <div className="flex items-center gap-2 mb-4">
-                        <Badge
-                          variant={product.status === "live" ? "secondary" : "outline"}
-                          className="text-xs bg-[#F1F1EF] text-[#4B5563] hover:bg-[#F1F1EF]"
-                        >
-                          {product.status === "live" ? "Available now" : "Coming soon"}
-                        </Badge>
-                      </div>
-                      <h2 className="text-2xl font-semibold text-[#2F2E2E] mb-2 tracking-tight group-hover:text-[#CB9135] transition-colors">
-                        {product.name}
-                      </h2>
-                      <p className="text-[#4B5563] leading-relaxed mb-6 flex-grow">{product.tagline}</p>
-                      <div className="flex items-end justify-between pt-5 border-t border-[#E5E7EB]">
-                        <div>
-                          <p className="text-xs uppercase tracking-[0.15em] text-[#4B5563] mb-1">Price</p>
-                          <p className="text-2xl font-bold text-[#2F2E2E] tabular-nums tracking-tight">
-                            ${product.price}{" "}
-                            <span className="text-xs font-medium text-[#4B5563]">{product.currency}</span>
-                          </p>
-                        </div>
-                        <span className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] group-hover:text-[#CB9135] font-medium transition-all duration-300 group-hover:gap-3">
-                          Learn more <ArrowRight className="h-4 w-4" />
-                        </span>
-                      </div>
-                    </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      <ClosingCTA
+        label="Custom build?"
+        questionLead="Need something"
+        questionBold="that doesn't exist yet?"
+        body="If a packaged tool would solve your problem but no-one's built it, we can scope a custom one in our discovery call."
+        primary={{
+          label: "Book a 30-minute call",
+          href: meetingLinks.discovery.url,
+          external: true,
+        }}
+      />
     </main>
   );
 }

@@ -48,7 +48,7 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
 
               <div className="space-y-5">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#CB9135] font-medium mb-2">What happens next</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#4B5563] font-medium mb-2">What happens next</p>
                   <ol className="space-y-2.5 text-sm text-[#4B5563] list-decimal pl-5 marker:text-[#CB9135]">
                     <li>Complete Stripe checkout on the next screen.</li>
                     <li>You&apos;ll be redirected to a page with your install URLs.</li>
@@ -58,7 +58,7 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
                 </div>
 
                 <div>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#CB9135] font-medium mb-2">Guarantees</p>
+                  <p className="text-xs uppercase tracking-[0.18em] text-[#4B5563] font-medium mb-2">Guarantees</p>
                   <ul className="space-y-2 text-sm text-[#4B5563]">
                     <li>Secure Stripe checkout — we never see your card.</li>
                     <li>Instant install URL — no waiting, no Security Review queue.</li>
