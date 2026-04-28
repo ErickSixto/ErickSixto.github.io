@@ -47,7 +47,7 @@ export const socialProof = [
     ],
     badges: ["Verified Pro", "Top Seller"],
     url: "https://www.fiverr.com/ericksixto",
-    color: "#1DBF73",
+    color: "#2F2E2E",
     letter: "F",
   },
   {
@@ -56,7 +56,7 @@ export const socialProof = [
     metrics: [{ value: "Top 3%", label: "of Global Talent" }],
     badges: ["Vetted Developer", "Elite Network"],
     url: "https://www.toptal.com/developers/resume/erick-sixto",
-    color: "#204ECF",
+    color: "#2F2E2E",
     letter: "T",
   },
   {
@@ -65,17 +65,17 @@ export const socialProof = [
     metrics: [{ value: "2x", label: "Certified Specialist" }],
     badges: ["Ranger", "Certified"],
     url: "https://www.salesforce.com/trailblazer/sixtohdez",
-    color: "#00A1E0",
+    color: "#2F2E2E",
     letter: "S",
   },
 ];
 
 export const platformLinks = [
-  { name: "Fiverr Pro", url: "https://www.fiverr.com/ericksixto", color: "#1DBF73", letter: "F" },
-  { name: "Toptal", url: "https://www.toptal.com/developers/resume/erick-sixto", color: "#204ECF", letter: "T" },
-  { name: "Trailblazer", url: "https://www.salesforce.com/trailblazer/sixtohdez", color: "#00A1E0", letter: "S" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/in/ericksixto", color: "#0A66C2", letter: "in" },
-  { name: "GitHub", url: "https://github.com/ericksixto", color: "#171515", letter: "G" },
+  { name: "Fiverr Pro", url: "https://www.fiverr.com/ericksixto", color: "#2F2E2E", letter: "F" },
+  { name: "Toptal", url: "https://www.toptal.com/developers/resume/erick-sixto", color: "#2F2E2E", letter: "T" },
+  { name: "Trailblazer", url: "https://www.salesforce.com/trailblazer/sixtohdez", color: "#2F2E2E", letter: "S" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/ericksixto", color: "#2F2E2E", letter: "in" },
+  { name: "GitHub", url: "https://github.com/ericksixto", color: "#2F2E2E", letter: "G" },
 ];
 
 export const marqueeItems = [

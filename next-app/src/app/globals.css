@@ -12,19 +12,19 @@
   --color-primary-foreground: hsl(40 7% 94%);
   --color-secondary: hsl(40 7% 94%);
   --color-secondary-foreground: hsl(0 2% 18%);
-  --color-muted: hsl(220 14% 96%);
-  --color-muted-foreground: hsl(215 14% 34%);
+  --color-muted: hsl(40 7% 94%);
+  --color-muted-foreground: hsl(0 2% 28%);
   --color-accent: hsl(37 56% 51%);
   --color-accent-foreground: hsl(0 0% 98%);
   --color-destructive: hsl(0 84.2% 60.2%);
   --color-destructive-foreground: hsl(0 0% 98%);
-  --color-border: hsl(220 13% 91%);
-  --color-input: hsl(220 13% 91%);
+  --color-border: hsl(40 5% 89%);
+  --color-input: hsl(40 5% 89%);
   --color-ring: hsl(0 2% 18%);
 
   --font-sans: var(--font-inter), "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
 
-  --radius: 0.5rem;
+  --radius: 0.25rem;
 
   --animate-marquee: marquee 35s linear infinite;
   --animate-accordion-down: accordion-down 0.25s ease-out;
@@ -82,16 +82,4 @@
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.18  0 0 0 0 0.18  0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
   background-size: auto, auto, 160px 160px;
   background-repeat: no-repeat, no-repeat, repeat;
-}
-
-.gradient-sweep-bg {
-  background: linear-gradient(
-    120deg,
-    rgba(203, 145, 53, 0.0) 0%,
-    rgba(203, 145, 53, 0.14) 30%,
-    rgba(255, 255, 255, 0.06) 50%,
-    rgba(203, 145, 53, 0.14) 70%,
-    rgba(203, 145, 53, 0.0) 100%
-  );
-  background-size: 300% 300%;
 }
