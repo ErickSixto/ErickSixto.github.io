@@ -51,7 +51,7 @@ export default function AboutPage() {
         <div className="mb-10">
           <SectionLabel className="mb-3 inline-block">Career</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
-            Where I've <strong className="font-bold">worked.</strong>
+            Where I&apos;ve <strong className="font-bold">worked.</strong>
           </h2>
         </div>
         <EditorialList>

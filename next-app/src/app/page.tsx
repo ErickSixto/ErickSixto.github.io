@@ -31,11 +31,11 @@ export default function HomePage() {
         <div className="mb-14 max-w-[56ch]">
           <SectionLabel className="mb-5 inline-block">Operating principles</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
-            Eight things I won't{" "}
+            Eight things I won&apos;t{" "}
             <strong className="font-bold">compromise on.</strong>
           </h2>
           <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
-            Regardless of the org, the engagement, or how badly the timeline is squeezed. These are the standards that have made my best client relationships last, and the ones I'm willing to walk away from work over.
+            Regardless of the org, the engagement, or how badly the timeline is squeezed. These are the standards that have made my best client relationships last, and the ones I&apos;m willing to walk away from work over.
           </p>
         </div>
         <StanceList stances={stances} />
