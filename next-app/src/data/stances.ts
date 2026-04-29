@@ -42,6 +42,8 @@ export const stances: Stance[] = [
     id: "tell-you-not-to-build",
     number: "P.05",
     headline: "I will tell you not to build it.",
+    rationale:
+      "Roughly a third of the requests I get end with \"you don't need this.\" Saying no is part of the job. Talking you out of bad work is part of the job.",
   },
   {
     id: "no-pitch",
