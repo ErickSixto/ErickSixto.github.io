@@ -40,17 +40,17 @@ const problemPatterns = [
 ];
 
 const rightFit = [
-  "SaaS founders past PMF whose CRM is starting to break things",
-  "CX teams whose portal is driving tickets, not deflecting them",
-  "Mid-market companies with a senior admin stuck on something architectural",
-  "Buyers who want a senior call, not another planning meeting",
+  "Companies whose Salesforce can't keep up with how they've grown",
+  "Support teams whose customer portal is making things worse, not better",
+  "Teams whose admin is solid but stuck on a hard problem",
+  "Buyers who want a senior expert, not another planning meeting",
 ];
 
 const notAFit = [
-  "Greenfield setup for fewer than 10 users",
+  "Lowest-bid, shortest-timeline work",
+  "Looking to hire a full-time Salesforce admin (different gig — happy to refer one)",
   "Enterprise procurement with 6-month vendor onboarding",
-  "Template-shopping (you'll get a better deal on Fiverr Pro)",
-  'Buyers who want the answer to be "yes" before the discovery call',
+  "Template-shopping for a cookie-cutter setup",
 ];
 
 export default function AboutPage() {

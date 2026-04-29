@@ -34,7 +34,7 @@ export const work: WorkEntry[] = [
     title:
       "Migrated a 3,400-line Visualforce page to Lightning Web Components without rebuilding it.",
     found:
-      "A 5-year-old Visualforce page handled 80% of daily interactions and had grown to 3,400 unmaintainable lines. The team had been quoted six figures for a full rebuild and shelved it twice.",
+      "A 5-year-old Visualforce page handled 80% of daily interactions and had grown to 3,400 unmaintainable lines. The codebase had grown too tangled to safely touch — every change carried real risk.",
     call:
       "I refused the rebuild. The data model was sound — only the UI was choking. Decomposed the page into discrete LWC components and migrated them section by section over 8 weeks, keeping the Visualforce shell live until each piece was proven in production.",
     outcome:
