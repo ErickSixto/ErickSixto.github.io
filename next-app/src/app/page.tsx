@@ -24,7 +24,10 @@ export default function HomePage() {
         eyebrowRight="Salesforce Specialist"
         headlineLead="Salesforce that doesn't"
         headlineBold="fight your team."
-        lead="I'm Erick Sixto — mechatronics engineer turned Salesforce specialist. 7 years fixing orgs that got worse every time someone tried to improve them. I take a small number of engagements per year, mostly with SaaS founders and CX teams who need someone to make the call, not run another planning meeting."
+        lead={[
+          "I'm Erick Sixto — mechatronics engineer turned Salesforce specialist.",
+          "7 years fixing orgs that got worse every time someone tried to improve them. I take a small number of engagements per year, mostly with SaaS founders and CX teams who need someone to make the call, not run another planning meeting.",
+        ]}
         cta={{
           label: "Book a 30-minute call",
           href: meetingLinks.discovery.url,
@@ -36,7 +39,7 @@ export default function HomePage() {
       <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-[#2F2E2E11]">
         <div className="mb-14 max-w-[56ch]">
           <SectionLabel className="mb-5 inline-block">Operating principles</SectionLabel>
-          <h2 className="font-normal text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
             What I won&apos;t{" "}
             <strong className="font-bold">compromise on.</strong>
           </h2>
@@ -50,7 +53,7 @@ export default function HomePage() {
       <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-[#2F2E2E11]">
         <div className="mb-10">
           <SectionLabel className="mb-3 inline-block">Selected work</SectionLabel>
-          <h2 className="font-normal text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
             Recent <strong className="font-bold">engagements.</strong>
           </h2>
         </div>

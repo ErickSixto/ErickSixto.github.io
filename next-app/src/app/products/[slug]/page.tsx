@@ -96,7 +96,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
           <div className="mb-10">
             <SectionLabel className="mb-3 inline-block">Features</SectionLabel>
-            <h2 className="font-normal text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+            <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
               What&apos;s <strong className="font-bold">inside.</strong>
             </h2>
           </div>

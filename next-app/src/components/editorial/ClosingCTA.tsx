@@ -23,7 +23,7 @@ export function ClosingCTA({
   return (
     <section className="text-center max-w-[720px] mx-auto px-6 py-28 border-t border-[#2F2E2E11]">
       <SectionLabel className="mb-4 inline-block">{label}</SectionLabel>
-      <h2 className="font-normal text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-[#2F2E2E] mb-6 mt-2">
+      <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-[#2F2E2E] mb-6 mt-2">
         {questionLead}{" "}
         <strong className="font-bold">{questionBold}</strong>
       </h2>
