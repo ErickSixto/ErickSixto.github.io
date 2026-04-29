@@ -20,7 +20,7 @@ const problemPatterns = [
   {
     title: "The Visualforce page nobody wants to touch.",
     description:
-      "5,000-line files where every change is a guess. Decompose section by section, ship a component library, retire the relic without a full rebuild.",
+      "Multi-thousand-line files where every change is a guess. Decompose section by section, ship a component library, retire the relic without a full rebuild.",
   },
   {
     title: "The portal users won't open.",
