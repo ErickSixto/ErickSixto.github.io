@@ -17,12 +17,14 @@ export function StanceList({ stances }: { stances: Stance[] }) {
             {s.number}
           </span>
           <div>
-            <strong className="block text-[1.05rem] font-semibold text-[#2F2E2E] mb-2 tracking-[-0.005em]">
+            <strong className="block text-[1.05rem] font-semibold text-[#2F2E2E] tracking-[-0.005em]">
               {s.headline}
             </strong>
-            <p className="text-[0.92rem] text-[#4B5563] leading-[1.6] max-w-[60ch]">
-              {s.rationale}
-            </p>
+            {s.rationale ? (
+              <p className="text-[0.92rem] text-[#4B5563] leading-[1.6] max-w-[60ch] mt-2">
+                {s.rationale}
+              </p>
+            ) : null}
           </div>
         </div>
       ))}

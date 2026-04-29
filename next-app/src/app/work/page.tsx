@@ -9,7 +9,7 @@ import { meetingLinks } from "@/data/mock";
 
 export const metadata = {
   title: "Selected work — Erick Sixto",
-  description: "Five to eight Salesforce engagements with the call I made and the outcome.",
+  description: "5 Salesforce engagements with the call I made and the outcome.",
 };
 
 export default function WorkPage() {

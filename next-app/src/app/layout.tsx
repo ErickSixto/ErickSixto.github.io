@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Erick Sixto — Salesforce Specialist",
   description:
-    "Senior Salesforce Specialist. Seven years fixing orgs that got harder to use every time someone tried to improve them.",
+    "Senior Salesforce Specialist. 7 years fixing orgs that got harder to use every time someone tried to improve them.",
 };
 
 export default function RootLayout({

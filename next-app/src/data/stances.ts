@@ -1,16 +1,13 @@
 // Operating principles. Each stance is one bold position Erick will defend
-// in client conversations. Keep them tight: ~25-35 words total per entry.
-//
-// Author voice: senior engineer talking peer-to-peer with a busy decision-maker.
-// Specific over abstract. Concrete examples beat adjectives.
-//
-// PLACEHOLDER CONTENT — Erick to replace with real stances before launch.
+// in client conversations. Length deliberately varies — the brand rule is
+// "break the patterns": some stances stand alone, others get a sentence,
+// others get a longer rationale with a concrete example.
 
 export type Stance = {
   id: string;
   number: string; // e.g. "P.01"
   headline: string; // bold one-line stance
-  rationale: string; // one sentence of "why"
+  rationale?: string; // optional. Some stances stand alone.
 };
 
 export const stances: Stance[] = [
@@ -31,7 +28,7 @@ export const stances: Stance[] = [
   {
     id: "flow-vs-apex",
     number: "P.03",
-    headline: "If a Flow needs ten elements, it's Apex.",
+    headline: "If a Flow needs 10 elements, it's Apex.",
     rationale:
       "Complex orchestration belongs in code that can be tested, reviewed, and reasoned about. Flow is great for declarative work and a debugging nightmare for everything else.",
   },
@@ -39,8 +36,7 @@ export const stances: Stance[] = [
     id: "adoption-over-architecture",
     number: "P.04",
     headline: "Adoption beats architecture, always.",
-    rationale:
-      "If your sales team won't open the screen, the cleanest data model is theatre. I optimize for the person clicking, not the consultant reviewing.",
+    rationale: "If your sales team won't open the screen, the cleanest data model is theatre.",
   },
   {
     id: "tell-you-not-to-build",

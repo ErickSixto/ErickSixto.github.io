@@ -5,7 +5,7 @@ export const siteConfig = {
   descriptor: "SALESFORCE SPECIALIST",
   headline: "Salesforce that doesn't fight your team",
   subheadline:
-    "I'm an engineer who ended up in Salesforce. Seven years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",
+    "I'm an engineer who ended up in Salesforce. 7 years of it — most of that spent fixing orgs that got harder to use every time someone tried to improve them.",
   email: "sixto@ericksixto.com",
   website: "www.ericksixto.card.co",
   linkedin: "https://www.linkedin.com/in/ericksixto",
@@ -40,7 +40,7 @@ export const credibilityItems = [
 export const socialProof = [
   {
     platform: "Fiverr Pro",
-    description: "Vetted Pro & Top Seller on the world's largest freelance marketplace.",
+    description: "Vetted Pro and Top Seller, with 120+ five-star reviews across 200+ orders.",
     metrics: [
       { value: "120+", label: "5-Star Reviews" },
       { value: "200+", label: "Completed Orders" },
@@ -308,16 +308,6 @@ export const experience = [
     highlights: ["Career foundation", "Apex & Lightning", "Full-stack development"],
   },
 ];
-
-export const aboutData = {
-  intro: "I'm an engineer who ended up in Salesforce. Seven years of it — mostly fixing things other people built.",
-  story: [
-    "I trained as a Mechatronics Engineer. That's the discipline where a motor failing on the factory floor teaches you more than any textbook — because the operator is standing there waiting for it to work. I moved into front-end development because I wanted to build software the same way: if a person can't use it, it doesn't matter how elegant the engineering is.",
-    "Salesforce came next. Seven years, multiple clouds, a dozen industries — from insurance carriers to SaaS startups moving faster than their ops could follow.",
-    "The work I'm best at is the work most consultants don't want to take: the brittle trigger no one's touched in two years, the portal users can't figure out, the integration that silently drops records on Tuesdays. I like untangling things.",
-  ],
-  approach: "I don't over-engineer. The goal is the simplest architecture that solves the problem — and a system your team can keep running after I'm gone.",
-};
 
 export const testimonials = [
   {

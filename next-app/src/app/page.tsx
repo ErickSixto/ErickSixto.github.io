@@ -11,7 +11,7 @@ import { meetingLinks } from "@/data/mock";
 export const metadata = {
   title: "Erick Sixto — Salesforce Specialist",
   description:
-    "Senior Salesforce specialist. Seven years fixing orgs that got worse every time someone tried to improve them. Lead-gen for SaaS founders and CX teams.",
+    "Senior Salesforce specialist. 7 years fixing orgs that got worse every time someone tried to improve them. Lead-gen for SaaS founders and CX teams.",
 };
 
 export default function HomePage() {
@@ -24,7 +24,10 @@ export default function HomePage() {
         eyebrowRight="Salesforce Specialist"
         headlineLead="Salesforce that doesn't"
         headlineBold="fight your team."
-        lead="I'm Erick Sixto. Seven years fixing Salesforce orgs that got worse every time someone tried to improve them. I take a small number of engagements per year, mostly with SaaS founders and CX teams who need someone to make the call, not run another planning meeting."
+        lead={[
+          "I'm Erick Sixto — mechatronics engineer turned Salesforce specialist.",
+          "7 years fixing orgs that got worse every time someone tried to improve them. I take a small number of engagements per year, mostly with SaaS founders and CX teams who need someone to make the call, not run another planning meeting.",
+        ]}
         cta={{
           label: "Book a 30-minute call",
           href: meetingLinks.discovery.url,
@@ -37,7 +40,7 @@ export default function HomePage() {
         <div className="mb-14 max-w-[56ch]">
           <SectionLabel className="mb-5 inline-block">Operating principles</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
-            Eight things I won&apos;t{" "}
+            What I won&apos;t{" "}
             <strong className="font-bold">compromise on.</strong>
           </h2>
           <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
@@ -61,7 +64,7 @@ export default function HomePage() {
         label="Get in touch"
         questionLead="Got an org that's working"
         questionBold="against your team?"
-        body="A 30-minute call is free. I'll tell you whether I can help, and if I can't, I'll usually know who can. No pitch, no proposal, no follow-up email three days later."
+        body="A 30-minute call is free. I'll tell you whether I can help, and if I can't, I'll usually know who can. No pitch, no proposal, no follow-up email 3 days later."
         primary={{
           label: "Book a 30-minute call",
           href: meetingLinks.discovery.url,
