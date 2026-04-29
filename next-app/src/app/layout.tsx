@@ -8,7 +8,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-  weight: ["200", "300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Erick Sixto — Salesforce Specialist",
   description:
-    "Senior Salesforce Specialist. Seven years fixing orgs that got harder to use every time someone tried to improve them.",
+    "Senior Salesforce Specialist. 7 years fixing orgs that got harder to use every time someone tried to improve them.",
 };
 
 export default function RootLayout({

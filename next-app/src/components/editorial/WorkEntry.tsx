@@ -19,7 +19,7 @@ export function WorkEntry({ entry }: { entry: WorkEntryType }) {
         {entry.client}
       </div>
 
-      <h2 className="font-light text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.15] tracking-[-0.02em] text-[#2F2E2E] mb-8 max-w-[24ch]">
+      <h2 className="font-medium text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.15] tracking-[-0.02em] text-[#2F2E2E] mb-8 max-w-[24ch]">
         {entry.title}
       </h2>
 

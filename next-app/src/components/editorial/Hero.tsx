@@ -1,6 +1,6 @@
 // Editorial hero block. Centered, max-width 760px. Used as the top section
 // of every page. The headline is split into a leading phrase + bolded ending
-// to enforce the Inter 200 → Inter 700 contrast.
+// to enforce the Inter 400 → Inter 700 contrast.
 
 import React from "react";
 import { Eyebrow } from "./Eyebrow";
@@ -27,7 +27,7 @@ export function Hero({
     <section className="text-center px-6 pt-28 pb-24 max-w-[760px] mx-auto">
       <Eyebrow left={eyebrowLeft} right={eyebrowRight} className="mb-12 inline-block" />
 
-      <h1 className="font-extralight text-[clamp(2.2rem,4.4vw,4.2rem)] leading-[1.04] tracking-[-0.03em] text-[#2F2E2E] mb-10 max-w-[18ch] mx-auto">
+      <h1 className="font-normal text-[clamp(2.2rem,4.4vw,4.2rem)] leading-[1.04] tracking-[-0.03em] text-[#2F2E2E] mb-10 max-w-[18ch] mx-auto">
         {headlineLead}{" "}
         <strong className="font-bold">{headlineBold}</strong>
       </h1>

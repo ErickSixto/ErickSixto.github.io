@@ -7,7 +7,7 @@ import { siteConfig, aboutData, experience, meetingLinks } from "@/data/mock";
 
 export const metadata = {
   title: "About — Erick Sixto",
-  description: "An engineer who ended up in Salesforce. Seven years fixing orgs.",
+  description: "An engineer who ended up in Salesforce. 7 years fixing orgs.",
 };
 
 export default function AboutPage() {
@@ -50,7 +50,7 @@ export default function AboutPage() {
       <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
         <div className="mb-10">
           <SectionLabel className="mb-3 inline-block">Career</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-normal text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
             Where I&apos;ve <strong className="font-bold">worked.</strong>
           </h2>
         </div>
