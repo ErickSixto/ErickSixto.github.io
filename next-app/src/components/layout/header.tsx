@@ -17,17 +17,17 @@ export default function Header() {
 
   return (
     <header className="border-b border-[#2F2E2E11] bg-[#F1F1EF]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3 group flex-1">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-6">
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-1 min-w-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={siteConfig.monogramLight}
             alt=""
             aria-hidden="true"
-            className="h-8 w-auto"
+            className="h-7 sm:h-8 w-auto shrink-0"
           />
-          <div className="flex flex-col leading-none">
-            <span className="text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E]">
+          <div className="flex flex-col leading-none min-w-0">
+            <span className="text-[0.9rem] sm:text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">
               Erick Sixto
             </span>
             <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#6B7280] mt-1">
@@ -57,20 +57,20 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex-1 flex justify-end">
+        <div className="flex justify-end shrink-0 md:flex-1">
           <a
             href={meetingLinks.discovery.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[0.72rem] border border-[#2F2E2E33] text-[#2F2E2E] px-4 py-2 rounded-[2px] hover:bg-[#2F2E2E] hover:text-[#F1F1EF] transition-colors duration-200"
+            className="whitespace-nowrap text-[0.7rem] sm:text-[0.72rem] border border-[#2F2E2E33] text-[#2F2E2E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] hover:bg-[#2F2E2E] hover:text-[#F1F1EF] transition-colors duration-200"
           >
             Book a call
           </a>
         </div>
       </div>
 
-      {/* Mobile nav: keep simple — links inline below the bar on small screens */}
-      <nav className="md:hidden border-t border-[#2F2E2E11] flex justify-center gap-6 px-6 py-3 text-[0.78rem]">
+      {/* Mobile nav: links distributed evenly below the bar on small screens */}
+      <nav className="md:hidden border-t border-[#2F2E2E11] flex justify-around px-3 py-2.5 text-[0.78rem]">
         {navLinks.map((link) => {
           const isActive =
             link.path === "/"

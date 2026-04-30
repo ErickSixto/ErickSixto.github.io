@@ -11,7 +11,7 @@ export function StanceList({ stances }: { stances: Stance[] }) {
       {stances.map((s) => (
         <div
           key={s.id}
-          className="grid grid-cols-[80px_1fr] gap-8 py-7 items-baseline"
+          className="grid grid-cols-[52px_1fr] sm:grid-cols-[80px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-baseline"
         >
           <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#CB9135] font-medium">
             {s.number}
