@@ -38,7 +38,7 @@ export const work: WorkEntry[] = [
     call:
       "I refused the rebuild. The data model was sound — only the UI was choking. Decomposed the page into discrete LWC components and migrated them section by section over 8 weeks, keeping the Visualforce shell live until each piece was proven in production.",
     outcome:
-      "First contentful paint dropped from 6.2 seconds to under 1. The codebase shipped with a component library the in-house dev can extend independently. Total cost: a quarter of the original quote.",
+      "First contentful paint dropped from 6.2 seconds to under 1 second. The codebase shipped with a component library the in-house dev can extend independently. Total cost: a quarter of the original quote.",
     outcomeMetric: "6.2s → 0.9s",
   },
   {

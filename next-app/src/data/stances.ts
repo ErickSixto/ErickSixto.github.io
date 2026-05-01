@@ -23,7 +23,7 @@ export const stances: Stance[] = [
     number: "P.02",
     headline: "Your admin runs it, not me.",
     rationale:
-      "Every engagement ends with a documented hand-off and a backup admin who can extend the work. If your team needs my phone number to change a field, I haven't finished.",
+      "Every engagement ends with a documented handoff and a backup admin who can extend the work. If your team needs my phone number to change a field, I'm not done.",
   },
   {
     id: "flow-vs-apex",
@@ -36,7 +36,7 @@ export const stances: Stance[] = [
     id: "adoption-over-architecture",
     number: "P.04",
     headline: "Adoption beats architecture, always.",
-    rationale: "If your sales team won't open the screen, the cleanest data model is theatre.",
+    rationale: "If your sales team won't open the screen, the cleanest data model is theater.",
   },
   {
     id: "tell-you-not-to-build",

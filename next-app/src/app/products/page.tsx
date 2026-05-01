@@ -71,7 +71,7 @@ export default function ProductsIndexPage() {
         label="Custom build?"
         questionLead="Need something"
         questionBold="that doesn't exist yet?"
-        body="If a packaged tool would solve your problem but no-one's built it, we can scope a custom one in our discovery call."
+        body="If a packaged tool would solve your problem but no one's built it, we can scope a custom one in our discovery call."
         primary={{
           label: "Book a 30-minute call",
           href: meetingLinks.discovery.url,

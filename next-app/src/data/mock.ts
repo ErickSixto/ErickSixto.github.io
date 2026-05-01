@@ -61,7 +61,7 @@ export const socialProof = [
   },
   {
     platform: "Salesforce Trailblazer",
-    description: "Two-time certified specialist recognized in the Salesforce ecosystem.",
+    description: "Twice-certified Salesforce specialist recognized in the ecosystem.",
     metrics: [{ value: "2x", label: "Certified Specialist" }],
     badges: ["Ranger", "Certified"],
     url: "https://www.salesforce.com/trailblazer/sixtohdez",
@@ -89,7 +89,7 @@ export const services = [
     id: "implementation",
     title: "Salesforce Implementation & Customization",
     shortDesc: "Salesforce setup that fits your team — not the other way around.",
-    description: "I set up Salesforce orgs that map to how your team already works. Nothing gets configured unless it solves a problem — and earns its maintenance cost. If a feature doesn't earn its place, it doesn't ship.",
+    description: "I set up Salesforce orgs that map to how your team already works. Nothing gets configured unless it solves a problem — and earns its keep. If a feature doesn't earn its place, it doesn't ship.",
     outcome: "A system your team picks up without training marathons.",
     deliverables: ["Custom objects & fields", "Page layouts & record types", "Validation rules & formulas", "User training & handoff documentation"],
     icon: "Settings",

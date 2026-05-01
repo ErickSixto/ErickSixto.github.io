@@ -62,7 +62,7 @@ export default function AboutPage() {
         headlineBold="Salesforce by choice."
         lead={[
           "I trained as a mechatronics engineer — the discipline where a motor failing on the factory floor teaches you more than any textbook. Operators don't care how elegant your circuit is; they need it to work.",
-          "I moved into Salesforce with that same standard. 7 years in. Multiple clouds, dozens of orgs, mostly clean-up work — the brittle trigger nobody's touched in 2 years, the portal users can't figure out, the integration that silently drops records on Tuesdays.",
+          "I moved into Salesforce with that same standard. 7 years in. Multiple clouds, dozens of orgs, mostly cleanup work — the brittle trigger nobody's touched in 2 years, the portal users can't figure out, the integration that silently drops records on Tuesdays.",
         ]}
       />
 

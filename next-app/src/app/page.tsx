@@ -44,7 +44,7 @@ export default function HomePage() {
             <strong className="font-bold">compromise on.</strong>
           </h2>
           <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
-            Regardless of the org, the engagement, or how badly the timeline is squeezed. These are the standards that have made my best client relationships last, and the ones I&apos;m willing to walk away from work over.
+            Regardless of the org, the engagement, or how badly the timeline is squeezed. These are the standards that have made my best client relationships last, and the ones I&apos;d walk away from a job to protect.
           </p>
         </div>
         <StanceList stances={stances} />

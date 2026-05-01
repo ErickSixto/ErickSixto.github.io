@@ -37,7 +37,7 @@ export default function WorkPage() {
         label="Want to be entry №06?"
         questionLead="Bring me the engagement"
         questionBold="other consultants ducked."
-        body="The work I keep is the work that wouldn't fit a packaged Salesforce template. If your org is one of those, let's talk."
+        body="The work I keep is the work that wouldn't fit a packaged Salesforce template. If your project is one of those, let's talk."
         primary={{
           label: "Book a 30-minute call",
           href: meetingLinks.discovery.url,
