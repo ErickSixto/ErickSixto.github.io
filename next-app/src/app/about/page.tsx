@@ -58,8 +58,8 @@ export default function AboutPage() {
     <main>
       <Hero
         eyebrowLeft="About"
-        headlineLead="An engineer who"
-        headlineBold="ended up in Salesforce."
+        headlineLead="Engineer by training."
+        headlineBold="Salesforce by choice."
         lead={[
           "I trained as a mechatronics engineer — the discipline where a motor failing on the factory floor teaches you more than any textbook. Operators don't care how elegant your circuit is; they need it to work.",
           "I moved into Salesforce with that same standard. 7 years in. Multiple clouds, dozens of orgs, mostly clean-up work — the brittle trigger nobody's touched in 2 years, the portal users can't figure out, the integration that silently drops records on Tuesdays.",
@@ -75,9 +75,10 @@ export default function AboutPage() {
             alt="Portrait of Erick Sixto, Salesforce Specialist"
             loading="lazy"
             className="w-full max-w-[480px] mx-auto block"
+            style={{ filter: "grayscale(0.75) saturate(0.85)" }}
           />
           <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] text-center mt-4">
-            Mérida · 2025
+            Mérida · 2026
           </figcaption>
         </figure>
       </section>

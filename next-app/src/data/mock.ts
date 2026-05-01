@@ -12,7 +12,7 @@ export const siteConfig = {
   github: "https://github.com/ericksixto",
   monogramLight: "/images/monogram-light.png",
   monogramDark: "/images/monogram-dark.png",
-  portrait: "/images/portrait.jpg",
+  portrait: "/images/portrait-2026.png",
   headshot: "/images/headshot.jpg",
   workspace: "https://images.pexels.com/photos/34803974/pexels-photo-34803974.jpeg",
 };
