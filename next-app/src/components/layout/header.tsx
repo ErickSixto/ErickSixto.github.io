@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { meetingLinks, siteConfig } from "@/data/mock";
+import { meetingLinks } from "@/data/mock";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -18,22 +18,13 @@ export default function Header() {
   return (
     <header className="border-b border-[#2F2E2E11] bg-[#F1F1EF]">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-6">
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group flex-1 min-w-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={siteConfig.monogramLight}
-            alt=""
-            aria-hidden="true"
-            className="h-7 sm:h-8 w-auto shrink-0"
-          />
-          <div className="flex flex-col leading-none min-w-0">
-            <span className="text-[0.9rem] sm:text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">
-              Erick Sixto
-            </span>
-            <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#4B5563] mt-1">
-              Salesforce Specialist
-            </span>
-          </div>
+        <Link href="/" className="flex flex-col leading-none flex-1 min-w-0 group">
+          <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">
+            Erick Sixto
+          </span>
+          <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#4B5563] mt-1">
+            Salesforce Specialist
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
