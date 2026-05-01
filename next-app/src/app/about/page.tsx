@@ -76,7 +76,7 @@ export default function AboutPage() {
             loading="lazy"
             className="w-full max-w-[480px] mx-auto block"
           />
-          <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] text-center mt-4">
+          <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] text-center mt-4">
             Mérida · 2025
           </figcaption>
         </figure>
@@ -149,7 +149,7 @@ export default function AboutPage() {
               key={i}
               className="grid grid-cols-1 sm:grid-cols-[60px_1fr] gap-3 sm:gap-8 py-6 items-baseline"
             >
-              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#6B7280]">
+              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#4B5563]">
                 №{String(i + 1).padStart(2, "0")}
               </span>
               <div>
@@ -194,7 +194,7 @@ export default function AboutPage() {
               {rightFit.map((item, i) => (
                 <li
                   key={i}
-                  className="text-[0.92rem] leading-[1.6] text-[#2F2E2E] pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-[#CB9135] before:font-medium"
+                  className="text-[0.92rem] leading-[1.6] text-[#2F2E2E] pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-[#7E5618] before:font-medium"
                 >
                   {item}
                 </li>
@@ -202,14 +202,14 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-5">
+            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] mb-5">
               Not a fit
             </div>
             <ul className="space-y-4">
               {notAFit.map((item, i) => (
                 <li
                   key={i}
-                  className="text-[0.92rem] leading-[1.6] text-[#4B5563] pl-5 relative before:content-['−'] before:absolute before:left-0 before:text-[#6B7280]"
+                  className="text-[0.92rem] leading-[1.6] text-[#4B5563] pl-5 relative before:content-['−'] before:absolute before:left-0 before:text-[#4B5563]"
                 >
                   {item}
                 </li>
@@ -233,7 +233,7 @@ export default function AboutPage() {
               key={i}
               className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-3 sm:gap-8 py-5 items-baseline"
             >
-              <div className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#6B7280]">
+              <div className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
                 {role.period}
               </div>
               <div>

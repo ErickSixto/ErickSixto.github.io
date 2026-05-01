@@ -66,7 +66,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <span className="text-[2rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.02em]">
               ${product.price}
             </span>
-            <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#6B7280]">
+            <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
               {product.currency}
             </span>
           </div>
@@ -80,7 +80,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {product.requiredEditions && (
         <section className="max-w-[880px] mx-auto px-6 py-5 border-t border-[#2F2E2E11]">
           <p className="text-[0.85rem] leading-[1.6] text-[#4B5563]">
-            <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#6B7280] mr-3">
+            <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mr-3">
               Requires
             </span>
             {product.requiredEditions}.
@@ -129,7 +129,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     className="w-full h-auto object-cover"
                   />
                 </div>
-                <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#6B7280] mt-3">
+                <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mt-3">
                   {shot.caption}
                 </figcaption>
               </figure>
@@ -160,7 +160,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   <p className="text-[0.95rem] leading-[1.8] text-[#4B5563] mb-5">{children}</p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="space-y-2 mb-6 pl-4 list-disc marker:text-[#6B7280]">{children}</ul>
+                  <ul className="space-y-2 mb-6 pl-4 list-disc marker:text-[#4B5563]">{children}</ul>
                 ),
                 li: ({ children }) => (
                   <li className="text-[0.9rem] leading-[1.6] text-[#4B5563]">{children}</li>

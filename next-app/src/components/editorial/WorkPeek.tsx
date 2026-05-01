@@ -23,7 +23,7 @@ export function WorkPeek({
             className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 sm:gap-8 py-7 items-baseline group"
           >
             <div>
-              <div className="font-mono text-[0.62rem] tracking-[0.16em] uppercase text-[#6B7280] mb-2">
+              <div className="font-mono text-[0.62rem] tracking-[0.16em] uppercase text-[#4B5563] mb-2">
                 <span className="text-[#2F2E2E] font-medium">{entry.client}</span>
                 <span className="mx-2 text-[#2F2E2E33]">·</span>
                 {entry.industry}

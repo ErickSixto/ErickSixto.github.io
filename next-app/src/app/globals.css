@@ -63,7 +63,7 @@
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #CB9135, 0 0 0 4px var(--color-background);
+    box-shadow: 0 0 0 2px #7E5618, 0 0 0 4px var(--color-background);
   }
 }
 

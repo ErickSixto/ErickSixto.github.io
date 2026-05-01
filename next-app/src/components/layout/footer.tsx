@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[#2F2E2E11] mt-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.74rem] text-[#6B7280]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.74rem] text-[#4B5563]">
         <div className="flex items-center gap-3 sm:flex-1">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

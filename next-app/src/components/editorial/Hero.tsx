@@ -63,7 +63,7 @@ export function Hero({
       ) : null}
 
       {credibility && credibility.length > 0 ? (
-        <div className="font-mono text-[0.66rem] tracking-[0.16em] uppercase text-[#6B7280] flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5">
+        <div className="font-mono text-[0.66rem] tracking-[0.16em] uppercase text-[#4B5563] flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5">
           {credibility.map((item, i) => (
             <span key={item} className="whitespace-nowrap inline-flex items-center gap-3">
               <span>{item}</span>
