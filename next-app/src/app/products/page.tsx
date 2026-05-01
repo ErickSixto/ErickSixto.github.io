@@ -38,7 +38,7 @@ export default function ProductsIndexPage() {
                 className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-6 sm:gap-12 py-8 items-baseline group"
               >
                 <div>
-                  <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-2">
+                  <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] mb-2">
                     {product.status === "live" ? "Available now" : "Coming soon"}
                   </div>
                   <h2 className="text-[1.4rem] font-semibold text-[#2F2E2E] mb-2 tracking-[-0.01em]">
@@ -53,7 +53,7 @@ export default function ProductsIndexPage() {
                     <span className="text-[1.4rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.005em]">
                       ${product.price}
                     </span>
-                    <span className="text-[0.72rem] text-[#6B7280] ml-1.5 font-mono uppercase tracking-[0.16em]">
+                    <span className="text-[0.72rem] text-[#4B5563] ml-1.5 font-mono uppercase tracking-[0.16em]">
                       {product.currency}
                     </span>
                   </div>

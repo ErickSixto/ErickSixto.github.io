@@ -8,8 +8,8 @@ import type { WorkEntry as WorkEntryType } from "@/data/work";
 export function WorkEntry({ entry }: { entry: WorkEntryType }) {
   return (
     <article id={entry.id} className="py-14 sm:py-20 border-t border-[#2F2E2E22] first:border-t-0 first:pt-8">
-      <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#6B7280] mb-3 flex flex-wrap gap-4">
-        <span className="text-[#CB9135] font-medium">{entry.number}</span>
+      <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] mb-3 flex flex-wrap gap-4">
+        <span className="text-[#7E5618] font-medium">{entry.number}</span>
         <span>{entry.industry}</span>
         <span>{entry.scale}</span>
         <span>{entry.year}</span>
@@ -50,7 +50,7 @@ function Section({
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-2 sm:gap-8 py-4 sm:py-5 border-t border-[#2F2E2E11] sm:items-baseline">
-      <span className="font-mono text-[0.6rem] tracking-[0.18em] uppercase text-[#6B7280] sm:pt-1">
+      <span className="font-mono text-[0.6rem] tracking-[0.18em] uppercase text-[#4B5563] sm:pt-1">
         {label}
       </span>
       <p

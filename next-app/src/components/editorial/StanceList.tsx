@@ -13,7 +13,7 @@ export function StanceList({ stances }: { stances: Stance[] }) {
           key={s.id}
           className="grid grid-cols-[52px_1fr] sm:grid-cols-[80px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-baseline"
         >
-          <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#CB9135] font-medium">
+          <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#7E5618] font-medium">
             {s.number}
           </span>
           <div>

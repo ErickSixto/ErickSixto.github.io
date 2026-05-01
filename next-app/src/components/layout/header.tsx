@@ -30,7 +30,7 @@ export default function Header() {
             <span className="text-[0.9rem] sm:text-[0.95rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">
               Erick Sixto
             </span>
-            <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#6B7280] mt-1">
+            <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#4B5563] mt-1">
               Salesforce Specialist
             </span>
           </div>

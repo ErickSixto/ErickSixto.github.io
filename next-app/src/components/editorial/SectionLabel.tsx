@@ -12,7 +12,7 @@ export function SectionLabel({
 }) {
   return (
     <span
-      className={`font-mono text-[0.62rem] tracking-[0.28em] uppercase text-[#CB9135] font-medium ${className}`}
+      className={`font-mono text-[0.62rem] tracking-[0.28em] uppercase text-[#7E5618] font-medium ${className}`}
     >
       — {children}
     </span>
