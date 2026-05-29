@@ -2,18 +2,16 @@
 
 // Editorial motion primitives. Entrance-only, plays once, no parallax or loops.
 // Values are deliberately quiet (small rise, short duration) to match the
-// restrained, document-like feel of the site. Every primitive honors
-// prefers-reduced-motion: when the user opts out, content renders at rest with
-// no transform and no fade (Framer animates via JS, so the global CSS
-// reduced-motion rule does not catch it — we guard here instead).
+// restrained, document-like feel of the site.
+//
+// Reduced motion is honored globally via <MotionProvider> (MotionConfig
+// reducedMotion="user"), NOT by branching the render here. Branching on the
+// client-only prefers-reduced-motion value caused a server/client hydration
+// mismatch, so every primitive now renders an identical tree on both sides and
+// lets framer apply the user's motion preference after hydration.
 
 import React, { useRef } from "react";
-import {
-  motion,
-  useInView,
-  useReducedMotion,
-  type Variants,
-} from "framer-motion";
+import { motion, useInView, type Variants } from "framer-motion";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -33,9 +31,6 @@ export function Reveal({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const reduce = useReducedMotion();
-
-  if (reduce) return <div className={className}>{children}</div>;
 
   return (
     <motion.div
@@ -64,9 +59,6 @@ export function Stagger({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const reduce = useReducedMotion();
-
-  if (reduce) return <div className={className}>{children}</div>;
 
   return (
     <motion.div
@@ -95,10 +87,6 @@ export function LoadStagger({
   stagger?: number;
   delayChildren?: number;
 }) {
-  const reduce = useReducedMotion();
-
-  if (reduce) return <div className={className}>{children}</div>;
-
   return (
     <motion.div
       initial="hidden"
@@ -127,10 +115,6 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
-
-  if (reduce) return <div className={className}>{children}</div>;
-
   return (
     <motion.div variants={itemVariants} className={className}>
       {children}
