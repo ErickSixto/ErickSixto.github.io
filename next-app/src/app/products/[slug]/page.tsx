@@ -6,6 +6,7 @@ import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { EditorialList } from "@/components/editorial/EditorialList";
 import { EditorialButton } from "@/components/editorial/EditorialButton";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
+import { Reveal, Stagger, StaggerItem } from "@/components/animations";
 import { getAllProducts, getProductBySlug } from "@/content/products";
 
 export function generateStaticParams() {
@@ -59,47 +60,51 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       />
 
       {/* Price + CTA */}
-      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-[#2F2E2E11] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <div>
-          <SectionLabel className="mb-2 inline-block">{statusLabel}</SectionLabel>
-          <div className="flex items-baseline gap-2 mt-1">
-            <span className="text-[2rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.02em]">
-              ${product.price}
-            </span>
-            <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
-              {product.currency}
-            </span>
+      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-[#2F2E2E11]">
+        <Reveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div>
+            <SectionLabel className="mb-2 inline-block">{statusLabel}</SectionLabel>
+            <div className="flex items-baseline gap-2 mt-1">
+              <span className="text-[2rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.02em]">
+                ${product.price}
+              </span>
+              <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
+                {product.currency}
+              </span>
+            </div>
           </div>
-        </div>
-        <EditorialButton href={`/products/${product.slug}/buy`}>
-          Get Access →
-        </EditorialButton>
+          <EditorialButton href={`/products/${product.slug}/buy`}>
+            Get Access →
+          </EditorialButton>
+        </Reveal>
       </section>
 
       {/* Compatibility */}
       {product.requiredEditions && (
         <section className="max-w-[880px] mx-auto px-6 py-5 border-t border-[#2F2E2E11]">
-          <p className="text-[0.85rem] leading-[1.6] text-[#4B5563]">
-            <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mr-3">
-              Requires
-            </span>
-            {product.requiredEditions}.
-            {product.notSupportedEditions && (
-              <> Not supported on {product.notSupportedEditions} editions.</>
-            )}
-          </p>
+          <Reveal>
+            <p className="text-[0.85rem] leading-[1.6] text-[#4B5563]">
+              <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mr-3">
+                Requires
+              </span>
+              {product.requiredEditions}.
+              {product.notSupportedEditions && (
+                <> Not supported on {product.notSupportedEditions} editions.</>
+              )}
+            </p>
+          </Reveal>
         </section>
       )}
 
       {/* Features */}
       {product.features.length > 0 && (
         <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
-          <div className="mb-10">
+          <Reveal className="mb-10">
             <SectionLabel className="mb-3 inline-block">Features</SectionLabel>
             <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
               What&apos;s <strong className="font-bold">inside.</strong>
             </h2>
-          </div>
+          </Reveal>
           <EditorialList>
             {product.features.map((f, i) => (
               <div
@@ -117,30 +122,35 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {/* Screenshots — Access Analyzer only */}
       {product.slug === "access-analyzer" && (
         <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
-          <SectionLabel className="mb-8 inline-block">In action</SectionLabel>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <Reveal>
+            <SectionLabel className="mb-8 inline-block">In action</SectionLabel>
+          </Reveal>
+          <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {ACCESS_ANALYZER_SHOTS.map((shot) => (
-              <figure key={shot.src}>
-                <div className="border border-[#2F2E2E11] bg-[#F7F7F5] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={shot.src}
-                    alt={shot.caption}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
-                <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mt-3">
-                  {shot.caption}
-                </figcaption>
-              </figure>
+              <StaggerItem key={shot.src}>
+                <figure>
+                  <div className="border border-[#2F2E2E11] bg-[#F7F7F5] overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={shot.src}
+                      alt={shot.caption}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mt-3">
+                    {shot.caption}
+                  </figcaption>
+                </figure>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </section>
       )}
 
       {/* Long-form body */}
       {product.body.trim() && (
         <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+          <Reveal>
           <SectionLabel className="mb-6 inline-block">Overview</SectionLabel>
           <article>
             <ReactMarkdown
@@ -173,13 +183,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               {product.body}
             </ReactMarkdown>
           </article>
+          </Reveal>
         </section>
       )}
 
       {/* FAQ */}
       {product.faq.length > 0 && (
         <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
-          <SectionLabel className="mb-8 inline-block">Questions</SectionLabel>
+          <Reveal>
+            <SectionLabel className="mb-8 inline-block">Questions</SectionLabel>
+          </Reveal>
           <EditorialList>
             {product.faq.map((item, i) => (
               <div key={i} className="py-6">

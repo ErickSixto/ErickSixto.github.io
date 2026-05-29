@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Check, Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function CopyButton({ value, label = "Copy" }: { value: string; label?: string }) {
   const [copied, setCopied] = useState(false);
@@ -18,14 +17,13 @@ export function CopyButton({ value, label = "Copy" }: { value: string; label?: s
   };
 
   return (
-    <Button
+    <button
       type="button"
-      variant="outline"
       onClick={handleCopy}
-      className="h-11 gap-2 border-[#E5E7EB] text-[#2F2E2E] hover:border-[#CB9135] hover:bg-[#CB9135]/5"
+      className="inline-flex items-center justify-center gap-2 border border-[#2F2E2E33] text-[#2F2E2E] px-5 h-11 text-[0.78rem] tracking-[0.04em] rounded-[2px] transition-colors duration-200 hover:bg-[#2F2E2E] hover:text-[#F1F1EF]"
     >
-      {copied ? <Check className="h-4 w-4 text-[#CB9135]" /> : <Copy className="h-4 w-4" />}
+      {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
       <span className="tabular-nums">{copied ? "Copied" : label}</span>
-    </Button>
+    </button>
   );
 }

@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Hero } from "@/components/editorial/Hero";
+import { SectionLabel } from "@/components/editorial/SectionLabel";
+import { EditorialList } from "@/components/editorial/EditorialList";
+import { EditorialButton } from "@/components/editorial/EditorialButton";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CopyButton } from "@/components/copy-button";
-import { CheckCircle2, ExternalLink, PartyPopper, BookOpen } from "lucide-react";
+import { Reveal } from "@/components/animations";
 import { getAllProducts, getProductBySlug } from "@/content/products";
 
 export function generateStaticParams() {
@@ -29,143 +30,144 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
   const adminPermSet = product.adminPermissionSetName ?? `${product.name} Admin`;
   const steps = [
     {
-      n: "01",
       title: "Open the install URL",
-      description: "Copy the URL for your target org (Production or Sandbox), paste it into a browser where you're already logged in to Salesforce.",
+      description:
+        "Copy the URL for your target org (Production or Sandbox) and paste it into a browser where you're already logged in to Salesforce.",
     },
     {
-      n: "02",
       title: "Sign in as a System Administrator",
-      description: "Salesforce asks you to log in to the target org. Use an account with permission to install unlocked packages.",
+      description:
+        "Salesforce asks you to log in to the target org. Use an account with permission to install unlocked packages.",
     },
     {
-      n: "03",
       title: "Click Install",
-      description: "Choose Install for All Users (recommended) or Install for Specific Profiles if you want tighter control. Click Install. Takes about 2 minutes.",
+      description:
+        "Choose Install for All Users (recommended) or Install for Specific Profiles for tighter control, then click Install. Takes about 2 minutes.",
     },
     {
-      n: "04",
-      title: `Assign the ${adminPermSet} perm set`,
-      description: `Go to Setup → Permission Sets → ${adminPermSet} → Manage Assignments → Add the admins who should use the tool.`,
+      title: `Assign the ${adminPermSet} permission set`,
+      description: `Go to Setup, Permission Sets, ${adminPermSet}, Manage Assignments, then add the admins who should use the tool.`,
     },
   ];
 
+  const installBlocks = [
+    {
+      url: product.installUrlProd,
+      badge: "Production",
+      solid: true,
+      heading: "Install in Production",
+      copy: "Use this URL for Production orgs. Salesforce will ask you to sign in before showing the installer.",
+    },
+    {
+      url: product.installUrlSandbox,
+      badge: "Sandbox / Dev / Scratch",
+      solid: false,
+      heading: "Install in Sandbox",
+      copy: "Use this URL for Sandbox, Developer Edition, or Scratch orgs. Test it here before rolling to Production.",
+    },
+  ].filter((b) => b.url);
+
   return (
-    <main className="bg-[#F1F1EF]">
-      <section className="pt-12 pb-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            items={[
-              { href: "/products", label: "Products" },
-              { href: `/products/${product.slug}`, label: product.name },
-              { label: "Install" },
-            ]}
-          />
-        </div>
+    <main>
+      <section className="max-w-[880px] mx-auto px-6 pt-10">
+        <Breadcrumbs
+          items={[
+            { href: "/products", label: "Products" },
+            { href: `/products/${product.slug}`, label: product.name },
+            { label: "Install" },
+          ]}
+        />
       </section>
 
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6">
-            <PartyPopper className="h-4 w-4 text-[#CB9135]" />
-            <span className="text-xs uppercase tracking-[0.15em] text-[#2F2E2E] font-medium">Thanks for your purchase</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-5 tracking-tight">
-            Install {product.name}
-          </h1>
-          <p className="text-lg text-[#4B5563] leading-relaxed max-w-2xl mx-auto">
-            Your install links are ready. Pick Production or Sandbox, paste into your Salesforce org, and you&apos;re
-            running in under two minutes.
-          </p>
-        </div>
-      </section>
+      <Hero
+        eyebrowLeft="Install"
+        eyebrowRight="Thanks for your purchase"
+        headlineLead="Install"
+        headlineBold={`${product.name}.`}
+        lead="Your install links are ready. Pick Production or Sandbox, paste into your Salesforce org, and you're running in under two minutes."
+      />
 
-      <section className="pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          {product.installUrlProd && (
-            <Card className="p-8 rounded-none border-[#E5E7EB] bg-white">
-              <div className="flex items-center gap-3 mb-3">
-                <Badge className="bg-[#2F2E2E] text-white hover:bg-[#2F2E2E]">Production</Badge>
-                <h2 className="text-xl font-semibold text-[#2F2E2E] tracking-tight">Install in Production</h2>
-              </div>
-              <p className="text-sm text-[#4B5563] leading-relaxed mb-5">
-                Use this URL for Production orgs. Salesforce will ask you to sign in before showing the installer.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a href={product.installUrlProd} target="_blank" rel="noopener noreferrer" className="flex-1">
-                  <Button className="w-full bg-[#2F2E2E] hover:bg-[#1a1919] text-white h-11 text-sm">
-                    Open installer <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-                <CopyButton value={product.installUrlProd} label="Copy URL" />
-              </div>
-              <p className="mt-4 text-xs text-[#4B5563] break-all font-mono tabular-nums">{product.installUrlProd}</p>
-            </Card>
-          )}
-
-          {product.installUrlSandbox && (
-            <Card className="p-8 rounded-none border-[#E5E7EB] bg-white">
-              <div className="flex items-center gap-3 mb-3">
-                <Badge variant="outline" className="border-[#CB9135]/30 text-[#CB9135]">
-                  Sandbox / Dev / Scratch
-                </Badge>
-                <h2 className="text-xl font-semibold text-[#2F2E2E] tracking-tight">Install in Sandbox</h2>
-              </div>
-              <p className="text-sm text-[#4B5563] leading-relaxed mb-5">
-                Use this URL for Sandbox, Developer Edition, or Scratch orgs. Test it here before rolling to Production.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a href={product.installUrlSandbox} target="_blank" rel="noopener noreferrer" className="flex-1">
-                  <Button
-                    variant="outline"
-                    className="w-full border-[#2F2E2E]/20 text-[#2F2E2E] hover:bg-[#CB9135] hover:text-white hover:border-[#CB9135] h-11 text-sm"
-                  >
-                    Open installer <ExternalLink className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-                <CopyButton value={product.installUrlSandbox} label="Copy URL" />
-              </div>
-              <p className="mt-4 text-xs text-[#4B5563] break-all font-mono tabular-nums">
-                {product.installUrlSandbox}
-              </p>
-            </Card>
-          )}
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">— Setup</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2F2E2E] tracking-tight">How to install</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {steps.map((step) => (
-              <div key={step.n}>
-                <span className="text-4xl md:text-5xl font-bold text-[#CB9135]/30 leading-none tabular-nums tracking-tight">
-                  {step.n}
+      {/* Install URLs */}
+      <section className="max-w-[720px] mx-auto px-6 py-12 border-t border-[#2F2E2E11] space-y-6">
+        {installBlocks.map((block) => (
+          <Reveal key={block.badge}>
+            <div className="border border-[#2F2E2E1F] bg-white rounded-[2px] p-7">
+              <div className="flex items-center gap-3 mb-3 flex-wrap">
+                <span
+                  className={`font-mono text-[0.55rem] tracking-[0.16em] uppercase px-2 py-1 rounded-[2px] ${
+                    block.solid
+                      ? "bg-[#2F2E2E] text-[#F1F1EF]"
+                      : "border border-[#7E5618]/40 text-[#7E5618]"
+                  }`}
+                >
+                  {block.badge}
                 </span>
-                <h3 className="font-semibold text-[#2F2E2E] mt-3 mb-2 text-lg tracking-tight">{step.title}</h3>
-                <p className="text-sm text-[#4B5563] leading-relaxed">{step.description}</p>
+                <h2 className="text-[1.1rem] font-semibold text-[#2F2E2E] tracking-[-0.005em]">
+                  {block.heading}
+                </h2>
               </div>
-            ))}
-          </div>
+              <p className="text-[0.9rem] leading-[1.6] text-[#4B5563] mb-5">{block.copy}</p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <EditorialButton href={block.url!} external>
+                  Open installer →
+                </EditorialButton>
+                <CopyButton value={block.url!} label="Copy URL" />
+              </div>
+              <p className="mt-4 font-mono text-[0.72rem] text-[#4B5563] break-all">{block.url}</p>
+            </div>
+          </Reveal>
+        ))}
+      </section>
 
-          <div className="mt-16 p-8 rounded-none bg-[#F1F1EF] flex items-start gap-4">
-            <div className="p-2.5 bg-white rounded-lg flex-shrink-0">
-              <BookOpen className="h-5 w-5 text-[#CB9135]" />
+      {/* How to install */}
+      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <Reveal className="mb-10">
+          <SectionLabel className="mb-3 inline-block">Setup</SectionLabel>
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+            How to <strong className="font-bold">install.</strong>
+          </h2>
+        </Reveal>
+        <EditorialList>
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              className="grid grid-cols-[52px_1fr] sm:grid-cols-[64px_1fr] gap-5 sm:gap-8 py-6 items-baseline"
+            >
+              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#7E5618] font-medium">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <div className="text-[1rem] font-semibold text-[#2F2E2E] tracking-[-0.005em] mb-2">
+                  {step.title}
+                </div>
+                <p className="text-[0.9rem] leading-[1.65] text-[#4B5563] max-w-[58ch]">
+                  {step.description}
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-semibold text-[#2F2E2E] mb-1.5">Need help?</h4>
-              <p className="text-sm text-[#4B5563] leading-relaxed mb-3">
-                Stuck on the install? Reply to your Stripe receipt or reach out via the contact page.
-              </p>
-              <a href="mailto:sixto@ericksixto.com" className="inline-flex items-center gap-2 text-sm text-[#2F2E2E] hover:text-[#CB9135] font-medium transition-colors">
-                Contact support <CheckCircle2 className="h-3.5 w-3.5" />
-              </a>
+          ))}
+        </EditorialList>
+      </section>
+
+      {/* Need help */}
+      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <Reveal>
+          <div className="border border-[#2F2E2E1F] bg-[#EAE7E0] rounded-[2px] p-7">
+            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#7E5618] font-medium mb-3">
+              Need help?
             </div>
+            <p className="text-[0.92rem] leading-[1.7] text-[#4B5563] mb-4 max-w-[58ch]">
+              Stuck on the install? Reply to your Stripe receipt, or reach out directly and I&apos;ll
+              walk you through it.
+            </p>
+            <a
+              href="mailto:sixto@ericksixto.com"
+              className="font-mono text-[0.72rem] text-[#2F2E2E] border-b border-[#2F2E2E33] pb-px"
+            >
+              sixto@ericksixto.com →
+            </a>
           </div>
-        </div>
+        </Reveal>
       </section>
     </main>
   );

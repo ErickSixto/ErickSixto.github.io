@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Hero } from "@/components/editorial/Hero";
+import { Reveal } from "@/components/animations";
 import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { EditorialList } from "@/components/editorial/EditorialList";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
@@ -26,7 +27,9 @@ export default function ProductsIndexPage() {
       />
 
       <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-[#2F2E2E11]">
-        <SectionLabel className="mb-6 inline-block">Available</SectionLabel>
+        <Reveal>
+          <SectionLabel className="mb-6 inline-block">Available</SectionLabel>
+        </Reveal>
         {products.length === 0 ? (
           <p className="text-[#4B5563]">No products available right now.</p>
         ) : (
