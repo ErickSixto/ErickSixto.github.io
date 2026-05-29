@@ -1,156 +1,48 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView, type Variants } from "framer-motion";
+// Editorial motion primitives. Entrance-only, plays once, no parallax or loops.
+// Values are deliberately quiet (small rise, short duration) to match the
+// restrained, document-like feel of the site. Every primitive honors
+// prefers-reduced-motion: when the user opts out, content renders at rest with
+// no transform and no fade (Framer animates via JS, so the global CSS
+// reduced-motion rule does not catch it — we guard here instead).
 
-// Premium easing curve used across the site
-const EASE_PREMIUM: [number, number, number, number] = [0.22, 1, 0.36, 1];
+import React, { useRef } from "react";
+import {
+  motion,
+  useInView,
+  useReducedMotion,
+  type Variants,
+} from "framer-motion";
 
-/* ─── Animated Hero Text ─── */
-export function AnimatedText({
-  text,
-  className = "",
-  delay = 0,
-}: {
-  text: string;
-  className?: string;
-  delay?: number;
-}) {
-  const words = text.split(" ");
-  const container = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.06, delayChildren: delay } },
-  };
-  const child: Variants = {
-    hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: EASE_PREMIUM },
-    },
-  };
-  return (
-    <motion.h1 className={className} variants={container} initial="hidden" animate="visible">
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          variants={child}
-          className="inline-block"
-          style={{ marginRight: "0.3em" }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.h1>
-  );
-}
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-/* ─── Infinite Marquee ─── */
-export function Marquee({
-  items,
-  speed = 35,
-  className = "",
-}: {
-  items: string[];
-  speed?: number;
-  className?: string;
-}) {
-  return (
-    <div className={`overflow-hidden ${className}`}>
-      <div className="flex whitespace-nowrap" style={{ animation: `marquee ${speed}s linear infinite` }}>
-        {[...items, ...items].map((item, i) => (
-          <span key={i} className="flex items-center flex-shrink-0">
-            <span className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#E5E7EB] select-none px-3 sm:px-4 tracking-tight">
-              {item}
-            </span>
-            <span className="text-[#CB9135] text-xl px-4 select-none">/</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ─── Counter Animation ─── */
-export function CountUp({
-  target,
-  suffix = "",
-  prefix = "",
-  duration = 2,
-}: {
-  target: string | number;
-  suffix?: string;
-  prefix?: string;
-  duration?: number;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const numericTarget = parseInt(String(target).replace(/[^0-9]/g, ""), 10);
-  const isNumeric = !isNaN(numericTarget) && numericTarget > 0;
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node || !isNumeric) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          const start = performance.now();
-          const tick = (now: number) => {
-            const elapsed = (now - start) / 1000;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * numericTarget));
-            if (progress < 1) requestAnimationFrame(tick);
-          };
-          requestAnimationFrame(tick);
-        }
-      },
-      { threshold: 0.5 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [numericTarget, duration, hasAnimated, isNumeric]);
-
-  if (!isNumeric) {
-    return (
-      <span className="tabular-nums">
-        {prefix}
-        {target}
-        {suffix}
-      </span>
-    );
-  }
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {prefix}
-      {hasAnimated ? count : 0}
-      {suffix}
-    </span>
-  );
-}
-
-/* ─── Motion Section ─── */
-export function MotionSection({
+/* ─── Reveal ───
+   Single block that rises a few px and fades in once, when it scrolls into
+   view. Used for section headings, the portrait, work entries, closing CTAs. */
+export function Reveal({
   children,
   className = "",
   delay = 0,
+  y = 16,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  y?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const reduce = useReducedMotion();
+
+  if (reduce) return <div className={className}>{children}</div>;
+
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.8, delay, ease: EASE_PREMIUM }}
+      initial={{ opacity: 0, y }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay, ease: EASE }}
       className={className}
     >
       {children}
@@ -158,23 +50,29 @@ export function MotionSection({
   );
 }
 
-/* ─── Stagger container ─── */
-export function StaggerContainer({
+/* ─── Stagger ───
+   Scroll-triggered container that cascades its <StaggerItem> children one
+   after another. Used by the hairline lists (stances, work peek, attestations). */
+export function Stagger({
   children,
   className = "",
-  stagger = 0.08,
+  stagger = 0.07,
 }: {
   children: React.ReactNode;
   className?: string;
   stagger?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const reduce = useReducedMotion();
+
+  if (reduce) return <div className={className}>{children}</div>;
+
   return (
     <motion.div
       ref={ref}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={inView ? "visible" : "hidden"}
       variants={{ visible: { transition: { staggerChildren: stagger } } }}
       className={className}
     >
@@ -183,6 +81,45 @@ export function StaggerContainer({
   );
 }
 
+/* ─── LoadStagger ───
+   Like Stagger, but plays on mount instead of on scroll. Used once, for the
+   hero, so the page opens with a composed entrance above the fold. */
+export function LoadStagger({
+  children,
+  className = "",
+  stagger = 0.06,
+  delayChildren = 0.04,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  stagger?: number;
+  delayChildren?: number;
+}) {
+  const reduce = useReducedMotion();
+
+  if (reduce) return <div className={className}>{children}</div>;
+
+  return (
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: { transition: { staggerChildren: stagger, delayChildren } },
+      }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+/* ─── StaggerItem ───
+   One row inside a Stagger / LoadStagger. */
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 14 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
+};
+
 export function StaggerItem({
   children,
   className = "",
@@ -190,18 +127,12 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
+  const reduce = useReducedMotion();
+
+  if (reduce) return <div className={className}>{children}</div>;
+
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.6, ease: EASE_PREMIUM },
-        },
-      } satisfies Variants}
-      className={className}
-    >
+    <motion.div variants={itemVariants} className={className}>
       {children}
     </motion.div>
   );

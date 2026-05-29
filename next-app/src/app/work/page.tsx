@@ -1,5 +1,6 @@
 import React from "react";
 import { Hero } from "@/components/editorial/Hero";
+import { Reveal } from "@/components/animations";
 import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { WorkIndex } from "@/components/editorial/WorkIndex";
 import { WorkEntry } from "@/components/editorial/WorkEntry";
@@ -23,7 +24,9 @@ export default function WorkPage() {
       />
 
       <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-[#2F2E2E11]">
-        <SectionLabel className="mb-5 inline-block">Index</SectionLabel>
+        <Reveal>
+          <SectionLabel className="mb-5 inline-block">Index</SectionLabel>
+        </Reveal>
         <WorkIndex entries={work} />
       </section>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { meetingLinks } from "@/data/mock";
@@ -14,9 +14,23 @@ const navLinks = [
 
 export default function Header() {
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="border-b border-[#2F2E2E11] bg-[#F1F1EF]">
+    <header
+      className={`sticky top-0 z-50 bg-[#F1F1EF] transition-[border-color,box-shadow] duration-300 ease-out ${
+        scrolled
+          ? "border-b border-[#2F2E2E11] shadow-[0_6px_24px_-18px_rgba(47,46,46,0.4)]"
+          : "border-b border-transparent shadow-none"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-6">
         <Link href="/" className="flex flex-col leading-none flex-1 min-w-0 group">
           <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">

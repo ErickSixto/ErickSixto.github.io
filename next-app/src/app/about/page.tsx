@@ -1,5 +1,6 @@
 import React from "react";
 import { Hero } from "@/components/editorial/Hero";
+import { Reveal } from "@/components/animations";
 import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { EditorialList } from "@/components/editorial/EditorialList";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
@@ -68,6 +69,7 @@ export default function AboutPage() {
 
       {/* Portrait */}
       <section className="max-w-[720px] mx-auto px-6 pb-16 border-t border-[#2F2E2E11] pt-12">
+        <Reveal>
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -81,16 +83,17 @@ export default function AboutPage() {
             Mérida · 2026
           </figcaption>
         </figure>
+        </Reveal>
       </section>
 
       {/* Verified by — TRUST */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
-        <div className="mb-10">
+        <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Verified by</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
             Third-party <strong className="font-bold">attestations.</strong>
           </h2>
-        </div>
+        </Reveal>
         <EditorialList>
           {socialProof.map((p) => {
             const metric = p.metrics[0];
@@ -134,7 +137,7 @@ export default function AboutPage() {
 
       {/* What I solve — PROBLEMS */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
-        <div className="mb-10 max-w-[56ch]">
+        <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">What I solve</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
             The work most consultants{" "}
@@ -143,7 +146,7 @@ export default function AboutPage() {
           <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
             A handful of patterns I see often enough that I keep a playbook for each one.
           </p>
-        </div>
+        </Reveal>
         <EditorialList>
           {problemPatterns.map((p, i) => (
             <div
@@ -176,7 +179,7 @@ export default function AboutPage() {
 
       {/* Is this a fit? — RIGHT FIT */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
-        <div className="mb-10 max-w-[56ch]">
+        <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">Is this a fit?</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
             Who I work with —{" "}
@@ -185,8 +188,8 @@ export default function AboutPage() {
           <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
             Save us both a discovery call. If you&apos;re in the left column, let&apos;s talk. If you&apos;re in the right, I&apos;ll usually know who can help.
           </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+        </Reveal>
+        <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           <div>
             <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#2F2E2E] font-medium mb-5">
               Right fit
@@ -217,17 +220,17 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Career timeline */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
-        <div className="mb-10">
+        <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Career</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
             Where I&apos;ve <strong className="font-bold">worked.</strong>
           </h2>
-        </div>
+        </Reveal>
         <EditorialList>
           {experience.map((role, i) => (
             <div
