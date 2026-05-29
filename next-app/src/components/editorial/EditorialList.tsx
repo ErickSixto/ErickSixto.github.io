@@ -1,5 +1,5 @@
 // Primitive for hairline-divided lists. Rows are children; the component
-// adds top/bottom 1px rules at #2F2E2E1F. Used by stances, work peek,
+// adds top/bottom 1px rules at border-ink/[0.12]. Used by stances, work peek,
 // /work index, and the about timeline.
 //
 // By default the rows cascade in (one after another) as the list scrolls into
@@ -22,9 +22,9 @@ export function EditorialList({
 
   if (!animate) {
     return (
-      <div className={`border-t border-[#2F2E2E1F] ${className}`}>
+      <div className={`border-t border-ink/[0.12] ${className}`}>
         {rows.map((child, i) => (
-          <div key={i} className="border-b border-[#2F2E2E1F]">
+          <div key={i} className="border-b border-ink/[0.12]">
             {child}
           </div>
         ))}
@@ -33,9 +33,9 @@ export function EditorialList({
   }
 
   return (
-    <Stagger className={`border-t border-[#2F2E2E1F] ${className}`}>
+    <Stagger className={`border-t border-ink/[0.12] ${className}`}>
       {rows.map((child, i) => (
-        <StaggerItem key={i} className="border-b border-[#2F2E2E1F]">
+        <StaggerItem key={i} className="border-b border-ink/[0.12]">
           {child}
         </StaggerItem>
       ))}

@@ -22,15 +22,15 @@ export function ClosingCTA({
   secondary?: { label: string; href: string };
 }) {
   return (
-    <section className="border-t border-[#2F2E2E11] bg-[#EAE7E0]">
+    <section className="border-t border-ink/[0.067] bg-panel">
       <div className="text-center max-w-[720px] mx-auto px-6 py-32">
       <Reveal>
         <SectionLabel className="mb-4 inline-block">{label}</SectionLabel>
-        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-[#2F2E2E] mb-6 mt-2">
+        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-ink mb-6 mt-2">
           {questionLead}{" "}
           <strong className="font-bold">{questionBold}</strong>
         </h2>
-        <p className="text-[1rem] leading-[1.7] text-[#4B5563] max-w-[50ch] mx-auto mb-10">
+        <p className="text-[1rem] leading-[1.7] text-muted max-w-[50ch] mx-auto mb-10">
           {body}
         </p>
         <div className="flex flex-wrap gap-6 justify-center items-center">
@@ -40,7 +40,7 @@ export function ClosingCTA({
           {secondary ? (
             <a
               href={secondary.href}
-              className="font-mono text-[0.72rem] text-[#2F2E2E] border-b border-[#2F2E2E33] pb-px"
+              className="font-mono text-[0.72rem] text-ink border-b border-ink/[0.2] pb-px"
             >
               {secondary.label}
             </a>

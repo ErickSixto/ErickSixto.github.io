@@ -14,12 +14,12 @@ export function Eyebrow({
 }) {
   return (
     <div
-      className={`font-mono text-[0.62rem] tracking-[0.28em] uppercase text-[#4B5563] ${className}`}
+      className={`font-mono text-[0.62rem] tracking-[0.28em] uppercase text-muted ${className}`}
     >
       {left}
       {right ? (
         <>
-          <span className="text-[#7E5618] mx-2">·</span>
+          <span className="text-gold mx-2">·</span>
           {right}
         </>
       ) : null}

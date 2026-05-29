@@ -20,7 +20,7 @@ export function CopyButton({ value, label = "Copy" }: { value: string; label?: s
     <button
       type="button"
       onClick={handleCopy}
-      className="inline-flex items-center justify-center gap-2 border border-[#2F2E2E33] text-[#2F2E2E] px-5 h-11 text-[0.78rem] tracking-[0.04em] rounded-[2px] transition-colors duration-200 hover:bg-[#2F2E2E] hover:text-[#F1F1EF]"
+      className="inline-flex items-center justify-center gap-2 border border-ink/[0.2] text-ink px-5 h-11 text-[0.78rem] tracking-[0.04em] rounded-[2px] transition-colors duration-200 hover:bg-ink hover:text-canvas"
     >
       {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
       <span className="tabular-nums">{copied ? "Copied" : label}</span>

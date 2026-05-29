@@ -23,9 +23,9 @@ type ButtonProps = CommonProps & {
 
 export function EditorialButton(props: AnchorProps | ButtonProps) {
   const baseClasses =
-    "inline-flex items-center gap-2 border border-[#2F2E2E] text-[#2F2E2E] " +
+    "inline-flex items-center gap-2 border border-ink text-ink " +
     "px-7 py-3 text-[0.78rem] tracking-[0.04em] rounded-[2px] " +
-    "transition-colors duration-200 hover:bg-[#2F2E2E] hover:text-[#F1F1EF]";
+    "transition-colors duration-200 hover:bg-ink hover:text-canvas";
 
   const className = `${baseClasses} ${props.className ?? ""}`;
 

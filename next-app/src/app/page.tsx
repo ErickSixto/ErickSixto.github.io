@@ -37,24 +37,24 @@ export default function HomePage() {
         credibility={["120+ projects", "7 years", "Toptal", "Trailblazer Ranger"]}
       />
 
-      <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-ink/[0.067]">
         <Reveal className="mb-14 max-w-[56ch]">
           <SectionLabel className="mb-5 inline-block">Operating principles</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             What I won&apos;t{" "}
             <strong className="font-bold">compromise on.</strong>
           </h2>
-          <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
+          <p className="text-[0.95rem] leading-[1.7] text-muted">
             Regardless of the org, the engagement, or how badly the timeline is squeezed. These are the standards that have made my best client relationships last, and the ones I&apos;d walk away from a job to protect.
           </p>
         </Reveal>
         <StanceList stances={stances} />
       </section>
 
-      <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Selected work</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Recent <strong className="font-bold">engagements.</strong>
           </h2>
         </Reveal>

@@ -68,7 +68,7 @@ export default function AboutPage() {
       />
 
       {/* Portrait */}
-      <section className="max-w-[720px] mx-auto px-6 pb-16 border-t border-[#2F2E2E11] pt-12">
+      <section className="max-w-[720px] mx-auto px-6 pb-16 border-t border-ink/[0.067] pt-12">
         <Reveal>
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -79,7 +79,7 @@ export default function AboutPage() {
             className="w-full max-w-[480px] mx-auto block"
             style={{ filter: "grayscale(0.75) saturate(0.85)" }}
           />
-          <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] text-center mt-4">
+          <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-muted text-center mt-4">
             Mérida · 2026
           </figcaption>
         </figure>
@@ -87,10 +87,10 @@ export default function AboutPage() {
       </section>
 
       {/* Verified by — TRUST */}
-      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Verified by</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Third-party <strong className="font-bold">attestations.</strong>
           </h2>
         </Reveal>
@@ -106,27 +106,27 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="grid grid-cols-1 sm:grid-cols-[180px_1fr_auto] gap-3 sm:gap-8 py-6 items-baseline group"
               >
-                <div className="font-mono text-[0.7rem] tracking-[0.16em] uppercase text-[#2F2E2E] font-medium">
+                <div className="font-mono text-[0.7rem] tracking-[0.16em] uppercase text-ink font-medium">
                   {p.platform}
                 </div>
                 <div>
-                  <div className="text-[1rem] text-[#2F2E2E] tracking-[-0.005em] mb-1">
+                  <div className="text-[1rem] text-ink tracking-[-0.005em] mb-1">
                     {metric.value}{" "}
-                    <span className="text-[#4B5563] font-normal">
+                    <span className="text-muted font-normal">
                       {metric.label.toLowerCase()}
                     </span>
                     {moreMetrics.map((m) => (
-                      <span key={m.label} className="text-[#4B5563] font-normal">
+                      <span key={m.label} className="text-muted font-normal">
                         {" · "}
                         {m.value} {m.label.toLowerCase()}
                       </span>
                     ))}
                   </div>
-                  <p className="text-[0.85rem] leading-[1.55] text-[#4B5563] max-w-[60ch]">
+                  <p className="text-[0.85rem] leading-[1.55] text-muted max-w-[60ch]">
                     {p.description}
                   </p>
                 </div>
-                <span className="font-mono text-[0.7rem] text-[#2F2E2E] border-b border-[#2F2E2E55] pb-px self-center sm:self-baseline whitespace-nowrap">
+                <span className="font-mono text-[0.7rem] text-ink border-b border-ink/[0.333] pb-px self-center sm:self-baseline whitespace-nowrap">
                   view profile →
                 </span>
               </a>
@@ -136,14 +136,14 @@ export default function AboutPage() {
       </section>
 
       {/* What I solve — PROBLEMS */}
-      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">What I solve</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             The work most consultants{" "}
             <strong className="font-bold">don&apos;t want to take.</strong>
           </h2>
-          <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
+          <p className="text-[0.95rem] leading-[1.7] text-muted">
             A handful of patterns I see often enough that I keep a playbook for each one.
           </p>
         </Reveal>
@@ -153,14 +153,14 @@ export default function AboutPage() {
               key={i}
               className="grid grid-cols-1 sm:grid-cols-[60px_1fr] gap-3 sm:gap-8 py-6 items-baseline"
             >
-              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#4B5563]">
+              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-muted">
                 №{String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <div className="text-[1rem] font-semibold text-[#2F2E2E] tracking-[-0.005em] mb-2">
+                <div className="text-[1rem] font-semibold text-ink tracking-[-0.005em] mb-2">
                   {p.title}
                 </div>
-                <p className="text-[0.9rem] leading-[1.65] text-[#4B5563] max-w-[58ch]">
+                <p className="text-[0.9rem] leading-[1.65] text-muted max-w-[58ch]">
                   {p.description}
                 </p>
               </div>
@@ -170,7 +170,7 @@ export default function AboutPage() {
         <div className="text-right mt-8">
           <a
             href="/work"
-            className="font-mono text-[0.7rem] text-[#2F2E2E] border-b border-[#CB9135] pb-px"
+            className="font-mono text-[0.7rem] text-ink border-b border-gold pb-px"
           >
             see the case studies →
           </a>
@@ -178,27 +178,27 @@ export default function AboutPage() {
       </section>
 
       {/* Is this a fit? — RIGHT FIT */}
-      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">Is this a fit?</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E] mb-4">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             Who I work with —{" "}
             <strong className="font-bold">and who I don&apos;t.</strong>
           </h2>
-          <p className="text-[0.95rem] leading-[1.7] text-[#4B5563]">
+          <p className="text-[0.95rem] leading-[1.7] text-muted">
             Save us both a discovery call. If you&apos;re in the left column, let&apos;s talk. If you&apos;re in the right, I&apos;ll usually know who can help.
           </p>
         </Reveal>
         <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           <div>
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#2F2E2E] font-medium mb-5">
+            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-ink font-medium mb-5">
               Right fit
             </div>
             <ul className="space-y-4">
               {rightFit.map((item, i) => (
                 <li
                   key={i}
-                  className="text-[0.92rem] leading-[1.6] text-[#2F2E2E] pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-[#7E5618] before:font-medium"
+                  className="text-[0.92rem] leading-[1.6] text-ink pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-gold before:font-medium"
                 >
                   {item}
                 </li>
@@ -206,14 +206,14 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#4B5563] mb-5">
+            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-muted mb-5">
               Not a fit
             </div>
             <ul className="space-y-4">
               {notAFit.map((item, i) => (
                 <li
                   key={i}
-                  className="text-[0.92rem] leading-[1.6] text-[#4B5563] pl-5 relative before:content-['−'] before:absolute before:left-0 before:text-[#4B5563]"
+                  className="text-[0.92rem] leading-[1.6] text-muted pl-5 relative before:content-['−'] before:absolute before:left-0 before:text-muted"
                 >
                   {item}
                 </li>
@@ -224,10 +224,10 @@ export default function AboutPage() {
       </section>
 
       {/* Career timeline */}
-      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Career</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Where I&apos;ve <strong className="font-bold">worked.</strong>
           </h2>
         </Reveal>
@@ -237,14 +237,14 @@ export default function AboutPage() {
               key={i}
               className="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-3 sm:gap-8 py-5 items-baseline"
             >
-              <div className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
+              <div className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-muted">
                 {role.period}
               </div>
               <div>
-                <div className="text-[0.95rem] font-semibold text-[#2F2E2E] tracking-[-0.005em]">
+                <div className="text-[0.95rem] font-semibold text-ink tracking-[-0.005em]">
                   {role.role}
                 </div>
-                <div className="text-[0.85rem] text-[#4B5563]">{role.company}</div>
+                <div className="text-[0.85rem] text-muted">{role.company}</div>
               </div>
             </div>
           ))}

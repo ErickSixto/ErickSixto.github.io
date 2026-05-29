@@ -23,7 +23,7 @@ export default function WorkPage() {
         lead="Most of my Salesforce work doesn't show up here — Fiverr clients, NDA work, projects that ended cleanly. These are the ones I'd send a prospective client to read first. Roughly 150 words each."
       />
 
-      <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-ink/[0.067]">
         <Reveal>
           <SectionLabel className="mb-5 inline-block">Index</SectionLabel>
         </Reveal>

@@ -25,18 +25,18 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-[#F1F1EF] transition-[border-color,box-shadow] duration-300 ease-out ${
+      className={`sticky top-0 z-50 bg-canvas transition-[border-color,box-shadow] duration-300 ease-out ${
         scrolled
-          ? "border-b border-[#2F2E2E11] shadow-[0_6px_24px_-18px_rgba(47,46,46,0.4)]"
+          ? "border-b border-ink/[0.067] shadow-[0_6px_24px_-18px_rgba(47,46,46,0.4)]"
           : "border-b border-transparent shadow-none"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-6">
         <Link href="/" className="flex flex-col leading-none flex-1 min-w-0 group">
-          <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-[-0.01em] text-[#2F2E2E] truncate">
+          <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-[-0.01em] text-ink truncate">
             Erick Sixto
           </span>
-          <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-[#4B5563] mt-1">
+          <span className="hidden sm:inline-block font-mono text-[0.55rem] tracking-[0.22em] uppercase text-muted mt-1">
             Salesforce Specialist
           </span>
         </Link>
@@ -53,7 +53,7 @@ export default function Header() {
                 href={link.path}
                 aria-current={isActive ? "page" : undefined}
                 className={`text-[0.78rem] transition-colors duration-200 ${
-                  isActive ? "text-[#2F2E2E] font-medium" : "text-[#4B5563] hover:text-[#2F2E2E]"
+                  isActive ? "text-ink font-medium" : "text-muted hover:text-ink"
                 }`}
               >
                 {link.label}
@@ -67,7 +67,7 @@ export default function Header() {
             href={meetingLinks.discovery.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap text-[0.7rem] sm:text-[0.72rem] border border-[#2F2E2E33] text-[#2F2E2E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] hover:bg-[#2F2E2E] hover:text-[#F1F1EF] transition-colors duration-200"
+            className="whitespace-nowrap text-[0.7rem] sm:text-[0.72rem] border border-ink/[0.2] text-ink px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] hover:bg-ink hover:text-canvas transition-colors duration-200"
           >
             Book a call
           </a>
@@ -75,7 +75,7 @@ export default function Header() {
       </div>
 
       {/* Mobile nav: links distributed evenly below the bar on small screens */}
-      <nav className="md:hidden border-t border-[#2F2E2E11] flex justify-around px-3 py-2.5 text-[0.78rem]">
+      <nav className="md:hidden border-t border-ink/[0.067] flex justify-around px-3 py-2.5 text-[0.78rem]">
         {navLinks.map((link) => {
           const isActive =
             link.path === "/"
@@ -86,7 +86,7 @@ export default function Header() {
               key={link.path}
               href={link.path}
               aria-current={isActive ? "page" : undefined}
-              className={isActive ? "text-[#2F2E2E] font-medium" : "text-[#4B5563]"}
+              className={isActive ? "text-ink font-medium" : "text-muted"}
             >
               {link.label}
             </Link>

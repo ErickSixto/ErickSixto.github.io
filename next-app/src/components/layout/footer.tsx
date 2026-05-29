@@ -12,10 +12,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#2F2E2E11] mt-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.74rem] text-[#4B5563]">
+    <footer className="border-t border-ink/[0.067] mt-0">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.74rem] text-muted">
         <div className="sm:flex-1">
-          <strong className="text-[#2F2E2E] font-semibold">Erick Sixto</strong>
+          <strong className="text-ink font-semibold">Erick Sixto</strong>
           <span className="hidden sm:inline ml-3 font-mono text-[0.62rem] tracking-[0.16em] uppercase">
             — Salesforce Specialist
           </span>
@@ -23,7 +23,7 @@ export default function Footer() {
 
         <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
           {navLinks.map((link) => (
-            <Link key={link.path} href={link.path} className="text-[#4B5563] hover:text-[#2F2E2E] transition-colors duration-200">
+            <Link key={link.path} href={link.path} className="text-muted hover:text-ink transition-colors duration-200">
               {link.label}
             </Link>
           ))}

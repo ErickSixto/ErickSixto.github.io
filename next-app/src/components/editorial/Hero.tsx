@@ -49,14 +49,14 @@ export function Hero({
         </StaggerItem>
 
         <StaggerItem>
-          <h1 className="font-extralight text-[clamp(1.6rem,6.5vw,4.2rem)] leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] sm:tracking-[-0.03em] text-[#2F2E2E] mb-8 sm:mb-10 max-w-[16ch] sm:max-w-[18ch] mx-auto text-balance">
+          <h1 className="font-extralight text-[clamp(1.6rem,6.5vw,4.2rem)] leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] sm:tracking-[-0.03em] text-ink mb-8 sm:mb-10 max-w-[16ch] sm:max-w-[18ch] mx-auto text-balance">
             {headlineLead}{" "}
             <strong className="font-bold">{headlineBold}</strong>
           </h1>
         </StaggerItem>
 
         <StaggerItem>
-          <div className="w-8 h-px bg-[#2F2E2E55] mx-auto mb-8 sm:mb-10" />
+          <div className="w-8 h-px bg-ink/[0.333] mx-auto mb-8 sm:mb-10" />
         </StaggerItem>
 
         {leadParagraphs.length > 0 ? (
@@ -65,7 +65,7 @@ export function Hero({
               {leadParagraphs.map((para, i) => (
                 <p
                   key={i}
-                  className="text-[0.98rem] sm:text-[1.05rem] leading-[1.65] sm:leading-[1.7] text-[#4B5563] mb-4 sm:mb-5 last:mb-0"
+                  className="text-[0.98rem] sm:text-[1.05rem] leading-[1.65] sm:leading-[1.7] text-muted mb-4 sm:mb-5 last:mb-0"
                 >
                   {para}
                 </p>
@@ -86,12 +86,12 @@ export function Hero({
 
         {credibility && credibility.length > 0 ? (
           <StaggerItem>
-            <div className="font-mono text-[0.66rem] tracking-[0.16em] uppercase text-[#4B5563] flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5">
+            <div className="font-mono text-[0.66rem] tracking-[0.16em] uppercase text-muted flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5">
               {credibility.map((item, i) => (
                 <span key={item} className="whitespace-nowrap inline-flex items-center gap-3">
                   <span>{item}</span>
                   {i < credibility.length - 1 ? (
-                    <span className="text-[#2F2E2E33]" aria-hidden>·</span>
+                    <span className="text-ink/[0.2]" aria-hidden>·</span>
                   ) : null}
                 </span>
               ))}

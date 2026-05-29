@@ -22,6 +22,16 @@
   --color-input: hsl(40 5% 89%);
   --color-ring: hsl(0 2% 18%);
 
+  /* Editorial palette — single source of truth for the brand colors.
+     Use these (text-ink, bg-canvas, border-ink/[0.067], text-gold, ...)
+     instead of hardcoded hex. One gold accent, not two. */
+  --color-ink: #2F2E2E;
+  --color-muted: #4B5563;
+  --color-canvas: #F1F1EF;
+  --color-panel: #EAE7E0;
+  --color-gold: #7E5618;
+  --color-faint: #F7F7F5;
+
   --font-sans: var(--font-inter), "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
@@ -58,7 +68,7 @@
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #7E5618, 0 0 0 4px var(--color-background);
+    box-shadow: 0 0 0 2px var(--color-gold), 0 0 0 4px var(--color-background);
   }
 }
 

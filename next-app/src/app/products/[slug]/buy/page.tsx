@@ -60,15 +60,15 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
       />
 
       {/* Price + checkout */}
-      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-ink/[0.067]">
         <Reveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <SectionLabel className="mb-2 inline-block">One-time purchase</SectionLabel>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="text-[2.5rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.02em]">
+              <span className="text-[2.5rem] font-semibold text-ink tabular-nums tracking-[-0.02em]">
                 ${product.price}
               </span>
-              <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
+              <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-muted">
                 {product.currency}
               </span>
             </div>
@@ -82,7 +82,7 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
             {GUARANTEES.map((g) => (
               <li
                 key={g}
-                className="text-[0.9rem] leading-[1.6] text-[#4B5563] pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-[#7E5618] before:font-medium"
+                className="text-[0.9rem] leading-[1.6] text-muted pl-5 relative before:content-['+'] before:absolute before:left-0 before:text-gold before:font-medium"
               >
                 {g}
               </li>
@@ -92,10 +92,10 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
       </section>
 
       {/* What happens next */}
-      <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">What happens next</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Four steps, <strong className="font-bold">two minutes.</strong>
           </h2>
         </Reveal>
@@ -105,26 +105,26 @@ export default async function BuyPage({ params }: { params: Promise<{ slug: stri
               key={i}
               className="grid grid-cols-[52px_1fr] sm:grid-cols-[64px_1fr] gap-5 sm:gap-8 py-6 items-baseline"
             >
-              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#7E5618] font-medium">
+              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-gold font-medium">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <p className="text-[0.95rem] leading-[1.6] text-[#2F2E2E]">{step}</p>
+              <p className="text-[0.95rem] leading-[1.6] text-ink">{step}</p>
             </div>
           ))}
         </EditorialList>
         <Reveal>
-          <p className="mt-10 text-[0.9rem] leading-[1.7] text-[#4B5563]">
+          <p className="mt-10 text-[0.9rem] leading-[1.7] text-muted">
             Not ready yet?{" "}
             <Link
               href={`/products/${product.slug}`}
-              className="text-[#2F2E2E] border-b border-[#CB9135] pb-px"
+              className="text-ink border-b border-gold pb-px"
             >
               Read the full overview
             </Link>{" "}
             or email{" "}
             <a
               href="mailto:sixto@ericksixto.com"
-              className="text-[#2F2E2E] border-b border-[#2F2E2E33] pb-px"
+              className="text-ink border-b border-ink/[0.2] pb-px"
             >
               sixto@ericksixto.com
             </a>

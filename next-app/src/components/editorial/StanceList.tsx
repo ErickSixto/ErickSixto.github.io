@@ -13,15 +13,15 @@ export function StanceList({ stances }: { stances: Stance[] }) {
           key={s.id}
           className="grid grid-cols-[52px_1fr] sm:grid-cols-[80px_1fr] gap-5 sm:gap-8 py-6 sm:py-7 items-baseline"
         >
-          <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#7E5618] font-medium">
+          <span className="font-mono text-[0.7rem] tracking-[0.16em] text-gold font-medium">
             {s.number}
           </span>
           <div>
-            <strong className="block text-[1.05rem] font-semibold text-[#2F2E2E] tracking-[-0.005em]">
+            <strong className="block text-[1.05rem] font-semibold text-ink tracking-[-0.005em]">
               {s.headline}
             </strong>
             {s.rationale ? (
-              <p className="text-[0.92rem] text-[#4B5563] leading-[1.6] max-w-[60ch] mt-2">
+              <p className="text-[0.92rem] text-muted leading-[1.6] max-w-[60ch] mt-2">
                 {s.rationale}
               </p>
             ) : null}

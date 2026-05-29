@@ -60,15 +60,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       />
 
       {/* Price + CTA */}
-      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-[#2F2E2E11]">
+      <section className="max-w-[880px] mx-auto px-6 py-10 border-t border-ink/[0.067]">
         <Reveal className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <SectionLabel className="mb-2 inline-block">{statusLabel}</SectionLabel>
             <div className="flex items-baseline gap-2 mt-1">
-              <span className="text-[2rem] font-semibold text-[#2F2E2E] tabular-nums tracking-[-0.02em]">
+              <span className="text-[2rem] font-semibold text-ink tabular-nums tracking-[-0.02em]">
                 ${product.price}
               </span>
-              <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-[#4B5563]">
+              <span className="font-mono text-[0.7rem] tracking-[0.14em] uppercase text-muted">
                 {product.currency}
               </span>
             </div>
@@ -81,10 +81,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Compatibility */}
       {product.requiredEditions && (
-        <section className="max-w-[880px] mx-auto px-6 py-5 border-t border-[#2F2E2E11]">
+        <section className="max-w-[880px] mx-auto px-6 py-5 border-t border-ink/[0.067]">
           <Reveal>
-            <p className="text-[0.85rem] leading-[1.6] text-[#4B5563]">
-              <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mr-3">
+            <p className="text-[0.85rem] leading-[1.6] text-muted">
+              <span className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-muted mr-3">
                 Requires
               </span>
               {product.requiredEditions}.
@@ -98,10 +98,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Features */}
       {product.features.length > 0 && (
-        <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
           <Reveal className="mb-10">
             <SectionLabel className="mb-3 inline-block">Features</SectionLabel>
-            <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+            <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
               What&apos;s <strong className="font-bold">inside.</strong>
             </h2>
           </Reveal>
@@ -111,8 +111,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 key={i}
                 className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-3 sm:gap-8 py-5 items-baseline"
               >
-                <div className="text-[0.9rem] font-semibold text-[#2F2E2E]">{f.title}</div>
-                <p className="text-[0.9rem] leading-[1.6] text-[#4B5563]">{f.description}</p>
+                <div className="text-[0.9rem] font-semibold text-ink">{f.title}</div>
+                <p className="text-[0.9rem] leading-[1.6] text-muted">{f.description}</p>
               </div>
             ))}
           </EditorialList>
@@ -121,7 +121,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Screenshots — Access Analyzer only */}
       {product.slug === "access-analyzer" && (
-        <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
           <Reveal>
             <SectionLabel className="mb-8 inline-block">In action</SectionLabel>
           </Reveal>
@@ -129,7 +129,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             {ACCESS_ANALYZER_SHOTS.map((shot) => (
               <StaggerItem key={shot.src}>
                 <figure>
-                  <div className="border border-[#2F2E2E11] bg-[#F7F7F5] overflow-hidden">
+                  <div className="border border-ink/[0.067] bg-faint overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={shot.src}
@@ -137,7 +137,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       className="w-full h-auto object-cover"
                     />
                   </div>
-                  <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-[#4B5563] mt-3">
+                  <figcaption className="font-mono text-[0.62rem] tracking-[0.14em] uppercase text-muted mt-3">
                     {shot.caption}
                   </figcaption>
                 </figure>
@@ -149,7 +149,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* Long-form body */}
       {product.body.trim() && (
-        <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
           <Reveal>
           <SectionLabel className="mb-6 inline-block">Overview</SectionLabel>
           <article>
@@ -157,26 +157,26 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               remarkPlugins={[remarkGfm]}
               components={{
                 h2: ({ children }) => (
-                  <h3 className="font-semibold text-[1.1rem] text-[#2F2E2E] mt-10 mb-3 tracking-[-0.005em] first:mt-0">
+                  <h3 className="font-semibold text-[1.1rem] text-ink mt-10 mb-3 tracking-[-0.005em] first:mt-0">
                     {children}
                   </h3>
                 ),
                 h3: ({ children }) => (
-                  <h4 className="font-semibold text-[0.95rem] text-[#2F2E2E] mt-8 mb-2 tracking-[-0.005em]">
+                  <h4 className="font-semibold text-[0.95rem] text-ink mt-8 mb-2 tracking-[-0.005em]">
                     {children}
                   </h4>
                 ),
                 p: ({ children }) => (
-                  <p className="text-[0.95rem] leading-[1.8] text-[#4B5563] mb-5">{children}</p>
+                  <p className="text-[0.95rem] leading-[1.8] text-muted mb-5">{children}</p>
                 ),
                 ul: ({ children }) => (
-                  <ul className="space-y-2 mb-6 pl-4 list-disc marker:text-[#4B5563]">{children}</ul>
+                  <ul className="space-y-2 mb-6 pl-4 list-disc marker:text-muted">{children}</ul>
                 ),
                 li: ({ children }) => (
-                  <li className="text-[0.9rem] leading-[1.6] text-[#4B5563]">{children}</li>
+                  <li className="text-[0.9rem] leading-[1.6] text-muted">{children}</li>
                 ),
                 strong: ({ children }) => (
-                  <strong className="text-[#2F2E2E] font-semibold">{children}</strong>
+                  <strong className="text-ink font-semibold">{children}</strong>
                 ),
               }}
             >
@@ -189,15 +189,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
       {/* FAQ */}
       {product.faq.length > 0 && (
-        <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+        <section className="max-w-[640px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
           <Reveal>
             <SectionLabel className="mb-8 inline-block">Questions</SectionLabel>
           </Reveal>
           <EditorialList>
             {product.faq.map((item, i) => (
               <div key={i} className="py-6">
-                <p className="text-[0.95rem] font-semibold text-[#2F2E2E] mb-3">{item.q}</p>
-                <p className="text-[0.9rem] leading-[1.7] text-[#4B5563]">{item.a}</p>
+                <p className="text-[0.95rem] font-semibold text-ink mb-3">{item.q}</p>
+                <p className="text-[0.9rem] leading-[1.7] text-muted">{item.a}</p>
               </div>
             ))}
           </EditorialList>

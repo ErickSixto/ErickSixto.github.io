@@ -88,42 +88,42 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
       />
 
       {/* Install URLs */}
-      <section className="max-w-[720px] mx-auto px-6 py-12 border-t border-[#2F2E2E11] space-y-6">
+      <section className="max-w-[720px] mx-auto px-6 py-12 border-t border-ink/[0.067] space-y-6">
         {installBlocks.map((block) => (
           <Reveal key={block.badge}>
-            <div className="border border-[#2F2E2E1F] bg-white rounded-[2px] p-7">
+            <div className="border border-ink/[0.12] bg-faint rounded-[2px] p-7">
               <div className="flex items-center gap-3 mb-3 flex-wrap">
                 <span
                   className={`font-mono text-[0.55rem] tracking-[0.16em] uppercase px-2 py-1 rounded-[2px] ${
                     block.solid
-                      ? "bg-[#2F2E2E] text-[#F1F1EF]"
-                      : "border border-[#7E5618]/40 text-[#7E5618]"
+                      ? "bg-ink text-canvas"
+                      : "border border-gold/40 text-gold"
                   }`}
                 >
                   {block.badge}
                 </span>
-                <h2 className="text-[1.1rem] font-semibold text-[#2F2E2E] tracking-[-0.005em]">
+                <h2 className="text-[1.1rem] font-semibold text-ink tracking-[-0.005em]">
                   {block.heading}
                 </h2>
               </div>
-              <p className="text-[0.9rem] leading-[1.6] text-[#4B5563] mb-5">{block.copy}</p>
+              <p className="text-[0.9rem] leading-[1.6] text-muted mb-5">{block.copy}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <EditorialButton href={block.url!} external>
                   Open installer →
                 </EditorialButton>
                 <CopyButton value={block.url!} label="Copy URL" />
               </div>
-              <p className="mt-4 font-mono text-[0.72rem] text-[#4B5563] break-all">{block.url}</p>
+              <p className="mt-4 font-mono text-[0.72rem] text-muted break-all">{block.url}</p>
             </div>
           </Reveal>
         ))}
       </section>
 
       {/* How to install */}
-      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Setup</SectionLabel>
-          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-[#2F2E2E]">
+          <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             How to <strong className="font-bold">install.</strong>
           </h2>
         </Reveal>
@@ -133,14 +133,14 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
               key={i}
               className="grid grid-cols-[52px_1fr] sm:grid-cols-[64px_1fr] gap-5 sm:gap-8 py-6 items-baseline"
             >
-              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-[#7E5618] font-medium">
+              <span className="font-mono text-[0.7rem] tracking-[0.16em] text-gold font-medium">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div>
-                <div className="text-[1rem] font-semibold text-[#2F2E2E] tracking-[-0.005em] mb-2">
+                <div className="text-[1rem] font-semibold text-ink tracking-[-0.005em] mb-2">
                   {step.title}
                 </div>
-                <p className="text-[0.9rem] leading-[1.65] text-[#4B5563] max-w-[58ch]">
+                <p className="text-[0.9rem] leading-[1.65] text-muted max-w-[58ch]">
                   {step.description}
                 </p>
               </div>
@@ -150,19 +150,19 @@ export default async function InstallPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Need help */}
-      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-[#2F2E2E11]">
+      <section className="max-w-[720px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
         <Reveal>
-          <div className="border border-[#2F2E2E1F] bg-[#EAE7E0] rounded-[2px] p-7">
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-[#7E5618] font-medium mb-3">
+          <div className="border border-ink/[0.12] bg-panel rounded-[2px] p-7">
+            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-gold font-medium mb-3">
               Need help?
             </div>
-            <p className="text-[0.92rem] leading-[1.7] text-[#4B5563] mb-4 max-w-[58ch]">
+            <p className="text-[0.92rem] leading-[1.7] text-muted mb-4 max-w-[58ch]">
               Stuck on the install? Reply to your Stripe receipt, or reach out directly and I&apos;ll
               walk you through it.
             </p>
             <a
               href="mailto:sixto@ericksixto.com"
-              className="font-mono text-[0.72rem] text-[#2F2E2E] border-b border-[#2F2E2E33] pb-px"
+              className="font-mono text-[0.72rem] text-ink border-b border-ink/[0.2] pb-px"
             >
               sixto@ericksixto.com →
             </a>
