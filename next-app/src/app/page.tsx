@@ -12,7 +12,7 @@ import { meetingLinks } from "@/data/mock";
 export const metadata = {
   title: "Erick Sixto — Salesforce Specialist",
   description:
-    "Senior Salesforce specialist. 7 years fixing orgs that got worse every time someone tried to improve them. Lead-gen for SaaS founders and CX teams.",
+    "Senior Salesforce specialist. 7 years fixing orgs that got worse every time someone tried to improve them. Remediation and custom builds for SaaS founders and CX teams.",
 };
 
 export default function HomePage() {
@@ -34,7 +34,7 @@ export default function HomePage() {
           href: meetingLinks.discovery.url,
           external: true,
         }}
-        credibility={["120+ projects", "7 years", "Toptal", "Trailblazer Ranger"]}
+        credibility={["200+ projects", "7 years", "Toptal", "Trailblazer Ranger"]}
       />
 
       <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-ink/[0.067]">
