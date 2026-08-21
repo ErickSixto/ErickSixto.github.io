@@ -19,7 +19,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Project Inquiry from ${formData.name}${formData.company ? ` — ${formData.company}` : ""}`);
+    const subject = encodeURIComponent(`Project Inquiry from ${formData.name}${formData.company ? ` · ${formData.company}` : ""}`);
     const body = encodeURIComponent(`Hi Erick,\n\n${formData.message}\n\n---\nName: ${formData.name}\nEmail: ${formData.email}${formData.company ? `\nCompany: ${formData.company}` : ""}`);
     window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`, "_self");
     setSubmitted(true);
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Contact</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Let's talk</h1>
             <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
-              A 30-minute call is the fastest way to figure out if we should work together. Or drop a message below — I reply inside a day.
+              A 30-minute call is the fastest way to figure out if we should work together. Or drop a message below, and I reply inside a day.
             </p>
           </MotionSection>
         </div>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                     </div>
                     <ExternalLink className="h-4 w-4 text-[#E5E7EB] group-hover:text-[#4B5563] transition-colors ml-auto" />
                   </div>
-                  <p className="text-sm text-[#4B5563] leading-relaxed">Tell me what's broken. I'll tell you if I can help — and if I can't, who probably can.</p>
+                  <p className="text-sm text-[#4B5563] leading-relaxed">Tell me what's broken. I'll tell you if I can help, and if I can't, who probably can.</p>
                 </Card>
               </a>
               <a href={meetingLinks.consultation.url} target="_blank" rel="noopener noreferrer">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                     </div>
                     <ExternalLink className="h-4 w-4 text-[#E5E7EB] group-hover:text-[#4B5563] transition-colors ml-auto" />
                   </div>
-                  <p className="text-sm text-[#4B5563] leading-relaxed">For teams that already know what they need — architecture review, integration design, or a sanity check before they build.</p>
+                  <p className="text-sm text-[#4B5563] leading-relaxed">For teams that already know what they need: architecture review, integration design, or a sanity check before they build.</p>
                 </Card>
               </a>
             </div>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <div className="space-y-4">
                     <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3.5 text-[#4B5563] hover:text-[#2F2E2E] transition-colors duration-200 group">
                       <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#E5E7EB] transition-colors"><Linkedin className="h-5 w-5" /></div>
-                      <span className="text-sm">LinkedIn — best for intros</span>
+                      <span className="text-sm">LinkedIn, best for intros</span>
                     </a>
                     <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-3.5 text-[#4B5563] hover:text-[#2F2E2E] transition-colors duration-200 group">
                       <div className="p-2.5 bg-[#F1F1EF] rounded-lg group-hover:bg-[#E5E7EB] transition-colors"><Mail className="h-5 w-5" /></div>

@@ -8,7 +8,7 @@ import { meetingLinks } from "@/data/mock";
 import { getAllProducts } from "@/content/products";
 
 export const metadata = {
-  title: "Products — Erick Sixto",
+  title: "Products · Erick Sixto",
   description: "Salesforce-native tools that explain your org and ship the fix.",
 };
 

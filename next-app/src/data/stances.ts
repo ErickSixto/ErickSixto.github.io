@@ -1,5 +1,5 @@
 // Operating principles. Each stance is one bold position Erick will defend
-// in client conversations. Length deliberately varies — the brand rule is
+// in client conversations. Length deliberately varies, because the brand rule is
 // "break the patterns": some stances stand alone, others get a sentence,
 // others get a longer rationale with a concrete example.
 

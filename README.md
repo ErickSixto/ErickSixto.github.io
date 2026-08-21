@@ -1,4 +1,4 @@
-# Erick Sixto — Personal Website
+# Erick Sixto · Personal Website
 
 Portfolio and professional website for **Erick Sixto**, a Senior Salesforce Developer with 7+ years of experience building systems across Sales Cloud, Service Cloud, and Experience Cloud.
 
@@ -42,4 +42,4 @@ This site deploys automatically to GitHub Pages via GitHub Actions on every push
 
 ## License
 
-All rights reserved. This is a personal portfolio site — not intended for reuse or redistribution.
+All rights reserved. This is a personal portfolio site, not intended for reuse or redistribution.

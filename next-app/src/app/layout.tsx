@@ -24,19 +24,19 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ericksixto.com"),
-  title: "Erick Sixto — Salesforce Specialist",
+  title: "Erick Sixto · Salesforce Specialist",
   description: DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: "Erick Sixto",
     locale: "en_US",
     url: "/",
-    title: "Erick Sixto — Salesforce Specialist",
+    title: "Erick Sixto · Salesforce Specialist",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Erick Sixto — Salesforce Specialist",
+    title: "Erick Sixto · Salesforce Specialist",
     description: DESCRIPTION,
   },
 };

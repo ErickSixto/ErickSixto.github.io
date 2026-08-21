@@ -12,7 +12,7 @@ import {
 } from "@/data/mock";
 
 export const metadata = {
-  title: "About — Erick Sixto",
+  title: "About · Erick Sixto",
   description:
     "Mechatronics engineer turned Salesforce specialist. 7 years untangling orgs other consultants ducked.",
 };
@@ -49,7 +49,7 @@ const rightFit = [
 
 const notAFit = [
   "Lowest-bid, shortest-timeline work",
-  "Looking to hire a full-time Salesforce admin (different gig — happy to refer one)",
+  "Looking to hire a full-time Salesforce admin (different gig, happy to refer one)",
   "Enterprise procurement with 6-month vendor onboarding",
   "Template-shopping for a cookie-cutter setup",
 ];
@@ -62,8 +62,8 @@ export default function AboutPage() {
         headlineLead="Engineer by training."
         headlineBold="Salesforce by choice."
         lead={[
-          "I trained as a mechatronics engineer — the discipline where a motor failing on the factory floor teaches you more than any textbook. Operators don't care how elegant your circuit is; they need it to work.",
-          "I moved into Salesforce with that same standard. 7 years in. Multiple clouds, dozens of orgs, mostly cleanup work — the brittle trigger nobody's touched in 2 years, the portal users can't figure out, the integration that silently drops records on Tuesdays.",
+          "I trained as a mechatronics engineer, the discipline where a motor failing on the factory floor teaches you more than any textbook. Operators don't care how elegant your circuit is; they need it to work.",
+          "I moved into Salesforce with that same standard. 7 years in. Multiple clouds, dozens of orgs, mostly cleanup work: the brittle trigger nobody's touched in 2 years, the portal users can't figure out, the integration that silently drops records on Tuesdays.",
         ]}
       />
 
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      {/* Verified by — TRUST */}
+      {/* Verified by: TRUST */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
           <SectionLabel className="mb-3 inline-block">Verified by</SectionLabel>
@@ -135,7 +135,7 @@ export default function AboutPage() {
         </EditorialList>
       </section>
 
-      {/* What I solve — PROBLEMS */}
+      {/* What I solve: PROBLEMS */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">What I solve</SectionLabel>
@@ -177,12 +177,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Is this a fit? — RIGHT FIT */}
+      {/* Is this a fit? RIGHT FIT */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">Is this a fit?</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
-            Who I work with —{" "}
+            Who I work with,{" "}
             <strong className="font-bold">and who I don&apos;t.</strong>
           </h2>
           <p className="text-[0.95rem] leading-[1.7] text-muted">

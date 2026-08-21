@@ -2,7 +2,7 @@ import { EditorialButton } from "@/components/editorial/EditorialButton";
 import { SectionLabel } from "@/components/editorial/SectionLabel";
 
 export const metadata = {
-  title: "Page not found — Erick Sixto",
+  title: "Page not found · Erick Sixto",
 };
 
 export default function NotFound() {

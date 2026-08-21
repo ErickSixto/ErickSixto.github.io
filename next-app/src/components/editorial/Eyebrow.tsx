@@ -1,4 +1,4 @@
-// Hero eyebrow — JetBrains Mono caps, two parts joined by a gold dot separator.
+// Hero eyebrow: JetBrains Mono caps, two parts joined by a gold dot separator.
 // Used at the top of every page hero (e.g. "ERICK SIXTO · SALESFORCE SPECIALIST").
 
 import React from "react";

@@ -16,7 +16,7 @@ features:
   - title: One-click fix
     description: Ship the minimum safe change, from the same screen
   - title: Works on any permission
-    description: Object, field, record type, app — anything a profile or perm set can grant
+    description: Any object, field, record type, or app a profile or perm set can grant
   - title: No data leaves your org
     description: Runs entirely inside Salesforce. No external services.
 faq:
@@ -25,13 +25,13 @@ faq:
   - q: How does installation work?
     a: One URL opens the Salesforce installer. Takes about two minutes. Works in Production, Sandbox, Developer Edition, and Scratch orgs.
   - q: Which Salesforce editions are supported?
-    a: Access Analyzer requires Apex class support, so it works on Enterprise, Unlimited, Developer, and Performance editions. It does NOT work on Professional, Essentials, or Group editions — those do not allow installed Apex. Sandbox and scratch orgs of supported editions are fully supported.
+    a: Access Analyzer requires Apex class support, so it works on Enterprise, Unlimited, Developer, and Performance editions. It does NOT work on Professional, Essentials, or Group editions, which do not allow installed Apex. Sandbox and scratch orgs of supported editions are fully supported.
   - q: What happens if I find the permission is wrong?
-    a: Access Analyzer explains exactly which profile or perm set to edit. You make the fix in Setup — the tool points to the decisive source so you change the minimum safe thing.
+    a: Access Analyzer explains exactly which profile or perm set to edit. You make the fix in Setup, and the tool points to the decisive source so you change the minimum safe thing.
   - q: Is it on the AppExchange?
-    a: No — Access Analyzer is distributed directly as an Unlocked Package. That means no Security Review queue, no middleman, and a lower price. You install it with a URL just like an AppExchange package.
+    a: No. Access Analyzer is distributed directly as an Unlocked Package. That means no Security Review queue, no middleman, and a lower price. You install it with a URL just like an AppExchange package.
   - q: Can I see the source code?
-    a: Yes — this is distributed as an Unlocked Package, so all Apex, LWC, and metadata is readable inside your org after install.
+    a: Yes. This is distributed as an Unlocked Package, so all Apex, LWC, and metadata is readable inside your org after install.
   - q: How do I uninstall?
     a: Setup → Installed Packages → Uninstall. Access Analyzer stores no data outside its own metadata, so uninstall is clean.
 ---
@@ -44,9 +44,9 @@ Access Analyzer collapses that maze into one clear answer.
 
 ## What you get
 
-- **The decisive source, highlighted.** Profile, permission set, permission set group, muting set — all evaluated together. The winning source is called out so you know exactly what to edit.
+- **The decisive source, highlighted.** Profile, permission set, permission set group, muting set, all evaluated together. The winning source is called out so you know exactly what to edit.
 - **Object and field-level detail.** CRUD at the object. Read/edit/hide at the field. All on one screen, for any user, on any object.
-- **Works on every page.** A standalone app for deep audits, plus a record-page widget that auto-detects the current object. Drop it on Account, Opportunity, or a custom object — zero configuration.
+- **Works on every page.** A standalone app for deep audits, plus a record-page widget that auto-detects the current object. Drop it on Account, Opportunity, or a custom object with zero configuration.
 - **Copy-ready explanations.** Plain-English sentences you can paste straight into a Jira ticket, audit note, or help-desk reply.
 - **Stays in your org.** No external services. No data leaves Salesforce. Nothing persisted beyond the package's own metadata.
 
@@ -70,4 +70,4 @@ Access Analyzer is built on Apex and Lightning Web Components, which require an 
 
 **Works on:** Enterprise, Unlimited, Developer, and Performance editions (including their sandboxes and scratch orgs).
 
-**Does not work on:** Professional, Essentials, and Group editions — these Salesforce editions do not allow installed Apex, which the tool depends on. If you're on one of these, there's no workaround; Salesforce itself blocks the install.
+**Does not work on:** Professional, Essentials, and Group editions. These Salesforce editions do not allow installed Apex, which the tool depends on. If you're on one of these, there's no workaround; Salesforce itself blocks the install.

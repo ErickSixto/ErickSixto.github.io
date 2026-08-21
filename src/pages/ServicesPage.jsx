@@ -32,7 +32,7 @@ export default function ServicesPage() {
               What I deliver
             </h1>
             <p className="text-lg text-[#4B5563] max-w-2xl leading-relaxed">
-              Six services I keep coming back to. All of them start with the same question — can your team maintain this after I'm gone?
+              Six services I keep coming back to. All of them start with the same question: can your team maintain this after I'm gone?
             </p>
           </MotionSection>
         </div>

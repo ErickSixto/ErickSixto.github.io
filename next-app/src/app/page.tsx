@@ -10,7 +10,7 @@ import { work } from "@/data/work";
 import { meetingLinks } from "@/data/mock";
 
 export const metadata = {
-  title: "Erick Sixto — Salesforce Specialist",
+  title: "Erick Sixto · Salesforce Specialist",
   description:
     "Senior Salesforce specialist. 7 years fixing orgs that got worse every time someone tried to improve them. Remediation and custom builds for SaaS founders and CX teams.",
 };
@@ -26,7 +26,7 @@ export default function HomePage() {
         headlineLead="Salesforce that doesn't"
         headlineBold="fight your team."
         lead={[
-          "I'm Erick Sixto — mechatronics engineer turned Salesforce specialist.",
+          "I'm Erick Sixto, a mechatronics engineer turned Salesforce specialist.",
           "7 years fixing orgs that got worse every time someone tried to improve them. I take a small number of engagements per year, mostly with SaaS founders and CX teams who need someone to make the call, not run another planning meeting.",
         ]}
         cta={{

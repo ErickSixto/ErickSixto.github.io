@@ -3,7 +3,7 @@
 // Editorial hero block. Centered, max-width 760px. Used as the top section
 // of every page. The headline is split into a leading phrase + bolded ending
 // to enforce the Inter 200 → Inter 700 contrast. `lead` accepts a single
-// string or an array of strings — array entries render as separate paragraphs.
+// string or an array of strings. Array entries render as separate paragraphs.
 //
 // On mount the blocks rise and fade in sequence (eyebrow → headline → rule →
 // lead → CTA → credibility) via LoadStagger. Honors prefers-reduced-motion.

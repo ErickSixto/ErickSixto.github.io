@@ -27,7 +27,7 @@ export default function ProjectsPage() {
               <p className="text-[13px] uppercase tracking-[0.2em] text-[#CB9135] mb-4">Projects</p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2F2E2E] mb-6">Selected work</h1>
               <p className="text-lg text-[#4B5563] max-w-lg leading-relaxed">
-                Salesforce work I've shipped. Business outcomes, not feature lists — click any project for the full story.
+                Salesforce work I've shipped. Business outcomes, not feature lists. Click any project for the full story.
               </p>
             </MotionSection>
 
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <MotionSection>
             <h2 className="text-3xl font-bold text-white mb-5">Have a similar challenge?</h2>
-            <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">Let's discuss what's not working and map out an approach — free, no commitment.</p>
+            <p className="text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed">Let's discuss what's not working and map out an approach. Free, no commitment.</p>
             <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
               <Button className="bg-white text-[#2F2E2E] hover:bg-gray-100 px-8 h-12 text-sm font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                 <Calendar className="mr-2 h-4 w-4" />

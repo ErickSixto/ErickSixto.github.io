@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = getProductBySlug(slug);
   if (!product) return { title: "Product not found" };
   return {
-    title: `${product.name} — Erick Sixto`,
+    title: `${product.name} · Erick Sixto`,
     description: product.tagline,
   };
 }
@@ -26,19 +26,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const ACCESS_ANALYZER_SHOTS = [
   {
     src: "/products/access-analyzer/crud-results.png",
-    caption: "CRUD results — every source evaluated, decisive winner highlighted.",
+    caption: "CRUD results: every source evaluated, decisive winner highlighted.",
   },
   {
     src: "/products/access-analyzer/fls-results.png",
-    caption: "Field-level detail — read, edit, and hidden states per field.",
+    caption: "Field-level detail: read, edit, and hidden states per field.",
   },
   {
     src: "/products/access-analyzer/record-widget.png",
-    caption: "Record-page widget — auto-detects the object and user in context.",
+    caption: "Record-page widget that auto-detects the object and user in context.",
   },
   {
     src: "/products/access-analyzer/app-overview.png",
-    caption: "Standalone app — for deep audits on any user and permission.",
+    caption: "Standalone app for deep audits on any user and permission.",
   },
 ];
 
@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         </section>
       )}
 
-      {/* Screenshots — Access Analyzer only */}
+      {/* Screenshots: Access Analyzer only */}
       {product.slug === "access-analyzer" && (
         <section className="max-w-[880px] mx-auto px-6 py-16 border-t border-ink/[0.067]">
           <Reveal>
@@ -210,7 +210,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         questionBold="install?"
         body="One URL. Two minutes. Works in every Salesforce edition that supports installed Apex code."
         primary={{
-          label: `Buy now — $${product.price}`,
+          label: `Buy now · $${product.price}`,
           href: `/products/${product.slug}/buy`,
         }}
       />

@@ -9,7 +9,7 @@ import { work } from "@/data/work";
 import { meetingLinks } from "@/data/mock";
 
 export const metadata = {
-  title: "Selected work — Erick Sixto",
+  title: "Selected work · Erick Sixto",
   description: "5 Salesforce engagements with the call I made and the outcome.",
 };
 
@@ -20,7 +20,7 @@ export default function WorkPage() {
         eyebrowLeft="Selected work"
         headlineLead={`${work.length} engagements,`}
         headlineBold="chosen carefully."
-        lead="Most of my Salesforce work doesn't show up here — Fiverr clients, NDA work, projects that ended cleanly. These are the ones I'd send a prospective client to read first. Roughly 150 words each."
+        lead="Most of my Salesforce work doesn't show up here: Fiverr clients, NDA work, projects that ended cleanly. These are the ones I'd send a prospective client to read first. Roughly 150 words each."
       />
 
       <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-ink/[0.067]">

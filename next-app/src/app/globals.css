@@ -22,7 +22,7 @@
   --color-input: hsl(40 5% 89%);
   --color-ring: hsl(0 2% 18%);
 
-  /* Editorial palette — single source of truth for the brand colors.
+  /* Editorial palette: single source of truth for the brand colors.
      Use these (text-ink, bg-canvas, border-ink/[0.067], text-gold, ...)
      instead of hardcoded hex. One gold accent, not two. */
   --color-ink: #2F2E2E;

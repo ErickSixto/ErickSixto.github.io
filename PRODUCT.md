@@ -1,4 +1,4 @@
-# PRODUCT.md — Erick Sixto
+# PRODUCT.md · Erick Sixto
 
 > Inferred from the codebase (copy, palette, type, structure) on 2026-05-29. Edit freely; this is a starting point, not gospel.
 
@@ -10,13 +10,13 @@ The personal site and lead-generation surface for **Erick Sixto**, a Senior Sale
 
 ## Users
 
-- **SaaS founders and CX / support team leads** with a Salesforce org that has grown messy — brittle automations, a portal users avoid, a pipeline that no longer matches how they sell.
+- **SaaS founders and CX / support team leads** with a Salesforce org that has grown messy: brittle automations, a portal users avoid, a pipeline that no longer matches how they sell.
 - Buyers who want **a senior expert who makes the call**, not another planning meeting, a junior admin, or a lowest-bid template shop.
 - Time-poor and skeptical of consultants. They scan, they judge fast, and they distrust hype. They respond to specifics and evidence (third-party attestations, named outcomes).
 
 ## Brand personality
 
-Senior, opinionated, plainspoken. An engineer's rigor applied to Salesforce: *"operators don't care how elegant your circuit is; they need it to work."* Confident enough to publish who he **won't** work with. Decisive — the recurring promise is "the call I made." Quietly premium, never loud.
+Senior, opinionated, plainspoken. An engineer's rigor applied to Salesforce: *"operators don't care how elegant your circuit is; they need it to work."* Confident enough to publish who he **won't** work with. Decisive. The recurring promise is "the call I made." Quietly premium, never loud.
 
 ## Tone of voice
 
@@ -38,4 +38,4 @@ Editorial / print aesthetic. A warm oat canvas (`hsl(40 7% 94%)`), charcoal ink 
 1. **Every element earns its place.** If it doesn't build trust or move toward the call, it's cut.
 2. **Restraint signals seniority.** The confidence to leave space is the brand.
 3. **Evidence over assertion.** Third-party attestations and named outcomes do the persuading.
-4. **Read like a document, behave like a portfolio.** Calm, scannable, substantive — never a sales funnel.
+4. **Read like a document, behave like a portfolio.** Calm, scannable, substantive, never a sales funnel.

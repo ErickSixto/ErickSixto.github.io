@@ -8,7 +8,7 @@ import { MotionConfig } from "framer-motion";
 //
 // This is applied client-side after hydration, so the motion primitives can
 // render an identical tree on the server and the client without branching on a
-// client-only value — which is what previously caused a hydration mismatch.
+// client-only value, which is what previously caused a hydration mismatch.
 export function MotionProvider({ children }: { children: React.ReactNode }) {
   return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }

@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
             <div className="max-w-xl">
-              {/* Overline: only on mobile — desktop header already carries the descriptor */}
+              {/* Overline: only on mobile. Desktop header already carries the descriptor */}
               <motion.p
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -166,7 +166,7 @@ export default function HomePage() {
                 Two things the work has to do
               </h2>
               <p className="text-lg text-[#4B5563] leading-relaxed">
-                Most Salesforce orgs have too many features and not enough adoption. I focus on the opposite — less configuration, more usability. If your team won't use it, I won't build it.
+                Most Salesforce orgs have too many features and not enough adoption. I focus on the opposite: less configuration, more usability. If your team won't use it, I won't build it.
               </p>
             </div>
           </MotionSection>
@@ -247,7 +247,7 @@ export default function HomePage() {
               </Link>
             </div>
           </MotionSection>
-          {/* Hero project — full-width, richer presentation */}
+          {/* Hero project: full-width, richer presentation */}
           <MotionSection>
             <Link to="/projects">
               <motion.div whileHover={{ y: -4 }} transition={{ duration: 0.25 }}>
@@ -277,7 +277,7 @@ export default function HomePage() {
             </Link>
           </MotionSection>
 
-          {/* Secondary projects — smaller cards in 2-column */}
+          {/* Secondary projects: smaller cards in 2-column */}
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {secondaryProjects.map((project) => (
               <StaggerItem key={project.id}>
@@ -465,7 +465,7 @@ export default function HomePage() {
           <MotionSection>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">Got an org that's fighting your team?</h2>
             <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Messy data model, broken integration, portal that users avoid — start with a 30-minute call. No pitch.
+              Messy data model, broken integration, portal that users avoid. Start with a 30-minute call. No pitch.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href={meetingLinks.discovery.url} target="_blank" rel="noopener noreferrer">
