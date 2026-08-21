@@ -177,7 +177,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Is this a fit? RIGHT FIT */}
+      {/* Is this a fit? (RIGHT FIT) */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
           <SectionLabel className="mb-3 inline-block">Is this a fit?</SectionLabel>

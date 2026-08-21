@@ -34,11 +34,11 @@ const ACCESS_ANALYZER_SHOTS = [
   },
   {
     src: "/products/access-analyzer/record-widget.png",
-    caption: "Record-page widget that auto-detects the object and user in context.",
+    caption: "Record-page widget: auto-detects the object and user in context.",
   },
   {
     src: "/products/access-analyzer/app-overview.png",
-    caption: "Standalone app for deep audits on any user and permission.",
+    caption: "Standalone app: deep audits on any user and permission.",
   },
 ];
 

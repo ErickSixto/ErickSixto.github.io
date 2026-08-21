@@ -55,7 +55,7 @@ They want a senior expert who makes the call, not lowest-bid, not template-shopp
 - First person singular: **"I"**, not "we." Erick is the brand; no fake agency plural.
 - **Specific beats vague.** Prefer real numbers and concrete failure modes ("drops records on Tuesdays") over adjectives ("robust," "seamless").
 - **No dashes as punctuation.** No em dashes, no en dashes, and no spaced " - " or " -- " standing in for one. Use a comma, a colon, a period, or parentheses. Two typographic exceptions survive because they are design marks, not punctuation: the gold leading dash on section labels and the same mark in the footer descriptor.
-- **Page titles join with a middle dot**: "About · Erick Sixto", "Selected work · Erick Sixto".
+- **Middle dot joins page titles and date ranges**: "About · Erick Sixto", "Jul 2019 · Jul 2021". It also keeps the career column on one line, which "to" does not.
 - Mono/uppercase micro-labels (eyebrows, section labels) stay short and factual: "What I solve," "Is this a fit?"
 - One exclamation mark is one too many. Let the claim carry the energy.
 - **No jargon the buyer doesn't already use.** Apex/LWC/Flow are fine for this audience; "synergize," "leverage," "best-in-class" are banned.
