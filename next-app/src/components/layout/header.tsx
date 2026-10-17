@@ -31,7 +31,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-4 sm:py-5 flex items-center justify-between gap-3 sm:gap-6">
-        <Link href="/" className="flex flex-col leading-none flex-1 min-w-0 group">
+        <Link href="/" className="flex flex-col justify-center leading-none flex-1 min-w-0 min-h-11 group">
           <span className="text-[0.95rem] sm:text-[1rem] font-semibold tracking-[-0.01em] text-ink truncate">
             Erick Sixto
           </span>
@@ -40,7 +40,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-5">
           {navLinks.map((link) => {
             const isActive =
               link.path === "/"
@@ -51,7 +51,7 @@ export default function Header() {
                 key={link.path}
                 href={link.path}
                 aria-current={isActive ? "page" : undefined}
-                className={`text-[0.82rem] transition-colors duration-200 ${
+                className={`text-[0.82rem] inline-flex items-center min-h-11 px-3 transition-colors duration-200 ${
                   isActive ? "text-ink font-medium" : "text-muted hover:text-ink"
                 }`}
               >
@@ -66,7 +66,7 @@ export default function Header() {
             href={meetingLinks.discovery.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap text-[0.78rem] sm:text-[0.8rem] border border-ink/[0.2] text-ink px-3 sm:px-4 py-1.5 sm:py-2 rounded-[2px] hover:bg-ink hover:text-canvas transition-colors duration-200"
+            className="whitespace-nowrap text-[0.78rem] sm:text-[0.8rem] inline-flex items-center min-h-11 border border-ink/[0.2] text-ink px-4 sm:px-5 rounded-[2px] hover:bg-ink hover:text-canvas transition-colors duration-200"
           >
             Book a call
           </a>
@@ -74,7 +74,7 @@ export default function Header() {
       </div>
 
       {/* Mobile nav: links distributed evenly below the bar on small screens */}
-      <nav className="md:hidden border-t border-ink/[0.067] flex justify-around px-3 py-2.5 text-[0.82rem]">
+      <nav className="md:hidden border-t border-ink/[0.067] flex justify-around px-3 text-[0.82rem]">
         {navLinks.map((link) => {
           const isActive =
             link.path === "/"
@@ -85,7 +85,9 @@ export default function Header() {
               key={link.path}
               href={link.path}
               aria-current={isActive ? "page" : undefined}
-              className={isActive ? "text-ink font-medium" : "text-muted"}
+              className={`inline-flex items-center min-h-11 px-4 ${
+                isActive ? "text-ink font-medium" : "text-muted"
+              }`}
             >
               {link.label}
             </Link>

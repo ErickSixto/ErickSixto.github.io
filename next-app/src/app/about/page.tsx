@@ -167,9 +167,9 @@ export default function AboutPage() {
         <div className="text-right mt-8">
           <a
             href="/work"
-            className="font-mono text-[0.7rem] text-ink border-b border-gold pb-px"
+            className="font-mono text-[0.76rem] text-ink inline-flex items-center min-h-11 [&>span]:border-b [&>span]:border-gold [&>span]:pb-px"
           >
-            see the case studies →
+            <span>see the case studies →</span>
           </a>
         </div>
       </section>

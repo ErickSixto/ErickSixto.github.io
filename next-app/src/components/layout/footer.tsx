@@ -22,7 +22,11 @@ export default function Footer() {
 
         <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
           {navLinks.map((link) => (
-            <Link key={link.path} href={link.path} className="text-muted hover:text-ink transition-colors duration-200">
+            <Link
+              key={link.path}
+              href={link.path}
+              className="inline-flex items-center min-h-11 px-2 text-muted hover:text-ink transition-colors duration-200"
+            >
               {link.label}
             </Link>
           ))}

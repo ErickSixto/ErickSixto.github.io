@@ -17,11 +17,11 @@ export function WorkEntry({ entry }: { entry: WorkEntryType }) {
           <span>{entry.year}</span>
         </div>
 
-        <div className="text-[0.95rem] font-semibold text-ink mb-5 tracking-[-0.005em]">
+        <div className="text-[0.95rem] font-semibold text-ink mb-10 tracking-[-0.005em]">
           {entry.client}
         </div>
 
-        <h2 className="font-light text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.15] tracking-[-0.02em] text-ink mb-8 max-w-[24ch]">
+        <h2 className="font-light text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.15] tracking-[-0.02em] text-ink mb-7 max-w-[24ch]">
           {entry.title}
         </h2>
 

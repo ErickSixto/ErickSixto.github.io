@@ -18,7 +18,7 @@
   --color-gold: #7E5618;
   --color-faint: #F7F7F5;
 
-  --font-sans: var(--font-inter), "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
+  --font-sans: var(--font-archivo), "Archivo", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
 }
 
@@ -43,12 +43,66 @@
   }
 }
 
+/* ─── Entrance motion ───
+   See src/components/animations.tsx for the rule these implement: content is
+   visible without JavaScript, so no hidden state is ever server-rendered.
+
+   The hero (`data-load-stagger`) runs on pure CSS and needs no JS at all.
+   Scroll reveals only become hidden once JS sets data-reveal="out", so with
+   scripts blocked the selector never matches and the content just stays put. */
+
+@keyframes editorial-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ease-out-quart: fast start, long settle. No bounce, no elastic. */
+:root { --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1); }
+
+[data-load-stagger] > [data-stagger-item] {
+  animation: editorial-rise 0.55s var(--ease-out-quart) both;
+  animation-delay: calc(
+    var(--stagger-delay, 0.04s) + var(--item-index, 0) * var(--stagger, 0.06s)
+  );
+}
+[data-load-stagger] > [data-stagger-item]:nth-child(1) { --item-index: 0; }
+[data-load-stagger] > [data-stagger-item]:nth-child(2) { --item-index: 1; }
+[data-load-stagger] > [data-stagger-item]:nth-child(3) { --item-index: 2; }
+[data-load-stagger] > [data-stagger-item]:nth-child(4) { --item-index: 3; }
+[data-load-stagger] > [data-stagger-item]:nth-child(5) { --item-index: 4; }
+[data-load-stagger] > [data-stagger-item]:nth-child(6) { --item-index: 5; }
+
+[data-reveal="out"] { opacity: 0; transform: translateY(16px); }
+[data-reveal="in"] {
+  animation: editorial-rise 0.6s var(--ease-out-quart) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+[data-reveal="in"][data-stagger] > [data-stagger-item] {
+  animation: editorial-rise 0.55s var(--ease-out-quart) both;
+  animation-delay: calc(var(--item-index, 0) * var(--stagger, 0.07s));
+}
+[data-reveal="out"][data-stagger] > [data-stagger-item] { opacity: 0; }
+[data-stagger] > [data-stagger-item]:nth-child(1) { --item-index: 0; }
+[data-stagger] > [data-stagger-item]:nth-child(2) { --item-index: 1; }
+[data-stagger] > [data-stagger-item]:nth-child(3) { --item-index: 2; }
+[data-stagger] > [data-stagger-item]:nth-child(4) { --item-index: 3; }
+[data-stagger] > [data-stagger-item]:nth-child(5) { --item-index: 4; }
+[data-stagger] > [data-stagger-item]:nth-child(6) { --item-index: 5; }
+[data-stagger] > [data-stagger-item]:nth-child(n + 7) { --item-index: 6; }
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+  /* Neutralized duration alone would leave a hidden element hidden, so make
+     the resting state explicit for anything the reveal marked. */
+  [data-reveal="out"], [data-reveal="out"] > [data-stagger-item] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

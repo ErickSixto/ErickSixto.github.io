@@ -44,9 +44,11 @@ export function WorkPeek({
       <div className="text-right mt-10">
         <Link
           href="/work"
-          className="font-mono text-[0.76rem] text-ink border-b border-gold pb-px"
+          className="font-mono text-[0.76rem] text-ink inline-flex items-center min-h-11"
         >
-          see all {totalCount} engagements →
+          <span className="border-b border-gold pb-px">
+            see all {totalCount} engagements →
+          </span>
         </Link>
       </div>
     </>

@@ -39,9 +39,9 @@ export function ClosingCTA({
           {secondary ? (
             <a
               href={secondary.href}
-              className="font-mono text-[0.82rem] text-ink border-b border-ink/[0.2] pb-px"
+              className="font-mono text-[0.82rem] text-ink inline-flex items-center min-h-11"
             >
-              {secondary.label}
+              <span className="border-b border-ink/[0.2] pb-px">{secondary.label}</span>
             </a>
           ) : null}
         </div>

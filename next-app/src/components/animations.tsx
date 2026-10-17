@@ -4,16 +4,77 @@
 // Values are deliberately quiet (small rise, short duration) to match the
 // restrained, document-like feel of the site.
 //
-// Reduced motion is honored globally via <MotionProvider> (MotionConfig
-// reducedMotion="user"), NOT by branching the render here. Branching on the
-// client-only prefers-reduced-motion value caused a server/client hydration
-// mismatch, so every primitive now renders an identical tree on both sides and
-// lets framer apply the user's motion preference after hydration.
+// The governing rule here is that CONTENT IS VISIBLE WITHOUT JAVASCRIPT.
+// This is a static export on GitHub Pages: there is no streaming fallback, so
+// anything hidden in the server-rendered HTML stays hidden if a script fails,
+// is blocked, or is slow on a bad connection. Previously every block shipped
+// with an inline `opacity:0` and the whole page depended on hydration to
+// become readable.
+//
+// So the hidden state is never rendered on the server:
+//
+//   Hero (above the fold) uses pure CSS. `.rise` animates from hidden to
+//   visible with `animation-fill-mode: both` and a per-item delay. CSS
+//   animations need no JS, so the entrance plays whether or not scripts run,
+//   and the markup itself carries no hidden state at all.
+//
+//   Reveal / Stagger (below the fold) are progressive enhancement. The server
+//   renders them plain and visible. Only once JS is confirmed running does the
+//   effect mark them hidden and hand them to an IntersectionObserver. Without
+//   JS they simply stay visible. The mark happens in useLayoutEffect, before
+//   paint, and everything using it sits below the fold, so there is no flash.
+//
+// Reduced motion is handled by the `prefers-reduced-motion` block in
+// globals.css, which neutralizes animation duration globally. Nothing here
+// branches on a client-only value, which is what caused the hydration mismatch
+// this file used to carry.
 
-import React, { useRef } from "react";
-import { motion, useInView, type Variants } from "framer-motion";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+// useLayoutEffect warns during SSR; on the server we never run it anyway.
+const useIsomorphicLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
+/* ─── useScrollReveal ───
+   Marks the node hidden only after JS is confirmed, then reveals it once it
+   scrolls into view. Returns the ref plus the data attribute the CSS keys on. */
+function useScrollReveal<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [armed, setArmed] = useState(false);
+
+  useIsomorphicLayoutEffect(() => {
+    // Reaching this point means scripts run, so it is safe to hide and animate.
+    setArmed(true);
+  }, []);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || !armed) return;
+
+    // No IntersectionObserver (old browser): leave the content visible.
+    if (typeof IntersectionObserver === "undefined") {
+      node.dataset.reveal = "in";
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            node.dataset.reveal = "in";
+            observer.disconnect();
+          }
+        }
+      },
+      { rootMargin: "-60px" }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [armed]);
+
+  return { ref, armed };
+}
 
 /* ─── Reveal ───
    Single block that rises a few px and fades in once, when it scrolls into
@@ -22,26 +83,22 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
-  y = 16,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  y?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { ref, armed } = useScrollReveal<HTMLDivElement>();
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, ease: EASE }}
       className={className}
+      data-reveal={armed ? "out" : undefined}
+      style={delay ? ({ "--reveal-delay": `${delay}s` } as React.CSSProperties) : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -57,25 +114,26 @@ export function Stagger({
   className?: string;
   stagger?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const { ref, armed } = useScrollReveal<HTMLDivElement>();
 
   return (
-    <motion.div
+    <div
       ref={ref}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      variants={{ visible: { transition: { staggerChildren: stagger } } }}
       className={className}
+      data-reveal={armed ? "out" : undefined}
+      data-stagger=""
+      style={{ "--stagger": `${stagger}s` } as React.CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
 /* ─── LoadStagger ───
    Like Stagger, but plays on mount instead of on scroll. Used once, for the
-   hero, so the page opens with a composed entrance above the fold. */
+   hero, so the page opens with a composed entrance above the fold.
+
+   Pure CSS: no hidden server state, no JS, no hydration dependency. */
 export function LoadStagger({
   children,
   className = "",
@@ -88,26 +146,24 @@ export function LoadStagger({
   delayChildren?: number;
 }) {
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={{
-        visible: { transition: { staggerChildren: stagger, delayChildren } },
-      }}
+    <div
       className={className}
+      data-load-stagger=""
+      style={
+        {
+          "--stagger": `${stagger}s`,
+          "--stagger-delay": `${delayChildren}s`,
+        } as React.CSSProperties
+      }
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
 /* ─── StaggerItem ───
-   One row inside a Stagger / LoadStagger. */
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
-};
-
+   One row inside a Stagger / LoadStagger. Carries no state of its own: the
+   parent's data attribute and the CSS nth-child delay drive it. */
 export function StaggerItem({
   children,
   className = "",
@@ -116,8 +172,8 @@ export function StaggerItem({
   className?: string;
 }) {
   return (
-    <motion.div variants={itemVariants} className={className}>
+    <div className={className} data-stagger-item="">
       {children}
-    </motion.div>
+    </div>
   );
 }
