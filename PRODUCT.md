@@ -39,3 +39,8 @@ Editorial / print aesthetic. A warm oat canvas (`hsl(40 7% 94%)`), charcoal ink 
 2. **Restraint signals seniority.** The confidence to leave space is the brand.
 3. **Evidence over assertion.** Third-party attestations and named outcomes do the persuading.
 4. **Read like a document, behave like a portfolio.** Calm, scannable, substantive, never a sales funnel.
+5. **Services and evidence only, no storefront.** The site sells Erick's judgment, not packaged software. There is no products or pricing surface, and a single listed tool reads as an abandoned shelf. Anything buyable belongs in the discovery call, not in the navigation.
+
+## Scope
+
+In scope: the home page, the selected work index, the about page, and the booking path. Out of scope: a products or pricing surface, a storefront, install or checkout flows, and any route that asks the visitor to buy rather than to book. The Access Analyzer product and the `/products` routes were removed on 2026-10-16; `/products` and `/products/access-analyzer` survive only as noindex redirect stubs pointing at `/work`.
