@@ -1,7 +1,6 @@
 import React from "react";
 import { Hero } from "@/components/editorial/Hero";
 import { Reveal } from "@/components/animations";
-import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { EditorialList } from "@/components/editorial/EditorialList";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
 import {
@@ -89,7 +88,6 @@ export default function AboutPage() {
       {/* Verified by: TRUST */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
-          <SectionLabel className="mb-3 inline-block">Verified by</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Third-party <strong className="font-bold">attestations.</strong>
           </h2>
@@ -138,7 +136,6 @@ export default function AboutPage() {
       {/* What I solve: PROBLEMS */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
-          <SectionLabel className="mb-3 inline-block">What I solve</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             The work most consultants{" "}
             <strong className="font-bold">don&apos;t want to take.</strong>
@@ -180,7 +177,6 @@ export default function AboutPage() {
       {/* Is this a fit? (RIGHT FIT) */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10 max-w-[56ch]">
-          <SectionLabel className="mb-3 inline-block">Is this a fit?</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             Who I work with,{" "}
             <strong className="font-bold">and who I don&apos;t.</strong>
@@ -226,7 +222,6 @@ export default function AboutPage() {
       {/* Career timeline */}
       <section className="max-w-[880px] mx-auto px-6 py-20 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
-          <SectionLabel className="mb-3 inline-block">Career</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Where I&apos;ve <strong className="font-bold">worked.</strong>
           </h2>
@@ -252,7 +247,6 @@ export default function AboutPage() {
       </section>
 
       <ClosingCTA
-        label="Get in touch"
         questionLead="Got an org that needs"
         questionBold="untangling?"
         body="A 30-minute call is free. I'll tell you whether I can help, and if I can't, I'll usually know who can."

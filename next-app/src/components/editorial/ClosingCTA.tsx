@@ -1,20 +1,20 @@
-// Closing block on every page. Centered. Section label, large editorial
-// question, brief paragraph, primary CTA + secondary text link.
+// Closing block on every page. Centered. Large editorial question, brief
+// paragraph, primary CTA + secondary text link.
+//
+// No kicker label above the question: the question carries its own weight,
+// and a tracked uppercase label restating it never earned its place.
 
 import React from "react";
-import { SectionLabel } from "./SectionLabel";
 import { EditorialButton } from "./EditorialButton";
 import { Reveal } from "../animations";
 
 export function ClosingCTA({
-  label,
   questionLead,
   questionBold,
   body,
   primary,
   secondary,
 }: {
-  label: string;
   questionLead: string;
   questionBold: string;
   body: string;
@@ -25,8 +25,7 @@ export function ClosingCTA({
     <section className="border-t border-ink/[0.067] bg-panel">
       <div className="text-center max-w-[720px] mx-auto px-6 py-32">
       <Reveal>
-        <SectionLabel className="mb-4 inline-block">{label}</SectionLabel>
-        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-ink mb-6 mt-2">
+        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-ink mb-6">
           {questionLead}{" "}
           <strong className="font-bold">{questionBold}</strong>
         </h2>

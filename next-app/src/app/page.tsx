@@ -1,7 +1,6 @@
 import React from "react";
 import { Hero } from "@/components/editorial/Hero";
 import { Reveal } from "@/components/animations";
-import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { StanceList } from "@/components/editorial/StanceList";
 import { WorkPeek } from "@/components/editorial/WorkPeek";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
@@ -39,7 +38,6 @@ export default function HomePage() {
 
       <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-ink/[0.067]">
         <Reveal className="mb-14 max-w-[56ch]">
-          <SectionLabel className="mb-5 inline-block">Operating principles</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink mb-4">
             What I won&apos;t{" "}
             <strong className="font-bold">compromise on.</strong>
@@ -53,7 +51,6 @@ export default function HomePage() {
 
       <section className="max-w-[880px] mx-auto px-6 py-24 border-t border-ink/[0.067]">
         <Reveal className="mb-10">
-          <SectionLabel className="mb-3 inline-block">Selected work</SectionLabel>
           <h2 className="font-extralight text-[clamp(1.6rem,2.8vw,2.4rem)] leading-[1.1] tracking-[-0.02em] text-ink">
             Recent <strong className="font-bold">engagements.</strong>
           </h2>
@@ -62,7 +59,6 @@ export default function HomePage() {
       </section>
 
       <ClosingCTA
-        label="Get in touch"
         questionLead="Got an org that's working"
         questionBold="against your team?"
         body="A 30-minute call is free. I'll tell you whether I can help, and if I can't, I'll usually know who can. No pitch, no proposal, no follow-up email 3 days later."

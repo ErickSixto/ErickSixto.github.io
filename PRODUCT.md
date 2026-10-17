@@ -24,7 +24,7 @@ Direct and declarative. Short sentences, dry wit, concrete over abstract. Specif
 
 ## Visual direction
 
-Editorial / print aesthetic. A warm oat canvas (`hsl(40 7% 94%)`), charcoal ink (`#2F2E2E`), and a single restrained gold accent (`#7E5618` / `#CB9135`) used only for labels, separators, and the focus ring. Typography carries the design: Inter with extreme weight contrast (200 extralight → 700 bold), JetBrains Mono for wide-tracked uppercase labels. Hairline dividers, generous content-driven whitespace, capped line lengths. It should read like a considered document, not a funnel.
+Editorial / print aesthetic. A warm oat canvas (`hsl(40 7% 94%)`), charcoal ink (`#2F2E2E`), and a single restrained gold accent (`#7E5618`) used only for numbering, inline markers, separators, and the focus ring. It never labels a section: tracked uppercase kicker labels above headings were removed on 2026-10-16 as an AI anti-pattern, since the heading carries its own weight and the label only restated it. Typography carries the design: Inter with extreme weight contrast (200 extralight → 700 bold), JetBrains Mono for wide-tracked uppercase labels. Hairline dividers, generous content-driven whitespace, capped line lengths. It should read like a considered document, not a funnel.
 
 ## Anti-references
 
@@ -32,6 +32,7 @@ Editorial / print aesthetic. A warm oat canvas (`hsl(40 7% 94%)`), charcoal ink 
 - Generic Salesforce-partner / agency sites: badge walls, stock "team collaborating" photos, "Digital Transformation Partner" boilerplate.
 - Loud "growth" design: neon accents, animated gradients, countdown timers, pop-up modals.
 - Anything that reads as templated. Sameness is the enemy; restraint is the differentiator.
+- Tracked uppercase kicker labels above headings ("— Operating principles" above "What I won't compromise on."). A generated-looking tell: the heading already carries the meaning and the label only restates it. If the words matter, work them into the heading or the body.
 
 ## Strategic principles
 

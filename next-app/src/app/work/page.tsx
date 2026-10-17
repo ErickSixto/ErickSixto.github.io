@@ -1,7 +1,5 @@
 import React from "react";
 import { Hero } from "@/components/editorial/Hero";
-import { Reveal } from "@/components/animations";
-import { SectionLabel } from "@/components/editorial/SectionLabel";
 import { WorkIndex } from "@/components/editorial/WorkIndex";
 import { WorkEntry } from "@/components/editorial/WorkEntry";
 import { ClosingCTA } from "@/components/editorial/ClosingCTA";
@@ -24,9 +22,6 @@ export default function WorkPage() {
       />
 
       <section className="max-w-[880px] mx-auto px-6 py-12 border-t border-ink/[0.067]">
-        <Reveal>
-          <SectionLabel className="mb-5 inline-block">Index</SectionLabel>
-        </Reveal>
         <WorkIndex entries={work} />
       </section>
 
@@ -37,7 +32,6 @@ export default function WorkPage() {
       </section>
 
       <ClosingCTA
-        label="Want to be entry №06?"
         questionLead="Bring me the engagement"
         questionBold="other consultants ducked."
         body="The work I keep is the work that wouldn't fit a packaged Salesforce template. If your project is one of those, let's talk."
