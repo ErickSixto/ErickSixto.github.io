@@ -2,25 +2,11 @@
 @plugin "tailwindcss-animate";
 
 @theme {
+  /* Structural tokens: consumed by the base layer below (body, and the
+     border-color reset on *). Not exposed as utilities anywhere else. */
   --color-background: hsl(40 7% 94%);
   --color-foreground: hsl(0 2% 18%);
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(0 2% 18%);
-  --color-popover: hsl(0 0% 100%);
-  --color-popover-foreground: hsl(0 2% 18%);
-  --color-primary: hsl(0 2% 18%);
-  --color-primary-foreground: hsl(40 7% 94%);
-  --color-secondary: hsl(40 7% 94%);
-  --color-secondary-foreground: hsl(0 2% 18%);
-  --color-muted: hsl(40 7% 94%);
-  --color-muted-foreground: hsl(0 2% 28%);
-  --color-accent: hsl(37 56% 51%);
-  --color-accent-foreground: hsl(0 0% 98%);
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 98%);
   --color-border: hsl(40 5% 89%);
-  --color-input: hsl(40 5% 89%);
-  --color-ring: hsl(0 2% 18%);
 
   /* Editorial palette: single source of truth for the brand colors.
      Use these (text-ink, bg-canvas, border-ink/[0.067], text-gold, ...)
@@ -34,21 +20,6 @@
 
   --font-sans: var(--font-inter), "Inter", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-
-  --radius: 0.25rem;
-
-  --animate-accordion-down: accordion-down 0.25s ease-out;
-  --animate-accordion-up: accordion-up 0.25s ease-out;
-}
-
-@keyframes accordion-down {
-  from { height: 0; }
-  to   { height: var(--radix-accordion-content-height); }
-}
-
-@keyframes accordion-up {
-  from { height: var(--radix-accordion-content-height); }
-  to   { height: 0; }
 }
 
 @layer base {
