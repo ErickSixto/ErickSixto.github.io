@@ -40,7 +40,7 @@ export function ClosingCTA({
           {secondary ? (
             <a
               href={secondary.href}
-              className="font-mono text-[0.72rem] text-ink border-b border-ink/[0.2] pb-px"
+              className="font-mono text-[0.82rem] text-ink border-b border-ink/[0.2] pb-px"
             >
               {secondary.label}
             </a>

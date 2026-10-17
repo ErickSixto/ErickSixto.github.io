@@ -86,9 +86,12 @@ export function Hero({
 
         {credibility && credibility.length > 0 ? (
           <StaggerItem>
-            <div className="font-mono text-[0.66rem] tracking-[0.16em] uppercase text-muted flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5">
+            {/* Third-party evidence. Principle 3 is "evidence over assertion",
+                so this reads at ink weight rather than sitting at the bottom of
+                the type ramp in muted gray. It is the proof, not a footnote. */}
+            <div className="font-mono text-[0.82rem] tracking-[0.12em] uppercase text-ink font-medium flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
               {credibility.map((item, i) => (
-                <span key={item} className="whitespace-nowrap inline-flex items-center gap-3">
+                <span key={item} className="whitespace-nowrap inline-flex items-center gap-4">
                   <span>{item}</span>
                   {i < credibility.length - 1 ? (
                     <span className="text-ink/[0.2]" aria-hidden>·</span>

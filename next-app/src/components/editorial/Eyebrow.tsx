@@ -14,7 +14,7 @@ export function Eyebrow({
 }) {
   return (
     <div
-      className={`font-mono text-[0.62rem] tracking-[0.28em] uppercase text-muted ${className}`}
+      className={`font-mono text-[0.72rem] tracking-[0.24em] uppercase text-muted ${className}`}
     >
       {left}
       {right ? (

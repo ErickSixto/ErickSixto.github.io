@@ -10,7 +10,7 @@ export function WorkEntry({ entry }: { entry: WorkEntryType }) {
   return (
     <article id={entry.id} className="scroll-mt-28 py-14 sm:py-20 border-t border-ink/[0.133] first:border-t-0 first:pt-8">
       <Reveal>
-        <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-muted mb-3 flex flex-wrap gap-4">
+        <div className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted mb-3 flex flex-wrap gap-4">
           <span className="text-gold font-medium">{entry.number}</span>
           <span>{entry.industry}</span>
           <span>{entry.scale}</span>
@@ -53,7 +53,7 @@ function Section({
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] gap-2 sm:gap-8 py-4 sm:py-5 border-t border-ink/[0.067] sm:items-baseline">
-      <span className="font-mono text-[0.6rem] tracking-[0.18em] uppercase text-muted sm:pt-1">
+      <span className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted sm:pt-1">
         {label}
       </span>
       <p

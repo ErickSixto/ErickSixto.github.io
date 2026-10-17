@@ -23,7 +23,7 @@ export function WorkPeek({
             className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 sm:gap-8 py-7 items-baseline group"
           >
             <div>
-              <div className="font-mono text-[0.62rem] tracking-[0.16em] uppercase text-muted mb-2">
+              <div className="font-mono text-[0.72rem] tracking-[0.14em] uppercase text-muted mb-2">
                 <span className="text-ink font-medium">{entry.client}</span>
                 <span className="mx-2 text-ink/[0.2]">·</span>
                 {entry.industry}
@@ -35,7 +35,7 @@ export function WorkPeek({
               </div>
               <div className="text-[0.9rem] text-muted">{entry.outcome}</div>
             </div>
-            <span className="font-mono text-[0.7rem] text-ink border-b border-ink/[0.333] pb-px self-center">
+            <span className="font-mono text-[0.76rem] text-ink border-b border-ink/[0.333] pb-px self-center">
               read →
             </span>
           </Link>
@@ -44,7 +44,7 @@ export function WorkPeek({
       <div className="text-right mt-10">
         <Link
           href="/work"
-          className="font-mono text-[0.7rem] text-ink border-b border-gold pb-px"
+          className="font-mono text-[0.76rem] text-ink border-b border-gold pb-px"
         >
           see all {totalCount} engagements →
         </Link>

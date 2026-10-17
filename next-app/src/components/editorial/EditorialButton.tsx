@@ -1,5 +1,9 @@
-// Outlined CTA button. 1px charcoal border. Fills charcoal on hover with oat
-// text. 2px radius. The single button style across the entire site.
+// Primary CTA button. Solid charcoal with oat text, inverting to outline on
+// hover. 2px radius. This is the booking action, the one thing the site exists
+// for, so it carries weight rather than whispering: it is the only solid block
+// on an otherwise hairline page, which is the same 200-vs-700 contrast the
+// headlines use. The quieter outlined "Book a call" in the header is the
+// persistent counterpart, deliberately subordinate to this one.
 //
 // Renders as <a> when `href` is provided, otherwise as <button>.
 
@@ -23,9 +27,9 @@ type ButtonProps = CommonProps & {
 
 export function EditorialButton(props: AnchorProps | ButtonProps) {
   const baseClasses =
-    "inline-flex items-center gap-2 border border-ink text-ink " +
-    "px-7 py-3 text-[0.78rem] tracking-[0.04em] rounded-[2px] " +
-    "transition-colors duration-200 hover:bg-ink hover:text-canvas";
+    "inline-flex items-center gap-2.5 border border-ink bg-ink text-canvas " +
+    "px-8 py-4 text-[0.92rem] font-medium tracking-[0.01em] rounded-[2px] " +
+    "transition-colors duration-200 hover:bg-transparent hover:text-ink";
 
   const className = `${baseClasses} ${props.className ?? ""}`;
 

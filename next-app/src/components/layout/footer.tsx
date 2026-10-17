@@ -12,10 +12,10 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-ink/[0.067] mt-0">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.74rem] text-muted">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-8 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap sm:justify-between sm:items-center sm:gap-4 text-[0.8rem] text-muted">
         <div className="sm:flex-1">
           <strong className="text-ink font-semibold">Erick Sixto</strong>
-          <span className="hidden sm:inline ml-3 font-mono text-[0.62rem] tracking-[0.16em] uppercase">
+          <span className="hidden sm:inline ml-3 font-mono text-[0.72rem] tracking-[0.14em] uppercase">
             — Salesforce Specialist
           </span>
         </div>
@@ -29,7 +29,7 @@ export default function Footer() {
         </nav>
 
         <div className="sm:flex-1 sm:flex sm:justify-end">
-          <span className="font-mono text-[0.62rem] tracking-[0.16em] uppercase">
+          <span className="font-mono text-[0.72rem] tracking-[0.14em] uppercase">
             © {year} · ericksixto.com
           </span>
         </div>

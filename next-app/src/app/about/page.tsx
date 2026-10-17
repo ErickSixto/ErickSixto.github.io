@@ -79,7 +79,7 @@ export default function AboutPage() {
             className="w-full max-w-[480px] mx-auto block"
             style={{ filter: "grayscale(0.75) saturate(0.85)" }}
           />
-          <figcaption className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-muted text-center mt-4">
+          <figcaption className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted text-center mt-4">
             Mérida · 2026
           </figcaption>
         </figure>
@@ -191,7 +191,7 @@ export default function AboutPage() {
         </Reveal>
         <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           <div>
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-ink font-medium mb-5">
+            <div className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-ink font-medium mb-5">
               Right fit
             </div>
             <ul className="space-y-4">
@@ -206,7 +206,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div>
-            <div className="font-mono text-[0.62rem] tracking-[0.18em] uppercase text-muted mb-5">
+            <div className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted mb-5">
               Not a fit
             </div>
             <ul className="space-y-4">
