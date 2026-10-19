@@ -13,7 +13,7 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main>
+    <main id="main" tabIndex={-1} className="outline-none">
       <Hero
         eyebrowLeft="Selected work"
         headlineLead={`${work.length} engagements,`}
@@ -25,10 +25,14 @@ export default function WorkPage() {
         <WorkIndex entries={work} />
       </section>
 
-      <section className="max-w-[720px] mx-auto px-6 pt-12 pb-24">
-        {work.map((entry) => (
-          <WorkEntry key={entry.id} entry={entry} />
-        ))}
+      {/* Same 880px column and left edge as the rest of the page; the inner
+          720px cap keeps the long-form reading measure. */}
+      <section className="max-w-[880px] mx-auto px-6 pt-12 pb-24">
+        <div className="max-w-[720px]">
+          {work.map((entry) => (
+            <WorkEntry key={entry.id} entry={entry} />
+          ))}
+        </div>
       </section>
 
       <ClosingCTA

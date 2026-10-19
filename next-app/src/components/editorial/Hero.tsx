@@ -1,8 +1,10 @@
 "use client";
 
-// Editorial hero block. Centered, max-width 760px. Used as the top section
-// of every page. The headline is split into a leading phrase + bolded ending
-// to enforce the Inter 200 → Inter 700 contrast. `lead` accepts a single
+// Editorial hero block. Left-aligned on the same 880px column as every
+// content section below it, so the page reads as one document with one left
+// edge rather than centered blocks bracketing left-aligned ones. Used as the
+// top section of every page. The headline is split into a leading phrase + bolded ending
+// to enforce the 200 extralight → 700 bold contrast. `lead` accepts a single
 // string or an array of strings. Array entries render as separate paragraphs.
 //
 // On mount the blocks rise and fade in sequence (eyebrow → headline → rule →
@@ -42,26 +44,26 @@ export function Hero({
         aria-hidden
         className="bg-noise pointer-events-none absolute inset-0 -z-10 opacity-70 [mask-image:linear-gradient(to_bottom,#000_0%,#000_30%,transparent_90%)] [-webkit-mask-image:linear-gradient(to_bottom,#000_0%,#000_30%,transparent_90%)]"
       />
-      <div className="text-center px-6 pt-20 sm:pt-28 pb-20 sm:pb-24 max-w-[760px] mx-auto">
+      <div className="px-6 pt-20 sm:pt-28 pb-20 sm:pb-24 max-w-[880px] mx-auto">
       <LoadStagger>
         <StaggerItem>
           <Eyebrow left={eyebrowLeft} right={eyebrowRight} className="mb-10 sm:mb-12 inline-block" />
         </StaggerItem>
 
         <StaggerItem>
-          <h1 className="font-extralight text-[clamp(1.6rem,6.5vw,4.2rem)] leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] sm:tracking-[-0.03em] text-ink mb-8 sm:mb-10 max-w-[16ch] sm:max-w-[18ch] mx-auto text-balance">
+          <h1 className="font-extralight text-[clamp(1.6rem,6.5vw,4.2rem)] leading-[1.08] sm:leading-[1.04] tracking-[-0.025em] sm:tracking-[-0.03em] text-ink mb-8 sm:mb-10 max-w-[16ch] sm:max-w-[18ch] text-balance">
             {headlineLead}{" "}
             <strong className="font-bold">{headlineBold}</strong>
           </h1>
         </StaggerItem>
 
         <StaggerItem>
-          <div className="w-8 h-px bg-ink/[0.333] mx-auto mb-8 sm:mb-10" />
+          <div className="w-8 h-px bg-ink/[0.333] mb-8 sm:mb-10" />
         </StaggerItem>
 
         {leadParagraphs.length > 0 ? (
           <StaggerItem>
-            <div className="max-w-[56ch] mx-auto mb-10 sm:mb-11">
+            <div className="max-w-[56ch] mb-10 sm:mb-11">
               {leadParagraphs.map((para, i) => (
                 <p
                   key={i}
@@ -89,7 +91,7 @@ export function Hero({
             {/* Third-party evidence. Principle 3 is "evidence over assertion",
                 so this reads at ink weight rather than sitting at the bottom of
                 the type ramp in muted gray. It is the proof, not a footnote. */}
-            <div className="font-mono text-[0.82rem] tracking-[0.12em] uppercase text-ink font-medium flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+            <div className="font-mono text-[0.82rem] tracking-[0.12em] uppercase text-ink font-medium flex flex-wrap items-center gap-x-4 gap-y-2">
               {credibility.map((item, i) => (
                 <span key={item} className="whitespace-nowrap inline-flex items-center gap-4">
                   <span>{item}</span>

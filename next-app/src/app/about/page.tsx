@@ -55,7 +55,7 @@ const notAFit = [
 
 export default function AboutPage() {
   return (
-    <main>
+    <main id="main" tabIndex={-1} className="outline-none">
       <Hero
         eyebrowLeft="About"
         headlineLead="Engineer by training."
@@ -67,7 +67,7 @@ export default function AboutPage() {
       />
 
       {/* Portrait */}
-      <section className="max-w-[720px] mx-auto px-6 pb-16 border-t border-ink/[0.067] pt-12">
+      <section className="max-w-[880px] mx-auto px-6 pb-16 border-t border-ink/[0.067] pt-12">
         <Reveal>
         <figure>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -75,10 +75,10 @@ export default function AboutPage() {
             src={siteConfig.portrait}
             alt="Portrait of Erick Sixto, Salesforce Specialist"
             loading="lazy"
-            className="w-full max-w-[480px] mx-auto block"
+            className="w-full max-w-[480px] block"
             style={{ filter: "grayscale(0.75) saturate(0.85)" }}
           />
-          <figcaption className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted text-center mt-4">
+          <figcaption className="font-mono text-[0.72rem] tracking-[0.16em] uppercase text-muted mt-4">
             Mérida · 2026
           </figcaption>
         </figure>
@@ -106,6 +106,7 @@ export default function AboutPage() {
               >
                 <div className="font-mono text-[0.7rem] tracking-[0.16em] uppercase text-ink font-medium">
                   {p.platform}
+                  <span className="sr-only"> (opens in a new tab)</span>
                 </div>
                 <div>
                   <div className="text-[1rem] text-ink tracking-[-0.005em] mb-1">

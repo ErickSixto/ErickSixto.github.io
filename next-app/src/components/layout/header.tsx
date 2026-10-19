@@ -69,6 +69,7 @@ export default function Header() {
             className="whitespace-nowrap text-[0.78rem] sm:text-[0.8rem] inline-flex items-center min-h-11 border border-ink/[0.2] text-ink px-4 sm:px-5 rounded-[2px] hover:bg-ink hover:text-canvas transition-colors duration-200"
           >
             Book a call
+            <span className="sr-only"> (opens in a new tab)</span>
           </a>
         </div>
       </div>

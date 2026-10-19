@@ -1,5 +1,5 @@
-// Closing block on every page. Centered. Large editorial question, brief
-// paragraph, primary CTA + secondary text link.
+// Closing block on every page. Left-aligned on the shared 880px column.
+// Large editorial question, brief paragraph, primary CTA + secondary link.
 //
 // No kicker label above the question: the question carries its own weight,
 // and a tracked uppercase label restating it never earned its place.
@@ -23,16 +23,16 @@ export function ClosingCTA({
 }) {
   return (
     <section className="border-t border-ink/[0.067] bg-panel">
-      <div className="text-center max-w-[720px] mx-auto px-6 py-32">
+      <div className="max-w-[880px] mx-auto px-6 py-32">
       <Reveal>
-        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-ink mb-6">
+        <h2 className="font-extralight text-[clamp(1.8rem,3.4vw,2.8rem)] leading-[1.1] tracking-[-0.025em] text-ink mb-6 max-w-[22ch]">
           {questionLead}{" "}
           <strong className="font-bold">{questionBold}</strong>
         </h2>
-        <p className="text-[1rem] leading-[1.7] text-muted max-w-[50ch] mx-auto mb-10">
+        <p className="text-[1rem] leading-[1.7] text-muted max-w-[50ch] mb-10">
           {body}
         </p>
-        <div className="flex flex-wrap gap-6 justify-center items-center">
+        <div className="flex flex-wrap gap-6 items-center">
           <EditorialButton href={primary.href} external={primary.external}>
             {primary.label} <span aria-hidden>→</span>
           </EditorialButton>

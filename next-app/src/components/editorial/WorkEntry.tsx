@@ -57,7 +57,7 @@ function Section({
         {label}
       </span>
       <p
-        className={`text-[0.95rem] leading-[1.7] ${
+        className={`text-[0.95rem] leading-[1.7] max-w-[62ch] ${
           muted ? "text-muted" : "text-ink"
         }`}
       >

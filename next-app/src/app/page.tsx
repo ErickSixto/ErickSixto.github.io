@@ -18,7 +18,7 @@ export default function HomePage() {
   const peek = work.slice(0, 3);
 
   return (
-    <main>
+    <main id="main" tabIndex={-1} className="outline-none">
       <Hero
         eyebrowLeft="Erick Sixto"
         eyebrowRight="Salesforce Specialist"

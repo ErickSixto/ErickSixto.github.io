@@ -40,6 +40,7 @@ export function EditorialButton(props: AnchorProps | ButtonProps) {
     return (
       <a href={props.href} className={className} {...externalProps}>
         {props.children}
+        {props.external ? <span className="sr-only"> (opens in a new tab)</span> : null}
       </a>
     );
   }

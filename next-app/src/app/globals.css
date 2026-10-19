@@ -2,10 +2,8 @@
 @plugin "tailwindcss-animate";
 
 @theme {
-  /* Structural tokens: consumed by the base layer below (body, and the
-     border-color reset on *). Not exposed as utilities anywhere else. */
-  --color-background: hsl(40 7% 94%);
-  --color-foreground: hsl(0 2% 18%);
+  /* Structural token: the default border color for the `*` reset below.
+     Every visible border in the components names its own ink alpha. */
   --color-border: hsl(40 5% 89%);
 
   /* Editorial palette: single source of truth for the brand colors.
@@ -16,7 +14,6 @@
   --color-canvas: #F1F1EF;
   --color-panel: #EAE7E0;
   --color-gold: #7E5618;
-  --color-faint: #F7F7F5;
 
   --font-sans: var(--font-archivo), "Archivo", "Helvetica Neue", Helvetica, Arial, -apple-system, sans-serif;
   --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -27,19 +24,23 @@
   html, body { margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--color-background);
-    color: var(--color-foreground);
+    background: var(--color-canvas);
+    color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+  /* Let the browser balance the last lines of running text so a single word
+     never sits alone on a paragraph's final line. Font metrics change line
+     breaks, so this is safer than hand-tuning copy to one typeface. */
+  p, li, figcaption { text-wrap: pretty; }
   a, button, [role="button"], [type="button"], [type="submit"],
   summary, label[for], select, .cursor-pointer { cursor: pointer; }
   a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
   input:focus-visible, textarea:focus-visible, select:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-gold), 0 0 0 4px var(--color-background);
+    box-shadow: 0 0 0 2px var(--color-gold), 0 0 0 4px var(--color-canvas);
   }
 }
 

@@ -51,6 +51,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivo.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased bg-canvas text-ink">
+        {/* First tab stop on every page. Hidden until focused, then shown
+            as a solid block so keyboard users can jump past the nav. */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:text-canvas focus:px-5 focus:py-3 focus:text-[0.92rem] focus:font-medium focus:rounded-[2px]"
+        >
+          Skip to content
+        </a>
         <Header />
         {children}
         <Footer />
