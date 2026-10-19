@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T20:30:45+00:00",
+  "title": "Design System: Erick Sixto",
+  "extensions": {
+    "colorMeta": {
+      "charcoal-ink": {
+        "role": "primary",
+        "displayName": "Charcoal Ink",
+        "canonical": "oklch(30.2% 0.001 17.2)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#626161",
+          "#838282",
+          "#A6A5A5",
+          "#CAC9C9",
+          "#EFEEEE"
+        ]
+      },
+      "tobacco-gold": {
+        "role": "tertiary",
+        "displayName": "Tobacco Gold",
+        "canonical": "oklch(48.5% 0.092 73.5)",
+        "tonalRamp": [
+          "#180600",
+          "#371F00",
+          "#593B0C",
+          "#7D5925",
+          "#A37A40",
+          "#C49D6B",
+          "#E6C395",
+          "#FFE9C1"
+        ]
+      },
+      "oat-canvas": {
+        "role": "neutral",
+        "displayName": "Oat Canvas",
+        "canonical": "oklch(95.8% 0.003 106.4)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#252524",
+          "#424241",
+          "#616160",
+          "#828281",
+          "#A5A5A3",
+          "#C9C9C8",
+          "#EEEEED"
+        ]
+      },
+      "linen-panel": {
+        "role": "neutral",
+        "displayName": "Linen Panel",
+        "canonical": "oklch(92.8% 0.010 87.5)",
+        "tonalRamp": [
+          "#0C0B08",
+          "#262521",
+          "#44423D",
+          "#63615C",
+          "#85827C",
+          "#A7A59F",
+          "#CBC9C3",
+          "#F0EEE9"
+        ]
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "oklch(44.6% 0.026 256.8)",
+        "tonalRamp": [
+          "#070B12",
+          "#1F252E",
+          "#3B434D",
+          "#59626F",
+          "#798392",
+          "#9CA6B4",
+          "#C1CAD7",
+          "#E7EFFB"
+        ]
+      },
+      "default-border": {
+        "role": "neutral",
+        "displayName": "Default Border",
+        "canonical": "oklch(91.6% 0.003 84.6)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#252524",
+          "#424241",
+          "#62615F",
+          "#838280",
+          "#A6A5A3",
+          "#CAC9C7",
+          "#EFEEED"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single page headline. 200 lead, 700 landing, 18ch cap."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings and the closing question."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Case-study titles on /work."
+      },
+      "item": {
+        "displayName": "Item",
+        "purpose": "List-row titles: operating principles, work-peek rows."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 50 to 56ch, text-wrap pretty."
+      },
+      "cta": {
+        "displayName": "CTA",
+        "purpose": "The booking button label only."
+      },
+      "proof": {
+        "displayName": "Proof",
+        "purpose": "Third-party evidence line and mono inline links, in ink."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Eyebrows, metadata rows, field labels, footer marks. 11px floor."
+      }
+    },
+    "inkAlphas": [
+      {
+        "name": "divider",
+        "value": "rgba(47,46,46,0.067)",
+        "purpose": "Section dividers, case-study field separators, header seam."
+      },
+      {
+        "name": "rule",
+        "value": "rgba(47,46,46,0.133)",
+        "purpose": "List rules and case-study separators."
+      },
+      {
+        "name": "quiet",
+        "value": "rgba(47,46,46,0.2)",
+        "purpose": "Outline button border, quiet underlines."
+      },
+      {
+        "name": "strong",
+        "value": "rgba(47,46,46,0.333)",
+        "purpose": "Short hero rule, emphasis underlines."
+      }
+    ],
+    "shadows": [
+      {
+        "name": "scroll-seam",
+        "value": "0 6px 24px -18px rgba(47,46,46,0.4)",
+        "purpose": "Sticky header, only after scrolling past 8px."
+      },
+      {
+        "name": "focus-ring",
+        "value": "0 0 0 2px #7E5618, 0 0 0 4px #F1F1EF",
+        "purpose": "Keyboard focus on every interactive element."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-quart",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "All entrance motion. No bounce, no elastic."
+      },
+      {
+        "name": "editorial-rise",
+        "value": "translateY(16px) to none, opacity 0 to 1, 550 to 600ms",
+        "purpose": "The only entrance. Plays once."
+      },
+      {
+        "name": "hero-stagger",
+        "value": "60ms between items, 40ms initial delay",
+        "purpose": "Hero blocks on load, pure CSS."
+      },
+      {
+        "name": "list-stagger",
+        "value": "70ms between rows",
+        "purpose": "List rows on scroll into view."
+      },
+      {
+        "name": "state-change",
+        "value": "200ms color",
+        "purpose": "Hover fills and link color shifts."
+      }
+    ],
+    "layout": [
+      {
+        "name": "column",
+        "value": "880px",
+        "purpose": "The single content column. Every block shares its left edge."
+      },
+      {
+        "name": "measure",
+        "value": "720px container, 62ch paragraphs",
+        "purpose": "Long-form reading cap inside the column, on /work. Keeps lines under 80 characters in Archivo."
+      },
+      {
+        "name": "gutter",
+        "value": "24px",
+        "purpose": "Horizontal page padding."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px",
+        "purpose": "Nav moves from the bottom strip into the bar."
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The booking action. The only solid block on any page.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a 30-minute call <span aria-hidden=\"true\">&rarr;</span></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:10px;background:#2F2E2E;color:#F1F1EF;border:1px solid #2F2E2E;padding:16px 32px;border-radius:2px;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.92rem;font-weight:500;letter-spacing:0.01em;text-decoration:none;transition:background-color .2s,color .2s}.ds-btn-primary:hover{background:transparent;color:#2F2E2E}.ds-btn-primary:focus-visible{outline:none;box-shadow:0 0 0 2px #7E5618,0 0 0 4px #F1F1EF}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Persistent header booking link, subordinate to the primary.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">Book a call</a>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border:1px solid rgba(47,46,46,0.2);border-radius:2px;color:#2F2E2E;background:transparent;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.8rem;text-decoration:none;transition:background-color .2s,color .2s}.ds-btn-outline:hover{background:#2F2E2E;color:#F1F1EF}.ds-btn-outline:focus-visible{outline:none;box-shadow:0 0 0 2px #7E5618,0 0 0 4px #F1F1EF}"
+    },
+    {
+      "name": "Secondary Link",
+      "kind": "custom",
+      "refersTo": "link-secondary",
+      "description": "Mono text link with a quiet underline and a 44px hit area.",
+      "html": "<a class=\"ds-link-secondary\" href=\"#\"><span>or send a brief email &rarr;</span></a>",
+      "css": ".ds-link-secondary{display:inline-flex;align-items:center;min-height:44px;color:#2F2E2E;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:0.82rem;text-decoration:none}.ds-link-secondary span{border-bottom:1px solid rgba(47,46,46,0.2);padding-bottom:1px}.ds-link-secondary:focus-visible{outline:none;box-shadow:0 0 0 2px #7E5618,0 0 0 4px #F1F1EF}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Slate idle links, ink active link, 44px targets.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Home</a><a href=\"#\">Work</a><a href=\"#\">About</a></nav>",
+      "css": ".ds-nav{display:flex;gap:20px;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.82rem}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;color:#4B5563;text-decoration:none;transition:color .2s}.ds-nav a:hover{color:#2F2E2E}.ds-nav a[aria-current=page]{color:#2F2E2E;font-weight:500}.ds-nav a:focus-visible{outline:none;box-shadow:0 0 0 2px #7E5618,0 0 0 4px #F1F1EF}"
+    },
+    {
+      "name": "Display Headline",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The 200/700 split headline.",
+      "html": "<h1 class=\"ds-display\">Salesforce that doesn't <strong>fight your team.</strong></h1>",
+      "css": ".ds-display{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-weight:200;font-size:clamp(1.6rem,6.5vw,4.2rem);line-height:1.04;letter-spacing:-0.03em;color:#2F2E2E;max-width:18ch;text-wrap:balance;margin:0}.ds-display strong{font-weight:700}"
+    },
+    {
+      "name": "Proof Line",
+      "kind": "custom",
+      "refersTo": "proof",
+      "description": "Third-party evidence under the hero CTA, set in ink.",
+      "html": "<div class=\"ds-proof\"><span>200+ projects</span><i aria-hidden=\"true\">&middot;</i><span>7 years</span><i aria-hidden=\"true\">&middot;</i><span>Toptal</span><i aria-hidden=\"true\">&middot;</i><span>Trailblazer Ranger</span></div>",
+      "css": ".ds-proof{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:0.82rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#2F2E2E}.ds-proof i{font-style:normal;color:rgba(47,46,46,0.2)}"
+    },
+    {
+      "name": "Principle Row",
+      "kind": "custom",
+      "refersTo": "item",
+      "description": "Numbered list row: gold number, item title, slate rationale, ink rules.",
+      "html": "<div class=\"ds-row\"><span class=\"ds-row-num\">P.01</span><div><div class=\"ds-row-title\">Standard before custom, every time.</div><p class=\"ds-row-body\">Most orgs are broken because someone reached for code first.</p></div></div>",
+      "css": ".ds-row{display:grid;grid-template-columns:72px 1fr;gap:24px;padding:24px 0;border-top:1px solid rgba(47,46,46,0.133);border-bottom:1px solid rgba(47,46,46,0.133)}.ds-row-num{font-family:'JetBrains Mono',ui-monospace,Menlo,monospace;font-size:0.7rem;font-weight:500;letter-spacing:0.16em;color:#7E5618}.ds-row-title{font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1.05rem;font-weight:600;color:#2F2E2E;letter-spacing:-0.005em}.ds-row-body{margin:6px 0 0;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:0.95rem;line-height:1.7;color:#4B5563;text-wrap:pretty}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signed Spec Sheet",
+    "overview": "This is a precision document that a senior engineer put his name to. It reads the way a good specification reads: one column, one left edge, numbered items, metadata set in mono, and nothing on the page that is not load-bearing. The signature is the point. Every case study is framed as \"the call I made,\" and the visual system exists to make that judgment legible, not to decorate it.\n\nDensity is low and deliberate. Generous whitespace is not empty space, it is the confidence to leave room. The page has exactly one solid object on it, the booking button, and everything else is type and hairlines on a warm oat surface. Emphasis comes from weight, never from color: a headline opens at weight 200 and lands at 700, and that jump is the whole emphasis vocabulary.\n\nThe system rejects, by name, the anti-references in PRODUCT.md: SaaS landing-page clichés (gradient hero, feature-card grids, big-number \"hero metric\" blocks, stock illustrations, pricing-table theater), generic Salesforce-partner sites (badge walls, stock \"team collaborating\" photos, \"Digital Transformation Partner\" boilerplate), loud \"growth\" design (neon accents, animated gradients, countdown timers, pop-up modals), tracked uppercase kicker labels above headings, and anything that reads as templated.",
+    "keyCharacteristics": [
+      "One column, one left edge, one solid object per screen.",
+      "Weight contrast (200 against 700) as the only emphasis device.",
+      "Charcoal ink at four alphas does all structural work; gold marks data only.",
+      "Flat surfaces. Depth comes from hairlines and a single tonal panel.",
+      "Motion is a quiet 16px rise on entry, once, then never again."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Structure is drawn in Charcoal Ink at fixed alphas, never in a new gray: 0.067 for section dividers, 0.133 for list rules and case-study separators, 0.2 for outline borders and quiet underlines, 0.333 for the short hero rule and emphasis underlines. If you need a fifth alpha, you need fewer lines.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Marks Data Rule",
+        "body": "Gold appears on numbers, markers, separators and focus, and nowhere else. It never fills a surface, never colors a headline, never labels a section, and never exceeds a few percent of any screen. Its rarity is what makes a number read as a number.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Pure White Rule",
+        "body": "Pure #FFFFFF and pure #000000 are prohibited. The lightest value is Oat Canvas; the darkest is Charcoal Ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The 200/700 Rule",
+        "body": "Every headline splits into an extralight lead and a bold landing: \"Salesforce that doesn't **fight your team.**\" The weight jump is the only emphasis device. Never italic, never color, never underline for emphasis.",
+        "section": "typography"
+      },
+      {
+        "name": "The 11px Floor Rule",
+        "body": "No text renders below 11px. The smallest step is the 0.72rem label at 11.52px. Being on the ramp does not excuse being illegible.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Is For Facts Rule",
+        "body": "JetBrains Mono sets numbers, metadata, proof and short links. It never sets a sentence of prose, and it is never used as costume to signal \"technical.\"",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Document Rule",
+        "body": "Surfaces are flat at rest. The only shadows in the system are the scroll seam and the focus ring, and both respond to state. If a shadow is visible on a page that has not been scrolled or focused, it is a bug.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Edge Rule",
+        "body": "Every block on every page starts on the same left edge of a single 880px column with a 24px gutter. Long-form reading is capped at 720px *inside* that column, with case-study paragraphs held to 62ch, never by re-centering a narrower container. Centered stacks are prohibited: a centered hero over left-aligned sections reads as a template.",
+        "section": "overview"
+      },
+      {
+        "name": "The Visible Without Script Rule",
+        "body": "Content is readable before JavaScript runs. No hidden state is ever server-rendered. The hero entrance is pure CSS; scroll reveals are hidden only after a script confirms it is running. If scripts fail, the page loses motion, never content.",
+        "section": "overview"
+      }
+    ],
+    "dos": [
+      "Do start every block on the same left edge of the 880px column. Cap long reading at 720px inside it, and paragraphs at 62ch.",
+      "Do split every headline into a weight-200 lead and a weight-700 landing.",
+      "Do keep the booking button the only solid ink block on the page.",
+      "Do set evidence (200+ projects, Toptal, Trailblazer Ranger) in ink at 0.82rem mono, never smaller and never in slate.",
+      "Do draw structure in Charcoal Ink at 0.067, 0.133, 0.2 or 0.333 alpha.",
+      "Do give every interactive element a 44px hit area and a visible gold focus ring.",
+      "Do render content in the server HTML. Let motion be the only thing that depends on JavaScript.",
+      "Do mark links that open a new tab for screen readers."
+    ],
+    "donts": [
+      "Don't use SaaS landing-page clichés: gradient hero, feature-card grids, big-number \"hero metric\" blocks, stock illustrations, or pricing-table theater.",
+      "Don't imitate generic Salesforce-partner sites: badge walls, stock \"team collaborating\" photos, or \"Digital Transformation Partner\" boilerplate.",
+      "Don't use loud \"growth\" design: neon accents, animated gradients, countdown timers, or pop-up modals.",
+      "Don't put a tracked uppercase kicker label above a heading. The heading carries its own weight; if the words matter, work them into the heading or the body.",
+      "Don't center a hero or a closing block over left-aligned content. That is the generic centered stack.",
+      "Don't use gold for a surface, a headline, a section label or decoration. Gold marks data.",
+      "Don't set any text below 11px, or set prose in JetBrains Mono.",
+      "Don't add a products, pricing, checkout or storefront surface. The site sells judgment, and the only ask is the call.",
+      "Don't use cards, nested cards, side-stripe borders, gradient text, glassmorphism or bounce easing.",
+      "Don't ship `opacity: 0` in server-rendered HTML.",
+      "Don't use em dashes or en dashes as punctuation in any copy."
+    ]
+  }
+}

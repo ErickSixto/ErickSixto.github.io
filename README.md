@@ -13,8 +13,10 @@ The live site is the Next.js app in [`next-app/`](next-app). Nothing else in thi
 | **Framework** | Next.js 16 (App Router) with React 19 |
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS v4, configured in CSS via `@theme` in `next-app/src/app/globals.css` |
-| **Animation** | Framer Motion |
+| **Animation** | Plain CSS keyframes plus a small IntersectionObserver; no animation library |
 | **Output** | Static export (`output: "export"`), no server runtime |
+| **Fonts** | Archivo and JetBrains Mono via `next/font`, self-hosted at build |
+| **Runtime deps** | `next`, `react`, `react-dom`, `tailwindcss-animate` |
 
 ### Routes
 
@@ -26,7 +28,9 @@ The live site is the Next.js app in [`next-app/`](next-app). Nothing else in thi
 
 Plus a branded 404, an Open Graph image generated at build time (`src/app/opengraph-image.tsx`), `sitemap.xml`, and `robots.txt`.
 
-Routes from earlier versions of the site (`/services`, `/projects`, `/contact`) are kept alive as `noindex` meta-refresh stubs in `next-app/public/`, so old inbound links do not land on a 404.
+Routes from earlier versions of the site (`/services`, `/projects`, `/contact`, `/products`, `/products/access-analyzer`) are kept alive as `noindex` meta-refresh stubs in `next-app/public/`, so old inbound links do not land on a 404.
+
+All page content is in the server-rendered HTML. Motion is progressive enhancement: with JavaScript blocked or failed, the site loses its entrance animation and nothing else.
 
 ## Development
 
@@ -48,16 +52,17 @@ npm run lint
 
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds `next-app/` on every push to `main` and publishes `next-app/out` to GitHub Pages. The custom domain comes from `next-app/public/CNAME`, which is copied into the export automatically.
 
-## The unused Create React App at the repository root
+## Repository layout
 
-The repository root still holds the original Create React App version of this site: `src/`, `public/`, `craco.config.js`, `tailwind.config.js`, `components.json`, `jsconfig.json`, `postcss.config.js`, the root `package.json` (named `erick-sixto-portfolio`), and `yarn.lock`.
-
-None of it is built, deployed, or maintained. It is kept only as history. If you are changing the website, you want `next-app/`. The root CRA is a candidate for deletion.
+`next-app/` is the whole website. The repository root holds only documentation and the deploy workflow. An earlier Create React App version of the site used to live at the root; it was never deployed after the move to Next.js and was removed on 2026-10-19. It remains in git history if you ever need it.
 
 ## Brand and product context
 
-- [`BRAND.md`](BRAND.md) is the source of truth for voice and copy rules.
-- [`PRODUCT.md`](PRODUCT.md) covers positioning, the audience, and what the site is for.
+- [`PRODUCT.md`](PRODUCT.md) covers positioning, the audience, scope, and what the site is for.
+- [`BRAND.md`](BRAND.md) is the source of truth for voice, copy rules, calls to action, and canonical proof numbers.
+- [`DESIGN.md`](DESIGN.md) is the source of truth for the visual system: color, type, layout, components, and the named rules. [`DESIGN.json`](DESIGN.json) is its machine-readable sidecar.
+
+When they disagree: `next-app/src/data/mock.ts` wins on figures, BRAND.md on voice, DESIGN.md on anything visual.
 
 ## License
 

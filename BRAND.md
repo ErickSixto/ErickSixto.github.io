@@ -1,7 +1,7 @@
 # Brand voice · Erick Sixto
 
 > One-page guide so every piece of copy sounds like the same person and cites the same numbers.
-> Source of truth for facts/numbers is [`next-app/src/data/mock.ts`](next-app/src/data/mock.ts). When in doubt, this doc wins on *voice*; `mock.ts` wins on *figures*.
+> Source of truth for facts/numbers is [`next-app/src/data/mock.ts`](next-app/src/data/mock.ts). When in doubt, this doc wins on *voice*; `mock.ts` wins on *figures*; [`DESIGN.md`](DESIGN.md) wins on anything visual (color, type, layout, components).
 
 ## Personality
 
@@ -54,15 +54,30 @@ They want a senior expert who makes the call, not lowest-bid, not template-shopp
 - **Contractions on.** "doesn't," "won't," "I'll."
 - First person singular: **"I"**, not "we." Erick is the brand; no fake agency plural.
 - **Specific beats vague.** Prefer real numbers and concrete failure modes ("drops records on Tuesdays") over adjectives ("robust," "seamless").
-- **No dashes as punctuation.** No em dashes, no en dashes, and no spaced " - " or " -- " standing in for one. Use a comma, a colon, a period, or parentheses. Two typographic exceptions survive because they are design marks, not punctuation: the gold leading dash on section labels and the same mark in the footer descriptor.
+- **No dashes as punctuation.** No em dashes, no en dashes, and no spaced " - " or " -- " standing in for one. Use a comma, a colon, a period, or parentheses. One typographic exception survives because it is a design mark, not punctuation: the leading dash in the footer descriptor ("— Salesforce Specialist"). The other former exception, a gold dash on section labels, is gone with the labels themselves.
 - **Middle dot joins page titles and date ranges**: "About · Erick Sixto", "Jul 2019 · Jul 2021". It also keeps the career column on one line, which "to" does not.
-- Mono/uppercase micro-labels (eyebrows, section labels) stay short and factual: "What I solve," "Is this a fit?"
+- **No kicker labels above headings.** A tracked uppercase line restating the heading under it ("Operating principles" above "What I won't compromise on.") is cut, not written. The heading carries its own meaning; if a label's words matter, work them into the heading or the first sentence.
+- Mono/uppercase micro-copy is reserved for facts: the hero eyebrow ("Erick Sixto · Salesforce Specialist"), metadata rows ("№ 01 · Insurance · 2022"), case-study field names ("The call I made"), and the proof line. Short, factual, never a sentence.
 - One exclamation mark is one too many. Let the claim carry the energy.
 - **No jargon the buyer doesn't already use.** Apex/LWC/Flow are fine for this audience; "synergize," "leverage," "best-in-class" are banned.
 
+## Calls to action
+
+The site makes one ask. Everything else is evidence for it.
+
+| Where | Exact wording | Role |
+|-------|---------------|------|
+| Hero and closing block | **Book a 30-minute call** | The primary action, always the solid button |
+| Header, every page | **Book a call** | Persistent shorthand for the same link |
+| Closing block, beside the button | **or send a brief email →** | The only secondary path |
+
+- Lead with what the call is *not*: free, no pitch, no proposal, no follow-up email. The closing paragraph does this on every page; keep it.
+- Never add a third CTA, a newsletter, a download, a "learn more," or a purchase. If a new page needs a closing line, write a new *question* for the closing block and keep the same two actions under it.
+- Never write CTA copy that sells software. There is no product, pricing or install surface (see PRODUCT.md, Scope).
+
 ## Avoid
 
-Lead-gen / growth-hacking framing (he does **remediation and custom builds**, not lead generation), urgency/scarcity tactics, superlatives without a number, "we" for a team of one, and testimonial quotes on-domain (link to the Fiverr profile instead).
+Lead-gen / growth-hacking framing (he does **remediation and custom builds**, not lead generation), urgency/scarcity tactics, superlatives without a number, "we" for a team of one, testimonial quotes on-domain (link to the Fiverr profile instead), and any framing of Erick as a software vendor. He sells judgment and builds; there are no products, plans, or prices on the site.
 
 ## Canonical proof numbers (do not paraphrase or swap)
 
